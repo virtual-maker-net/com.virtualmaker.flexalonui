@@ -1,0 +1,864 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FlexalonInteractable
+ | Flexalon 3D Layouts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FlexalonInteractable
+ | Flexalon 3D Layouts ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="tochead.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="https://www.flexalon.com/">
+                <img id="logo" class="svg" src="images/logo_32x32.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Flexalon.FlexalonInteractable">
+
+
+  <h1 id="Flexalon_FlexalonInteractable" data-uid="Flexalon.FlexalonInteractable" class="text-break">Class FlexalonInteractable
+</h1>
+  <div class="markdown level0 summary"><p>Allows a gameObject to be clicked and dragged.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><span class="xref">FlexalonInteractable</span></div>
+  </div>
+  <h5 id="Flexalon_FlexalonInteractable_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;Flexalon/Flexalon Interactable&quot;)]
+[HelpURL(&quot;https://www.flexalon.com/docs/interactable&quot;)]
+[DisallowMultipleComponent]
+public class FlexalonInteractable : MonoBehaviour</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Flexalon_FlexalonInteractable_Bounds_" data-uid="Flexalon.FlexalonInteractable.Bounds*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_Bounds" data-uid="Flexalon.FlexalonInteractable.Bounds">Bounds</h4>
+  <div class="markdown level1 summary"><p>If set, the object cannot be dragged outside of the bounds collider.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collider Bounds { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Collider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_Clickable_" data-uid="Flexalon.FlexalonInteractable.Clickable*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_Clickable" data-uid="Flexalon.FlexalonInteractable.Clickable">Clickable</h4>
+  <div class="markdown level1 summary"><p>Determines if this object can be clicked and generate click events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Clickable { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_Clicked_" data-uid="Flexalon.FlexalonInteractable.Clicked*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_Clicked" data-uid="Flexalon.FlexalonInteractable.Clicked">Clicked</h4>
+  <div class="markdown level1 summary"><p>Unity Event invoked when the object is pressed and released within MaxClickTime.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.InteractableEvent Clicked { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.InteractableEvent.html">InteractableEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_DragEnd_" data-uid="Flexalon.FlexalonInteractable.DragEnd*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_DragEnd" data-uid="Flexalon.FlexalonInteractable.DragEnd">DragEnd</h4>
+  <div class="markdown level1 summary"><p>Unity Event invoked when the object stops being dragged.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.InteractableEvent DragEnd { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.InteractableEvent.html">InteractableEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_Draggable_" data-uid="Flexalon.FlexalonInteractable.Draggable*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_Draggable" data-uid="Flexalon.FlexalonInteractable.Draggable">Draggable</h4>
+  <div class="markdown level1 summary"><p>Determines if this object can be dragged and generate drag events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Draggable { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_DragStart_" data-uid="Flexalon.FlexalonInteractable.DragStart*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_DragStart" data-uid="Flexalon.FlexalonInteractable.DragStart">DragStart</h4>
+  <div class="markdown level1 summary"><p>Unity Event invoked when the object starts being dragged.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.InteractableEvent DragStart { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.InteractableEvent.html">InteractableEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_Handle_" data-uid="Flexalon.FlexalonInteractable.Handle*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_Handle" data-uid="Flexalon.FlexalonInteractable.Handle">Handle</h4>
+  <div class="markdown level1 summary"><p>GameObject to use to select and drag this object. If not set, uses self.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject Handle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_HideCursor_" data-uid="Flexalon.FlexalonInteractable.HideCursor*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_HideCursor" data-uid="Flexalon.FlexalonInteractable.HideCursor">HideCursor</h4>
+  <div class="markdown level1 summary"><p>When checked, Cursor.visible is set to false when the object is dragged.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HideCursor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_HoldOffset_" data-uid="Flexalon.FlexalonInteractable.HoldOffset*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_HoldOffset" data-uid="Flexalon.FlexalonInteractable.HoldOffset">HoldOffset</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 HoldOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_HoldRotation_" data-uid="Flexalon.FlexalonInteractable.HoldRotation*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_HoldRotation" data-uid="Flexalon.FlexalonInteractable.HoldRotation">HoldRotation</h4>
+  <div class="markdown level1 summary"><p>The rotation to apply to the object when it is being dragged.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion HoldRotation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_HoveredObject_" data-uid="Flexalon.FlexalonInteractable.HoveredObject*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_HoveredObject" data-uid="Flexalon.FlexalonInteractable.HoveredObject">HoveredObject</h4>
+  <div class="markdown level1 summary"><p>The first hovered object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FlexalonInteractable HoveredObject { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_HoveredObjects_" data-uid="Flexalon.FlexalonInteractable.HoveredObjects*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_HoveredObjects" data-uid="Flexalon.FlexalonInteractable.HoveredObjects">HoveredObjects</h4>
+  <div class="markdown level1 summary"><p>The currently hovered objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;FlexalonInteractable&gt; HoveredObjects { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_HoverEnd_" data-uid="Flexalon.FlexalonInteractable.HoverEnd*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_HoverEnd" data-uid="Flexalon.FlexalonInteractable.HoverEnd">HoverEnd</h4>
+  <div class="markdown level1 summary"><p>Unity Event invoked when the object stops being hovered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.InteractableEvent HoverEnd { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.InteractableEvent.html">InteractableEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_HoverStart_" data-uid="Flexalon.FlexalonInteractable.HoverStart*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_HoverStart" data-uid="Flexalon.FlexalonInteractable.HoverStart">HoverStart</h4>
+  <div class="markdown level1 summary"><p>Unity Event invoked when the object starts being hovered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.InteractableEvent HoverStart { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.InteractableEvent.html">InteractableEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_InsertRadius_" data-uid="Flexalon.FlexalonInteractable.InsertRadius*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_InsertRadius" data-uid="Flexalon.FlexalonInteractable.InsertRadius">InsertRadius</h4>
+  <div class="markdown level1 summary"><p>How close this object needs to a drag target's bounds to be inserted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float InsertRadius { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_InterpolationSpeed_" data-uid="Flexalon.FlexalonInteractable.InterpolationSpeed*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_InterpolationSpeed" data-uid="Flexalon.FlexalonInteractable.InterpolationSpeed">InterpolationSpeed</h4>
+  <div class="markdown level1 summary"><p>How quickly the object moves towards the cursor when dragged.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float InterpolationSpeed { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_LayerMask_" data-uid="Flexalon.FlexalonInteractable.LayerMask*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_LayerMask" data-uid="Flexalon.FlexalonInteractable.LayerMask">LayerMask</h4>
+  <div class="markdown level1 summary"><p>When dragged, limits which Flexalon Drag Targets will accept this object
+by comparing the Layer Mask to the target GameObject's layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayerMask LayerMask { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.LayerMask</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_LineDirection_" data-uid="Flexalon.FlexalonInteractable.LineDirection*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_LineDirection" data-uid="Flexalon.FlexalonInteractable.LineDirection">LineDirection</h4>
+  <div class="markdown level1 summary"><p>Defines the direction of the line when using a line restriction.
+If 'Local Space'is checked, this direction is rotated by the transform
+of the layout that the object started in.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 LineDirection { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_LocalSpaceOffset_" data-uid="Flexalon.FlexalonInteractable.LocalSpaceOffset*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_LocalSpaceOffset" data-uid="Flexalon.FlexalonInteractable.LocalSpaceOffset">LocalSpaceOffset</h4>
+  <div class="markdown level1 summary"><p>When checked, the Hold Offset is applied in local space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LocalSpaceOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_LocalSpaceRestriction_" data-uid="Flexalon.FlexalonInteractable.LocalSpaceRestriction*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_LocalSpaceRestriction" data-uid="Flexalon.FlexalonInteractable.LocalSpaceRestriction">LocalSpaceRestriction</h4>
+  <div class="markdown level1 summary"><p>When checked, the Plane Normal and Line Direction are applied in local space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LocalSpaceRestriction { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_LocalSpaceRotation_" data-uid="Flexalon.FlexalonInteractable.LocalSpaceRotation*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_LocalSpaceRotation" data-uid="Flexalon.FlexalonInteractable.LocalSpaceRotation">LocalSpaceRotation</h4>
+  <div class="markdown level1 summary"><p>When checked, the Hold Rotation is applied in local space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LocalSpaceRotation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_MaxClickTime_" data-uid="Flexalon.FlexalonInteractable.MaxClickTime*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_MaxClickTime" data-uid="Flexalon.FlexalonInteractable.MaxClickTime">MaxClickTime</h4>
+  <div class="markdown level1 summary"><p>With a mouse or touch input, a click is defined as a press and release.
+The time between press and release must be less than Max Click Time to
+count as a click. A drag interaction cannot start until Max Click Time is exceeded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxClickTime { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_PlaneNormal_" data-uid="Flexalon.FlexalonInteractable.PlaneNormal*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_PlaneNormal" data-uid="Flexalon.FlexalonInteractable.PlaneNormal">PlaneNormal</h4>
+  <div class="markdown level1 summary"><p>Defines the normal of the plane when using a plane restriction.
+If 'Local Space' is checked, this normal is rotated by the transform
+of the layout that the object started in.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 PlaneNormal { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_Restriction_" data-uid="Flexalon.FlexalonInteractable.Restriction*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_Restriction" data-uid="Flexalon.FlexalonInteractable.Restriction">Restriction</h4>
+  <div class="markdown level1 summary"><p>Determines how to restrict the object's drag movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.RestrictionType Restriction { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.RestrictionType.html">RestrictionType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_RotateOnDrag_" data-uid="Flexalon.FlexalonInteractable.RotateOnDrag*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_RotateOnDrag" data-uid="Flexalon.FlexalonInteractable.RotateOnDrag">RotateOnDrag</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RotateOnDrag { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_SelectedObject_" data-uid="Flexalon.FlexalonInteractable.SelectedObject*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_SelectedObject" data-uid="Flexalon.FlexalonInteractable.SelectedObject">SelectedObject</h4>
+  <div class="markdown level1 summary"><p>The first selected / dragged object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FlexalonInteractable SelectedObject { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_SelectedObjects_" data-uid="Flexalon.FlexalonInteractable.SelectedObjects*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_SelectedObjects" data-uid="Flexalon.FlexalonInteractable.SelectedObjects">SelectedObjects</h4>
+  <div class="markdown level1 summary"><p>The currently selected / dragged objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;FlexalonInteractable&gt; SelectedObjects { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_SelectEnd_" data-uid="Flexalon.FlexalonInteractable.SelectEnd*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_SelectEnd" data-uid="Flexalon.FlexalonInteractable.SelectEnd">SelectEnd</h4>
+  <div class="markdown level1 summary"><p>Unity Event invoked when the object stops being selected (e.g. release mouse).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.InteractableEvent SelectEnd { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.InteractableEvent.html">InteractableEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_SelectStart_" data-uid="Flexalon.FlexalonInteractable.SelectStart*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_SelectStart" data-uid="Flexalon.FlexalonInteractable.SelectStart">SelectStart</h4>
+  <div class="markdown level1 summary"><p>Unity Event invoked when the object starts being selected (e.g. press down mouse over object).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.InteractableEvent SelectStart { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.InteractableEvent.html">InteractableEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonInteractable_State_" data-uid="Flexalon.FlexalonInteractable.State*"></a>
+  <h4 id="Flexalon_FlexalonInteractable_State" data-uid="Flexalon.FlexalonInteractable.State">State</h4>
+  <div class="markdown level1 summary"><p>The current state of the interactable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonInteractable.InteractableState State { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonInteractable.html">FlexalonInteractable</a>.<a class="xref" href="Flexalon.FlexalonInteractable.InteractableState.html">InteractableState</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Flexalon 3D Layouts
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    
+    
+    
+  </body>
+</html>

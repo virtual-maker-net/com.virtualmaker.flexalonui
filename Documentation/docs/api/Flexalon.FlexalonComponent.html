@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FlexalonComponent
+ | Flexalon 3D Layouts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FlexalonComponent
+ | Flexalon 3D Layouts ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="tochead.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="https://www.flexalon.com/">
+                <img id="logo" class="svg" src="images/logo_32x32.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Flexalon.FlexalonComponent">
+
+
+  <h1 id="Flexalon_FlexalonComponent" data-uid="Flexalon.FlexalonComponent" class="text-break">Class FlexalonComponent
+</h1>
+  <div class="markdown level0 summary"><p>Base type for many Flexalon components. Deals with FlexalonNode lifecycle,
+and provides the ForceUpdate and MarkDirty methods to trigger a Flexalon update.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><span class="xref">FlexalonComponent</span></div>
+      <div class="level6"><a class="xref" href="Flexalon.FlexalonConstraint.html">FlexalonConstraint</a></div>
+      <div class="level6"><a class="xref" href="Flexalon.FlexalonGridCell.html">FlexalonGridCell</a></div>
+      <div class="level6"><a class="xref" href="Flexalon.FlexalonObject.html">FlexalonObject</a></div>
+      <div class="level6"><a class="xref" href="Flexalon.FlexalonRandomModifier.html">FlexalonRandomModifier</a></div>
+      <div class="level6"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
+  </div>
+  <h5 id="Flexalon_FlexalonComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class FlexalonComponent : MonoBehaviour</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <h4 id="Flexalon_FlexalonComponent__node" data-uid="Flexalon.FlexalonComponent._node">_node</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected FlexalonNode _node</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Flexalon_FlexalonComponent_Node_" data-uid="Flexalon.FlexalonComponent.Node*"></a>
+  <h4 id="Flexalon_FlexalonComponent_Node" data-uid="Flexalon.FlexalonComponent.Node">Node</h4>
+  <div class="markdown level1 summary"><p>The FlexalonNode associated with this gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonNode Node { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Flexalon_FlexalonComponent_DoOnDisable_" data-uid="Flexalon.FlexalonComponent.DoOnDisable*"></a>
+  <h4 id="Flexalon_FlexalonComponent_DoOnDisable" data-uid="Flexalon.FlexalonComponent.DoOnDisable">DoOnDisable()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is disabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void DoOnDisable()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonComponent_DoOnEnable_" data-uid="Flexalon.FlexalonComponent.DoOnEnable*"></a>
+  <h4 id="Flexalon_FlexalonComponent_DoOnEnable" data-uid="Flexalon.FlexalonComponent.DoOnEnable">DoOnEnable()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void DoOnEnable()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonComponent_DoUpdate_" data-uid="Flexalon.FlexalonComponent.DoUpdate*"></a>
+  <h4 id="Flexalon_FlexalonComponent_DoUpdate" data-uid="Flexalon.FlexalonComponent.DoUpdate">DoUpdate()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DoUpdate()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonComponent_ForceUpdate_" data-uid="Flexalon.FlexalonComponent.ForceUpdate*"></a>
+  <h4 id="Flexalon_FlexalonComponent_ForceUpdate" data-uid="Flexalon.FlexalonComponent.ForceUpdate">ForceUpdate()</h4>
+  <div class="markdown level1 summary"><p>Forces this component, its parent nodes, and its children nodes to update immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ForceUpdate()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonComponent_Initialize_" data-uid="Flexalon.FlexalonComponent.Initialize*"></a>
+  <h4 id="Flexalon_FlexalonComponent_Initialize" data-uid="Flexalon.FlexalonComponent.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is first created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Initialize()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonComponent_MarkDirty_" data-uid="Flexalon.FlexalonComponent.MarkDirty*"></a>
+  <h4 id="Flexalon_FlexalonComponent_MarkDirty" data-uid="Flexalon.FlexalonComponent.MarkDirty">MarkDirty()</h4>
+  <div class="markdown level1 summary"><p>Marks this component needing an update. The Flexalon singleton
+will visit it in dependency order on LateUpdate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MarkDirty()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonComponent_ResetProperties_" data-uid="Flexalon.FlexalonComponent.ResetProperties*"></a>
+  <h4 id="Flexalon_FlexalonComponent_ResetProperties" data-uid="Flexalon.FlexalonComponent.ResetProperties">ResetProperties()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is destroyed to reset properties on the FlexalonNode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ResetProperties()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonComponent_UpdateProperties_" data-uid="Flexalon.FlexalonComponent.UpdateProperties*"></a>
+  <h4 id="Flexalon_FlexalonComponent_UpdateProperties" data-uid="Flexalon.FlexalonComponent.UpdateProperties">UpdateProperties()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is enabled to apply properties to the FlexalonNode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateProperties()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonComponent_Upgrade_" data-uid="Flexalon.FlexalonComponent.Upgrade*"></a>
+  <h4 id="Flexalon_FlexalonComponent_Upgrade_System_Int32_" data-uid="Flexalon.FlexalonComponent.Upgrade(System.Int32)">Upgrade(int)</h4>
+  <div class="markdown level1 summary"><p>Called when the component is upgraded to a new version of Flexalon.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Upgrade(int fromVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">fromVersion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Flexalon 3D Layouts
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    
+    
+    
+  </body>
+</html>

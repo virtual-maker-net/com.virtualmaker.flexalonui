@@ -1,0 +1,909 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FlexalonObject
+ | Flexalon 3D Layouts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FlexalonObject
+ | Flexalon 3D Layouts ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="tochead.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="https://www.flexalon.com/">
+                <img id="logo" class="svg" src="images/logo_32x32.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Flexalon.FlexalonObject">
+
+
+  <h1 id="Flexalon_FlexalonObject" data-uid="Flexalon.FlexalonObject" class="text-break">Class FlexalonObject
+</h1>
+  <div class="markdown level0 summary"><p>To control the size of an object, add a Flexalon Object
+component to it and edit the width, height, or depth properties.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
+    <div class="level6"><span class="xref">FlexalonObject</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent__node">FlexalonComponent._node</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Node">FlexalonComponent.Node</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_MarkDirty">FlexalonComponent.MarkDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_ForceUpdate">FlexalonComponent.ForceUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_DoOnEnable">FlexalonComponent.DoOnEnable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_DoOnDisable">FlexalonComponent.DoOnDisable()</a>
+    </div>
+  </div>
+  <h5 id="Flexalon_FlexalonObject_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ExecuteAlways]
+[DisallowMultipleComponent]
+[AddComponentMenu(&quot;Flexalon/Flexalon Object&quot;)]
+[HelpURL(&quot;https://www.flexalon.com/docs/flexalonObject&quot;)]
+public class FlexalonObject : FlexalonComponent</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Flexalon_FlexalonObject_Depth_" data-uid="Flexalon.FlexalonObject.Depth*"></a>
+  <h4 id="Flexalon_FlexalonObject_Depth" data-uid="Flexalon.FlexalonObject.Depth">Depth</h4>
+  <div class="markdown level1 summary"><p>The fixed depth of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Depth { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_DepthOfParent_" data-uid="Flexalon.FlexalonObject.DepthOfParent*"></a>
+  <h4 id="Flexalon_FlexalonObject_DepthOfParent" data-uid="Flexalon.FlexalonObject.DepthOfParent">DepthOfParent</h4>
+  <div class="markdown level1 summary"><p>The relative depth of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float DepthOfParent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_DepthType_" data-uid="Flexalon.FlexalonObject.DepthType*"></a>
+  <h4 id="Flexalon_FlexalonObject_DepthType" data-uid="Flexalon.FlexalonObject.DepthType">DepthType</h4>
+  <div class="markdown level1 summary"><p>The depth type of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SizeType DepthType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.SizeType.html">SizeType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_Height_" data-uid="Flexalon.FlexalonObject.Height*"></a>
+  <h4 id="Flexalon_FlexalonObject_Height" data-uid="Flexalon.FlexalonObject.Height">Height</h4>
+  <div class="markdown level1 summary"><p>The fixed height of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Height { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_HeightOfParent_" data-uid="Flexalon.FlexalonObject.HeightOfParent*"></a>
+  <h4 id="Flexalon_FlexalonObject_HeightOfParent" data-uid="Flexalon.FlexalonObject.HeightOfParent">HeightOfParent</h4>
+  <div class="markdown level1 summary"><p>The relative height of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float HeightOfParent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_HeightType_" data-uid="Flexalon.FlexalonObject.HeightType*"></a>
+  <h4 id="Flexalon_FlexalonObject_HeightType" data-uid="Flexalon.FlexalonObject.HeightType">HeightType</h4>
+  <div class="markdown level1 summary"><p>The height type of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SizeType HeightType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.SizeType.html">SizeType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_Margin_" data-uid="Flexalon.FlexalonObject.Margin*"></a>
+  <h4 id="Flexalon_FlexalonObject_Margin" data-uid="Flexalon.FlexalonObject.Margin">Margin</h4>
+  <div class="markdown level1 summary"><p>Margin to add additional space around a gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Directions Margin { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Directions.html">Directions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_MarginBack_" data-uid="Flexalon.FlexalonObject.MarginBack*"></a>
+  <h4 id="Flexalon_FlexalonObject_MarginBack" data-uid="Flexalon.FlexalonObject.MarginBack">MarginBack</h4>
+  <div class="markdown level1 summary"><p>Margin to add additional space around a gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MarginBack { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_MarginBottom_" data-uid="Flexalon.FlexalonObject.MarginBottom*"></a>
+  <h4 id="Flexalon_FlexalonObject_MarginBottom" data-uid="Flexalon.FlexalonObject.MarginBottom">MarginBottom</h4>
+  <div class="markdown level1 summary"><p>Margin to add additional space around a gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MarginBottom { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_MarginFront_" data-uid="Flexalon.FlexalonObject.MarginFront*"></a>
+  <h4 id="Flexalon_FlexalonObject_MarginFront" data-uid="Flexalon.FlexalonObject.MarginFront">MarginFront</h4>
+  <div class="markdown level1 summary"><p>Margin to add additional space around a gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MarginFront { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_MarginLeft_" data-uid="Flexalon.FlexalonObject.MarginLeft*"></a>
+  <h4 id="Flexalon_FlexalonObject_MarginLeft" data-uid="Flexalon.FlexalonObject.MarginLeft">MarginLeft</h4>
+  <div class="markdown level1 summary"><p>Margin to add additional space around a gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MarginLeft { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_MarginRight_" data-uid="Flexalon.FlexalonObject.MarginRight*"></a>
+  <h4 id="Flexalon_FlexalonObject_MarginRight" data-uid="Flexalon.FlexalonObject.MarginRight">MarginRight</h4>
+  <div class="markdown level1 summary"><p>Margin to add additional space around a gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MarginRight { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_MarginTop_" data-uid="Flexalon.FlexalonObject.MarginTop*"></a>
+  <h4 id="Flexalon_FlexalonObject_MarginTop" data-uid="Flexalon.FlexalonObject.MarginTop">MarginTop</h4>
+  <div class="markdown level1 summary"><p>Margin to add additional space around a gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MarginTop { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_Offset_" data-uid="Flexalon.FlexalonObject.Offset*"></a>
+  <h4 id="Flexalon_FlexalonObject_Offset" data-uid="Flexalon.FlexalonObject.Offset">Offset</h4>
+  <div class="markdown level1 summary"><p>Use offset to add an offset to the final position of the gameObject after layout is complete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Offset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_Padding_" data-uid="Flexalon.FlexalonObject.Padding*"></a>
+  <h4 id="Flexalon_FlexalonObject_Padding" data-uid="Flexalon.FlexalonObject.Padding">Padding</h4>
+  <div class="markdown level1 summary"><p>Padding to reduce available space inside a layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Directions Padding { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Directions.html">Directions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_PaddingBack_" data-uid="Flexalon.FlexalonObject.PaddingBack*"></a>
+  <h4 id="Flexalon_FlexalonObject_PaddingBack" data-uid="Flexalon.FlexalonObject.PaddingBack">PaddingBack</h4>
+  <div class="markdown level1 summary"><p>Padding to reduce available space inside a layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PaddingBack { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_PaddingBottom_" data-uid="Flexalon.FlexalonObject.PaddingBottom*"></a>
+  <h4 id="Flexalon_FlexalonObject_PaddingBottom" data-uid="Flexalon.FlexalonObject.PaddingBottom">PaddingBottom</h4>
+  <div class="markdown level1 summary"><p>Padding to reduce available space inside a layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PaddingBottom { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_PaddingFront_" data-uid="Flexalon.FlexalonObject.PaddingFront*"></a>
+  <h4 id="Flexalon_FlexalonObject_PaddingFront" data-uid="Flexalon.FlexalonObject.PaddingFront">PaddingFront</h4>
+  <div class="markdown level1 summary"><p>Padding to reduce available space inside a layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PaddingFront { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_PaddingLeft_" data-uid="Flexalon.FlexalonObject.PaddingLeft*"></a>
+  <h4 id="Flexalon_FlexalonObject_PaddingLeft" data-uid="Flexalon.FlexalonObject.PaddingLeft">PaddingLeft</h4>
+  <div class="markdown level1 summary"><p>Padding to reduce available space inside a layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PaddingLeft { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_PaddingRight_" data-uid="Flexalon.FlexalonObject.PaddingRight*"></a>
+  <h4 id="Flexalon_FlexalonObject_PaddingRight" data-uid="Flexalon.FlexalonObject.PaddingRight">PaddingRight</h4>
+  <div class="markdown level1 summary"><p>Padding to reduce available space inside a layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PaddingRight { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_PaddingTop_" data-uid="Flexalon.FlexalonObject.PaddingTop*"></a>
+  <h4 id="Flexalon_FlexalonObject_PaddingTop" data-uid="Flexalon.FlexalonObject.PaddingTop">PaddingTop</h4>
+  <div class="markdown level1 summary"><p>Padding to reduce available space inside a layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PaddingTop { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_Rotation_" data-uid="Flexalon.FlexalonObject.Rotation*"></a>
+  <h4 id="Flexalon_FlexalonObject_Rotation" data-uid="Flexalon.FlexalonObject.Rotation">Rotation</h4>
+  <div class="markdown level1 summary"><p>Use rotation to set the rotation of the gameObject before layout runs.
+This will generate a new size to encapsulate the rotated object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion Rotation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_Scale_" data-uid="Flexalon.FlexalonObject.Scale*"></a>
+  <h4 id="Flexalon_FlexalonObject_Scale" data-uid="Flexalon.FlexalonObject.Scale">Scale</h4>
+  <div class="markdown level1 summary"><p>Use rotation to scale the size of the gameObject before layout runs.
+This will generate a new size to encapsulate the scaled object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Scale { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_Size_" data-uid="Flexalon.FlexalonObject.Size*"></a>
+  <h4 id="Flexalon_FlexalonObject_Size" data-uid="Flexalon.FlexalonObject.Size">Size</h4>
+  <div class="markdown level1 summary"><p>The fixed size of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Size { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_SizeOfParent_" data-uid="Flexalon.FlexalonObject.SizeOfParent*"></a>
+  <h4 id="Flexalon_FlexalonObject_SizeOfParent" data-uid="Flexalon.FlexalonObject.SizeOfParent">SizeOfParent</h4>
+  <div class="markdown level1 summary"><p>The relative size of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 SizeOfParent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_Width_" data-uid="Flexalon.FlexalonObject.Width*"></a>
+  <h4 id="Flexalon_FlexalonObject_Width" data-uid="Flexalon.FlexalonObject.Width">Width</h4>
+  <div class="markdown level1 summary"><p>The fixed width of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Width { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_WidthOfParent_" data-uid="Flexalon.FlexalonObject.WidthOfParent*"></a>
+  <h4 id="Flexalon_FlexalonObject_WidthOfParent" data-uid="Flexalon.FlexalonObject.WidthOfParent">WidthOfParent</h4>
+  <div class="markdown level1 summary"><p>The relative width of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float WidthOfParent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_WidthType_" data-uid="Flexalon.FlexalonObject.WidthType*"></a>
+  <h4 id="Flexalon_FlexalonObject_WidthType" data-uid="Flexalon.FlexalonObject.WidthType">WidthType</h4>
+  <div class="markdown level1 summary"><p>The width type of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SizeType WidthType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.SizeType.html">SizeType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Flexalon_FlexalonObject_DoUpdate_" data-uid="Flexalon.FlexalonObject.DoUpdate*"></a>
+  <h4 id="Flexalon_FlexalonObject_DoUpdate" data-uid="Flexalon.FlexalonObject.DoUpdate">DoUpdate()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DoUpdate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_DoUpdate">FlexalonComponent.DoUpdate()</a></div>
+  <a id="Flexalon_FlexalonObject_Initialize_" data-uid="Flexalon.FlexalonObject.Initialize*"></a>
+  <h4 id="Flexalon_FlexalonObject_Initialize" data-uid="Flexalon.FlexalonObject.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Initialize()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Initialize">FlexalonComponent.Initialize()</a></div>
+  <a id="Flexalon_FlexalonObject_ResetProperties_" data-uid="Flexalon.FlexalonObject.ResetProperties*"></a>
+  <h4 id="Flexalon_FlexalonObject_ResetProperties" data-uid="Flexalon.FlexalonObject.ResetProperties">ResetProperties()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is destroyed to reset properties on the FlexalonNode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ResetProperties()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_ResetProperties">FlexalonComponent.ResetProperties()</a></div>
+  <a id="Flexalon_FlexalonObject_UpdateProperties_" data-uid="Flexalon.FlexalonObject.UpdateProperties*"></a>
+  <h4 id="Flexalon_FlexalonObject_UpdateProperties" data-uid="Flexalon.FlexalonObject.UpdateProperties">UpdateProperties()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is enabled to apply properties to the FlexalonNode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UpdateProperties()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_UpdateProperties">FlexalonComponent.UpdateProperties()</a></div>
+  <a id="Flexalon_FlexalonObject_Upgrade_" data-uid="Flexalon.FlexalonObject.Upgrade*"></a>
+  <h4 id="Flexalon_FlexalonObject_Upgrade_System_Int32_" data-uid="Flexalon.FlexalonObject.Upgrade(System.Int32)">Upgrade(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Upgrade(int fromVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">fromVersion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Upgrade_System_Int32_">FlexalonComponent.Upgrade(int)</a></div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Flexalon 3D Layouts
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    
+    
+    
+  </body>
+</html>

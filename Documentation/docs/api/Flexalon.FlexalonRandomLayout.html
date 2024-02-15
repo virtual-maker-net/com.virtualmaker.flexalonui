@@ -1,0 +1,1157 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FlexalonRandomLayout
+ | Flexalon 3D Layouts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FlexalonRandomLayout
+ | Flexalon 3D Layouts ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="tochead.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="https://www.flexalon.com/">
+                <img id="logo" class="svg" src="images/logo_32x32.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Flexalon.FlexalonRandomLayout">
+
+
+  <h1 id="Flexalon_FlexalonRandomLayout" data-uid="Flexalon.FlexalonRandomLayout" class="text-break">Class FlexalonRandomLayout
+</h1>
+  <div class="markdown level0 summary"><p>Use a random layout to position, rotate, and size children randomly within bounds.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
+    <div class="level6"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
+    <div class="level7"><span class="xref">FlexalonRandomLayout</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Flexalon.Layout.html">Layout</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_DoOnEnable">LayoutBase.DoOnEnable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_DoOnDisable">LayoutBase.DoOnDisable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_ResetProperties">LayoutBase.ResetProperties()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent__node">FlexalonComponent._node</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Node">FlexalonComponent.Node</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_MarkDirty">FlexalonComponent.MarkDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_ForceUpdate">FlexalonComponent.ForceUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_UpdateProperties">FlexalonComponent.UpdateProperties()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_DoUpdate">FlexalonComponent.DoUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Initialize">FlexalonComponent.Initialize()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Upgrade_System_Int32_">FlexalonComponent.Upgrade(int)</a>
+    </div>
+  </div>
+  <h5 id="Flexalon_FlexalonRandomLayout_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ExecuteAlways]
+[AddComponentMenu(&quot;Flexalon/Flexalon Random Layout&quot;)]
+[HelpURL(&quot;https://www.flexalon.com/docs/randomLayout&quot;)]
+public class FlexalonRandomLayout : LayoutBase, Layout</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Flexalon_FlexalonRandomLayout_DepthAlign_" data-uid="Flexalon.FlexalonRandomLayout.DepthAlign*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_DepthAlign" data-uid="Flexalon.FlexalonRandomLayout.DepthAlign">DepthAlign</h4>
+  <div class="markdown level1 summary"><p>Depth alignment of all children within layout bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align DepthAlign { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_HorizontalAlign_" data-uid="Flexalon.FlexalonRandomLayout.HorizontalAlign*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_HorizontalAlign" data-uid="Flexalon.FlexalonRandomLayout.HorizontalAlign">HorizontalAlign</h4>
+  <div class="markdown level1 summary"><p>Horizontal alignment of all children within layout bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align HorizontalAlign { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_PositionMax_" data-uid="Flexalon.FlexalonRandomLayout.PositionMax*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_PositionMax" data-uid="Flexalon.FlexalonRandomLayout.PositionMax">PositionMax</h4>
+  <div class="markdown level1 summary"><p>Maximum position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 PositionMax { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_PositionMaxX_" data-uid="Flexalon.FlexalonRandomLayout.PositionMaxX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_PositionMaxX" data-uid="Flexalon.FlexalonRandomLayout.PositionMaxX">PositionMaxX</h4>
+  <div class="markdown level1 summary"><p>Maximum X position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PositionMaxX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_PositionMaxY_" data-uid="Flexalon.FlexalonRandomLayout.PositionMaxY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_PositionMaxY" data-uid="Flexalon.FlexalonRandomLayout.PositionMaxY">PositionMaxY</h4>
+  <div class="markdown level1 summary"><p>Maximum Y position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PositionMaxY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_PositionMaxZ_" data-uid="Flexalon.FlexalonRandomLayout.PositionMaxZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_PositionMaxZ" data-uid="Flexalon.FlexalonRandomLayout.PositionMaxZ">PositionMaxZ</h4>
+  <div class="markdown level1 summary"><p>Maximum Z position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PositionMaxZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_PositionMin_" data-uid="Flexalon.FlexalonRandomLayout.PositionMin*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_PositionMin" data-uid="Flexalon.FlexalonRandomLayout.PositionMin">PositionMin</h4>
+  <div class="markdown level1 summary"><p>Minimum position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 PositionMin { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_PositionMinX_" data-uid="Flexalon.FlexalonRandomLayout.PositionMinX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_PositionMinX" data-uid="Flexalon.FlexalonRandomLayout.PositionMinX">PositionMinX</h4>
+  <div class="markdown level1 summary"><p>Minimum X position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PositionMinX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_PositionMinY_" data-uid="Flexalon.FlexalonRandomLayout.PositionMinY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_PositionMinY" data-uid="Flexalon.FlexalonRandomLayout.PositionMinY">PositionMinY</h4>
+  <div class="markdown level1 summary"><p>Minimum Y position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PositionMinY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_PositionMinZ_" data-uid="Flexalon.FlexalonRandomLayout.PositionMinZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_PositionMinZ" data-uid="Flexalon.FlexalonRandomLayout.PositionMinZ">PositionMinZ</h4>
+  <div class="markdown level1 summary"><p>Minimum Z position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PositionMinZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizePositionX_" data-uid="Flexalon.FlexalonRandomLayout.RandomizePositionX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizePositionX" data-uid="Flexalon.FlexalonRandomLayout.RandomizePositionX">RandomizePositionX</h4>
+  <div class="markdown level1 summary"><p>Randomizes the X position within bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizePositionX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizePositionY_" data-uid="Flexalon.FlexalonRandomLayout.RandomizePositionY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizePositionY" data-uid="Flexalon.FlexalonRandomLayout.RandomizePositionY">RandomizePositionY</h4>
+  <div class="markdown level1 summary"><p>Randomizes the Y position within bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizePositionY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizePositionZ_" data-uid="Flexalon.FlexalonRandomLayout.RandomizePositionZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizePositionZ" data-uid="Flexalon.FlexalonRandomLayout.RandomizePositionZ">RandomizePositionZ</h4>
+  <div class="markdown level1 summary"><p>Randomizes the Z position within bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizePositionZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizeRotationX_" data-uid="Flexalon.FlexalonRandomLayout.RandomizeRotationX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizeRotationX" data-uid="Flexalon.FlexalonRandomLayout.RandomizeRotationX">RandomizeRotationX</h4>
+  <div class="markdown level1 summary"><p>Randomizes the X rotation within bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizeRotationX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizeRotationY_" data-uid="Flexalon.FlexalonRandomLayout.RandomizeRotationY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizeRotationY" data-uid="Flexalon.FlexalonRandomLayout.RandomizeRotationY">RandomizeRotationY</h4>
+  <div class="markdown level1 summary"><p>Randomizes the Y rotation within bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizeRotationY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizeRotationZ_" data-uid="Flexalon.FlexalonRandomLayout.RandomizeRotationZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizeRotationZ" data-uid="Flexalon.FlexalonRandomLayout.RandomizeRotationZ">RandomizeRotationZ</h4>
+  <div class="markdown level1 summary"><p>Randomizes the Z rotation within bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizeRotationZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizeSizeX_" data-uid="Flexalon.FlexalonRandomLayout.RandomizeSizeX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizeSizeX" data-uid="Flexalon.FlexalonRandomLayout.RandomizeSizeX">RandomizeSizeX</h4>
+  <div class="markdown level1 summary"><p>Randomizes the X size within bounds. You must set child size to &quot;Fill&quot; for this to have effect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizeSizeX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizeSizeY_" data-uid="Flexalon.FlexalonRandomLayout.RandomizeSizeY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizeSizeY" data-uid="Flexalon.FlexalonRandomLayout.RandomizeSizeY">RandomizeSizeY</h4>
+  <div class="markdown level1 summary"><p>Randomizes the Y size within bounds. You must set child size to &quot;Fill&quot; for this to have effect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizeSizeY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomizeSizeZ_" data-uid="Flexalon.FlexalonRandomLayout.RandomizeSizeZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomizeSizeZ" data-uid="Flexalon.FlexalonRandomLayout.RandomizeSizeZ">RandomizeSizeZ</h4>
+  <div class="markdown level1 summary"><p>Randomizes the Z size within bounds. You must set child size to &quot;Fill&quot; for this to have effect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomizeSizeZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RandomSeed_" data-uid="Flexalon.FlexalonRandomLayout.RandomSeed*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RandomSeed" data-uid="Flexalon.FlexalonRandomLayout.RandomSeed">RandomSeed</h4>
+  <div class="markdown level1 summary"><p>Seed value used to determine random values. This ensures
+results remain consistent each time layout is computed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RandomSeed { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RotationMax_" data-uid="Flexalon.FlexalonRandomLayout.RotationMax*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RotationMax" data-uid="Flexalon.FlexalonRandomLayout.RotationMax">RotationMax</h4>
+  <div class="markdown level1 summary"><p>Maximum rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion RotationMax { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RotationMaxX_" data-uid="Flexalon.FlexalonRandomLayout.RotationMaxX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RotationMaxX" data-uid="Flexalon.FlexalonRandomLayout.RotationMaxX">RotationMaxX</h4>
+  <div class="markdown level1 summary"><p>Maximum X rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationMaxX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RotationMaxY_" data-uid="Flexalon.FlexalonRandomLayout.RotationMaxY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RotationMaxY" data-uid="Flexalon.FlexalonRandomLayout.RotationMaxY">RotationMaxY</h4>
+  <div class="markdown level1 summary"><p>Maximum Y rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationMaxY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RotationMaxZ_" data-uid="Flexalon.FlexalonRandomLayout.RotationMaxZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RotationMaxZ" data-uid="Flexalon.FlexalonRandomLayout.RotationMaxZ">RotationMaxZ</h4>
+  <div class="markdown level1 summary"><p>Maximum Z rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationMaxZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RotationMin_" data-uid="Flexalon.FlexalonRandomLayout.RotationMin*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RotationMin" data-uid="Flexalon.FlexalonRandomLayout.RotationMin">RotationMin</h4>
+  <div class="markdown level1 summary"><p>Minimum rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion RotationMin { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RotationMinX_" data-uid="Flexalon.FlexalonRandomLayout.RotationMinX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RotationMinX" data-uid="Flexalon.FlexalonRandomLayout.RotationMinX">RotationMinX</h4>
+  <div class="markdown level1 summary"><p>Minimum X rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationMinX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RotationMinY_" data-uid="Flexalon.FlexalonRandomLayout.RotationMinY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RotationMinY" data-uid="Flexalon.FlexalonRandomLayout.RotationMinY">RotationMinY</h4>
+  <div class="markdown level1 summary"><p>Minimum Y rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationMinY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_RotationMinZ_" data-uid="Flexalon.FlexalonRandomLayout.RotationMinZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_RotationMinZ" data-uid="Flexalon.FlexalonRandomLayout.RotationMinZ">RotationMinZ</h4>
+  <div class="markdown level1 summary"><p>Minimum Z rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationMinZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_SizeMax_" data-uid="Flexalon.FlexalonRandomLayout.SizeMax*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_SizeMax" data-uid="Flexalon.FlexalonRandomLayout.SizeMax">SizeMax</h4>
+  <div class="markdown level1 summary"><p>Maximum size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 SizeMax { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_SizeMaxX_" data-uid="Flexalon.FlexalonRandomLayout.SizeMaxX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_SizeMaxX" data-uid="Flexalon.FlexalonRandomLayout.SizeMaxX">SizeMaxX</h4>
+  <div class="markdown level1 summary"><p>Maximum X size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SizeMaxX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_SizeMaxY_" data-uid="Flexalon.FlexalonRandomLayout.SizeMaxY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_SizeMaxY" data-uid="Flexalon.FlexalonRandomLayout.SizeMaxY">SizeMaxY</h4>
+  <div class="markdown level1 summary"><p>Maximum Y size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SizeMaxY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_SizeMaxZ_" data-uid="Flexalon.FlexalonRandomLayout.SizeMaxZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_SizeMaxZ" data-uid="Flexalon.FlexalonRandomLayout.SizeMaxZ">SizeMaxZ</h4>
+  <div class="markdown level1 summary"><p>Maximum Z size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SizeMaxZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_SizeMin_" data-uid="Flexalon.FlexalonRandomLayout.SizeMin*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_SizeMin" data-uid="Flexalon.FlexalonRandomLayout.SizeMin">SizeMin</h4>
+  <div class="markdown level1 summary"><p>Minimum size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 SizeMin { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_SizeMinX_" data-uid="Flexalon.FlexalonRandomLayout.SizeMinX*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_SizeMinX" data-uid="Flexalon.FlexalonRandomLayout.SizeMinX">SizeMinX</h4>
+  <div class="markdown level1 summary"><p>Minimum X size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SizeMinX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_SizeMinY_" data-uid="Flexalon.FlexalonRandomLayout.SizeMinY*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_SizeMinY" data-uid="Flexalon.FlexalonRandomLayout.SizeMinY">SizeMinY</h4>
+  <div class="markdown level1 summary"><p>Minimum Y size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SizeMinY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_SizeMinZ_" data-uid="Flexalon.FlexalonRandomLayout.SizeMinZ*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_SizeMinZ" data-uid="Flexalon.FlexalonRandomLayout.SizeMinZ">SizeMinZ</h4>
+  <div class="markdown level1 summary"><p>Minimum Z size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SizeMinZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonRandomLayout_VerticalAlign_" data-uid="Flexalon.FlexalonRandomLayout.VerticalAlign*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_VerticalAlign" data-uid="Flexalon.FlexalonRandomLayout.VerticalAlign">VerticalAlign</h4>
+  <div class="markdown level1 summary"><p>Vertical alignment of all children within layout bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align VerticalAlign { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Flexalon_FlexalonRandomLayout_Arrange_" data-uid="Flexalon.FlexalonRandomLayout.Arrange*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonRandomLayout.Arrange(Flexalon.FlexalonNode,UnityEngine.Vector3)">Arrange(FlexalonNode, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Position the children of node within the available bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Arrange(FlexalonNode node, Vector3 layoutSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">layoutSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_">LayoutBase.Arrange(FlexalonNode, Vector3)</a></div>
+  <a id="Flexalon_FlexalonRandomLayout_Measure_" data-uid="Flexalon.FlexalonRandomLayout.Measure*"></a>
+  <h4 id="Flexalon_FlexalonRandomLayout_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonRandomLayout.Measure(Flexalon.FlexalonNode,UnityEngine.Vector3)">Measure(FlexalonNode, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Perform minimal work to determine what the size of node and available size for node's children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Bounds Measure(FlexalonNode node, Vector3 size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">size</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Bounds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_">LayoutBase.Measure(FlexalonNode, Vector3)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Flexalon.Layout.html">Layout</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Flexalon 3D Layouts
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    
+    
+    
+  </body>
+</html>

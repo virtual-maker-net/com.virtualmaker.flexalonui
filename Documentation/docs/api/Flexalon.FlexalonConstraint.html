@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FlexalonConstraint
+ | Flexalon 3D Layouts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FlexalonConstraint
+ | Flexalon 3D Layouts ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="tochead.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="https://www.flexalon.com/">
+                <img id="logo" class="svg" src="images/logo_32x32.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Flexalon.FlexalonConstraint">
+
+
+  <h1 id="Flexalon_FlexalonConstraint" data-uid="Flexalon.FlexalonConstraint" class="text-break">Class FlexalonConstraint
+</h1>
+  <div class="markdown level0 summary"><p>The Flexalon Constraint component positions its gameObject relative to a target,
+which can be any other gameObject. The constrained object or the target can also
+have layout components, which provides a powerful way to combine layouts together.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
+    <div class="level6"><span class="xref">FlexalonConstraint</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Flexalon.Constraint.html">Constraint</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent__node">FlexalonComponent._node</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Node">FlexalonComponent.Node</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_MarkDirty">FlexalonComponent.MarkDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_ForceUpdate">FlexalonComponent.ForceUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_DoOnEnable">FlexalonComponent.DoOnEnable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_DoOnDisable">FlexalonComponent.DoOnDisable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Initialize">FlexalonComponent.Initialize()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Upgrade_System_Int32_">FlexalonComponent.Upgrade(int)</a>
+    </div>
+  </div>
+  <h5 id="Flexalon_FlexalonConstraint_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ExecuteAlways]
+[DisallowMultipleComponent]
+[AddComponentMenu(&quot;Flexalon/Flexalon Constraint&quot;)]
+[HelpURL(&quot;https://www.flexalon.com/docs/constraints&quot;)]
+public class FlexalonConstraint : FlexalonComponent, Constraint</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Flexalon_FlexalonConstraint_DepthAlign_" data-uid="Flexalon.FlexalonConstraint.DepthAlign*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_DepthAlign" data-uid="Flexalon.FlexalonConstraint.DepthAlign">DepthAlign</h4>
+  <div class="markdown level1 summary"><p>Determines how the depth axis aligns to the target's box.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align DepthAlign { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonConstraint_DepthPivot_" data-uid="Flexalon.FlexalonConstraint.DepthPivot*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_DepthPivot" data-uid="Flexalon.FlexalonConstraint.DepthPivot">DepthPivot</h4>
+  <div class="markdown level1 summary"><p>Determines how the depth axis aligns to this object's box.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align DepthPivot { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonConstraint_HorizontalAlign_" data-uid="Flexalon.FlexalonConstraint.HorizontalAlign*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_HorizontalAlign" data-uid="Flexalon.FlexalonConstraint.HorizontalAlign">HorizontalAlign</h4>
+  <div class="markdown level1 summary"><p>Determines how the horizontal axis aligns to the target's box.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align HorizontalAlign { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonConstraint_HorizontalPivot_" data-uid="Flexalon.FlexalonConstraint.HorizontalPivot*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_HorizontalPivot" data-uid="Flexalon.FlexalonConstraint.HorizontalPivot">HorizontalPivot</h4>
+  <div class="markdown level1 summary"><p>Determines how the horizontal axis aligns to this object's box.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align HorizontalPivot { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonConstraint_Target_" data-uid="Flexalon.FlexalonConstraint.Target*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_Target" data-uid="Flexalon.FlexalonConstraint.Target">Target</h4>
+  <div class="markdown level1 summary"><p>Which gameObject to constrain to.
+The position depends on the Align and Pivot options (see below).
+The rotation is set to match the target's rotation.
+The available space is set to match the target's size. Set the width, height, and
+depth properties on the Flexalon Object Component to Parent to match the target's size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject Target { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonConstraint_VerticalAlign_" data-uid="Flexalon.FlexalonConstraint.VerticalAlign*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_VerticalAlign" data-uid="Flexalon.FlexalonConstraint.VerticalAlign">VerticalAlign</h4>
+  <div class="markdown level1 summary"><p>Determines how the vertical axis aligns to the target's box.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align VerticalAlign { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonConstraint_VerticalPivot_" data-uid="Flexalon.FlexalonConstraint.VerticalPivot*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_VerticalPivot" data-uid="Flexalon.FlexalonConstraint.VerticalPivot">VerticalPivot</h4>
+  <div class="markdown level1 summary"><p>Determines how the vertical axis aligns to this object's box.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Align VerticalPivot { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Align.html">Align</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Flexalon_FlexalonConstraint_Constrain_" data-uid="Flexalon.FlexalonConstraint.Constrain*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_Constrain_Flexalon_FlexalonNode_" data-uid="Flexalon.FlexalonConstraint.Constrain(Flexalon.FlexalonNode)">Constrain(FlexalonNode)</h4>
+  <div class="markdown level1 summary"><p>Applies the constraint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Constrain(FlexalonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonConstraint_DoUpdate_" data-uid="Flexalon.FlexalonConstraint.DoUpdate*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_DoUpdate" data-uid="Flexalon.FlexalonConstraint.DoUpdate">DoUpdate()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DoUpdate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_DoUpdate">FlexalonComponent.DoUpdate()</a></div>
+  <a id="Flexalon_FlexalonConstraint_ResetProperties_" data-uid="Flexalon.FlexalonConstraint.ResetProperties*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_ResetProperties" data-uid="Flexalon.FlexalonConstraint.ResetProperties">ResetProperties()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is destroyed to reset properties on the FlexalonNode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ResetProperties()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_ResetProperties">FlexalonComponent.ResetProperties()</a></div>
+  <a id="Flexalon_FlexalonConstraint_UpdateProperties_" data-uid="Flexalon.FlexalonConstraint.UpdateProperties*"></a>
+  <h4 id="Flexalon_FlexalonConstraint_UpdateProperties" data-uid="Flexalon.FlexalonConstraint.UpdateProperties">UpdateProperties()</h4>
+  <div class="markdown level1 summary"><p>Called when the component is enabled to apply properties to the FlexalonNode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UpdateProperties()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_UpdateProperties">FlexalonComponent.UpdateProperties()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Flexalon.Constraint.html">Constraint</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Flexalon 3D Layouts
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    
+    
+    
+  </body>
+</html>

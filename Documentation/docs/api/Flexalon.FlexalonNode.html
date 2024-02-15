@@ -1,0 +1,1268 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface FlexalonNode
+ | Flexalon 3D Layouts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface FlexalonNode
+ | Flexalon 3D Layouts ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="tochead.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="https://www.flexalon.com/">
+                <img id="logo" class="svg" src="images/logo_32x32.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Flexalon.FlexalonNode">
+
+
+  <h1 id="Flexalon_FlexalonNode" data-uid="Flexalon.FlexalonNode" class="text-break">Interface FlexalonNode
+</h1>
+  <div class="markdown level0 summary"><p>Represents a node in the Flexalon layout tree.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h5 id="Flexalon_FlexalonNode_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface FlexalonNode</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Flexalon_FlexalonNode_Adapter_" data-uid="Flexalon.FlexalonNode.Adapter*"></a>
+  <h4 id="Flexalon_FlexalonNode_Adapter" data-uid="Flexalon.FlexalonNode.Adapter">Adapter</h4>
+  <div class="markdown level1 summary"><p>Returns the active adapter for this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Adapter Adapter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Adapter.html">Adapter</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Children_" data-uid="Flexalon.FlexalonNode.Children*"></a>
+  <h4 id="Flexalon_FlexalonNode_Children" data-uid="Flexalon.FlexalonNode.Children">Children</h4>
+  <div class="markdown level1 summary"><p>The children of this layout node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;FlexalonNode&gt; Children { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Constraint_" data-uid="Flexalon.FlexalonNode.Constraint*"></a>
+  <h4 id="Flexalon_FlexalonNode_Constraint" data-uid="Flexalon.FlexalonNode.Constraint">Constraint</h4>
+  <div class="markdown level1 summary"><p>Returns the constraint of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Constraint Constraint { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Constraint.html">Constraint</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Dirty_" data-uid="Flexalon.FlexalonNode.Dirty*"></a>
+  <h4 id="Flexalon_FlexalonNode_Dirty" data-uid="Flexalon.FlexalonNode.Dirty">Dirty</h4>
+  <div class="markdown level1 summary"><p>True if this node is dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool Dirty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_FlexalonObject_" data-uid="Flexalon.FlexalonNode.FlexalonObject*"></a>
+  <h4 id="Flexalon_FlexalonNode_FlexalonObject" data-uid="Flexalon.FlexalonNode.FlexalonObject">FlexalonObject</h4>
+  <div class="markdown level1 summary"><p>Returns the FlexalonObject of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">FlexalonObject FlexalonObject { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonObject.html">FlexalonObject</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GameObject_" data-uid="Flexalon.FlexalonNode.GameObject*"></a>
+  <h4 id="Flexalon_FlexalonNode_GameObject" data-uid="Flexalon.FlexalonNode.GameObject">GameObject</h4>
+  <div class="markdown level1 summary"><p>The GameObject associated with this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GameObject GameObject { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_HasResult_" data-uid="Flexalon.FlexalonNode.HasResult*"></a>
+  <h4 id="Flexalon_FlexalonNode_HasResult" data-uid="Flexalon.FlexalonNode.HasResult">HasResult</h4>
+  <div class="markdown level1 summary"><p>Has layout ever run on this node?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool HasResult { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Index_" data-uid="Flexalon.FlexalonNode.Index*"></a>
+  <h4 id="Flexalon_FlexalonNode_Index" data-uid="Flexalon.FlexalonNode.Index">Index</h4>
+  <div class="markdown level1 summary"><p>The index of this node in its parent's Children list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int Index { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_IsDragging_" data-uid="Flexalon.FlexalonNode.IsDragging*"></a>
+  <h4 id="Flexalon_FlexalonNode_IsDragging" data-uid="Flexalon.FlexalonNode.IsDragging">IsDragging</h4>
+  <div class="markdown level1 summary"><p>True when this node is being dragged.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsDragging { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Margin_" data-uid="Flexalon.FlexalonNode.Margin*"></a>
+  <h4 id="Flexalon_FlexalonNode_Margin" data-uid="Flexalon.FlexalonNode.Margin">Margin</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned margin of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Directions Margin { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Directions.html">Directions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Method_" data-uid="Flexalon.FlexalonNode.Method*"></a>
+  <h4 id="Flexalon_FlexalonNode_Method" data-uid="Flexalon.FlexalonNode.Method">Method</h4>
+  <div class="markdown level1 summary"><p>Returns the layout method of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Layout Method { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Layout.html">Layout</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Modifiers_" data-uid="Flexalon.FlexalonNode.Modifiers*"></a>
+  <h4 id="Flexalon_FlexalonNode_Modifiers" data-uid="Flexalon.FlexalonNode.Modifiers">Modifiers</h4>
+  <div class="markdown level1 summary"><p>Returns the set of modifiers that apply to layout results.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;FlexalonModifier&gt; Modifiers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Flexalon.FlexalonModifier.html">FlexalonModifier</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Offset_" data-uid="Flexalon.FlexalonNode.Offset*"></a>
+  <h4 id="Flexalon_FlexalonNode_Offset" data-uid="Flexalon.FlexalonNode.Offset">Offset</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned offset of this node relative to its layout position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 Offset { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Padding_" data-uid="Flexalon.FlexalonNode.Padding*"></a>
+  <h4 id="Flexalon_FlexalonNode_Padding" data-uid="Flexalon.FlexalonNode.Padding">Padding</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned padding of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Directions Padding { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Directions.html">Directions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Parent_" data-uid="Flexalon.FlexalonNode.Parent*"></a>
+  <h4 id="Flexalon_FlexalonNode_Parent" data-uid="Flexalon.FlexalonNode.Parent">Parent</h4>
+  <div class="markdown level1 summary"><p>The parent layout node of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">FlexalonNode Parent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Result_" data-uid="Flexalon.FlexalonNode.Result*"></a>
+  <h4 id="Flexalon_FlexalonNode_Result" data-uid="Flexalon.FlexalonNode.Result">Result</h4>
+  <div class="markdown level1 summary"><p>Returns the result of the last layout run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">FlexalonResult Result { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonResult.html">FlexalonResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Rotation_" data-uid="Flexalon.FlexalonNode.Rotation*"></a>
+  <h4 id="Flexalon_FlexalonNode_Rotation" data-uid="Flexalon.FlexalonNode.Rotation">Rotation</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned relative rotation of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Quaternion Rotation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Scale_" data-uid="Flexalon.FlexalonNode.Scale*"></a>
+  <h4 id="Flexalon_FlexalonNode_Scale" data-uid="Flexalon.FlexalonNode.Scale">Scale</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned relative scale of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 Scale { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_Size_" data-uid="Flexalon.FlexalonNode.Size*"></a>
+  <h4 id="Flexalon_FlexalonNode_Size" data-uid="Flexalon.FlexalonNode.Size">Size</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned fixed size of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 Size { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SizeOfParent_" data-uid="Flexalon.FlexalonNode.SizeOfParent*"></a>
+  <h4 id="Flexalon_FlexalonNode_SizeOfParent" data-uid="Flexalon.FlexalonNode.SizeOfParent">SizeOfParent</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned size factor of this node relative to the available space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 SizeOfParent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Flexalon_FlexalonNode_AddChild_" data-uid="Flexalon.FlexalonNode.AddChild*"></a>
+  <h4 id="Flexalon_FlexalonNode_AddChild_Flexalon_FlexalonNode_" data-uid="Flexalon.FlexalonNode.AddChild(Flexalon.FlexalonNode)">AddChild(FlexalonNode)</h4>
+  <div class="markdown level1 summary"><p>Adds a child to this layout node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddChild(FlexalonNode child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>The child to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_AddModifier_" data-uid="Flexalon.FlexalonNode.AddModifier*"></a>
+  <h4 id="Flexalon_FlexalonNode_AddModifier_Flexalon_FlexalonModifier_" data-uid="Flexalon.FlexalonNode.AddModifier(Flexalon.FlexalonModifier)">AddModifier(FlexalonModifier)</h4>
+  <div class="markdown level1 summary"><p>Adds a modifier to this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddModifier(FlexalonModifier modifier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonModifier.html">FlexalonModifier</a></td>
+        <td><span class="parametername">modifier</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_ApplyScaleAndRotation_" data-uid="Flexalon.FlexalonNode.ApplyScaleAndRotation*"></a>
+  <h4 id="Flexalon_FlexalonNode_ApplyScaleAndRotation" data-uid="Flexalon.FlexalonNode.ApplyScaleAndRotation">ApplyScaleAndRotation()</h4>
+  <div class="markdown level1 summary"><p>Only applies rotation and scale changes to the node. Faster than marking it dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ApplyScaleAndRotation()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonNode_Detach_" data-uid="Flexalon.FlexalonNode.Detach*"></a>
+  <h4 id="Flexalon_FlexalonNode_Detach" data-uid="Flexalon.FlexalonNode.Detach">Detach()</h4>
+  <div class="markdown level1 summary"><p>Removes this node from its parent layout node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Detach()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonNode_DetachAllChildren_" data-uid="Flexalon.FlexalonNode.DetachAllChildren*"></a>
+  <h4 id="Flexalon_FlexalonNode_DetachAllChildren" data-uid="Flexalon.FlexalonNode.DetachAllChildren">DetachAllChildren()</h4>
+  <div class="markdown level1 summary"><p>Removes all children from this layout node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DetachAllChildren()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonNode_ForceUpdate_" data-uid="Flexalon.FlexalonNode.ForceUpdate*"></a>
+  <h4 id="Flexalon_FlexalonNode_ForceUpdate" data-uid="Flexalon.FlexalonNode.ForceUpdate">ForceUpdate()</h4>
+  <div class="markdown level1 summary"><p>Forces this node, its parent nodes, and its children nodes to update immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ForceUpdate()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonNode_GetArrangeSize_" data-uid="Flexalon.FlexalonNode.GetArrangeSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetArrangeSize" data-uid="Flexalon.FlexalonNode.GetArrangeSize">GetArrangeSize()</h4>
+  <div class="markdown level1 summary"><p>Returns the computed size of this node during the arrange step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 GetArrangeSize()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetChild_" data-uid="Flexalon.FlexalonNode.GetChild*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetChild_System_Int32_" data-uid="Flexalon.FlexalonNode.GetChild(System.Int32)">GetChild(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the child of this layout node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">FlexalonNode GetChild(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the child to return.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><p>The child at the given index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetMeasureSize_" data-uid="Flexalon.FlexalonNode.GetMeasureSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetMeasureSize" data-uid="Flexalon.FlexalonNode.GetMeasureSize">GetMeasureSize()</h4>
+  <div class="markdown level1 summary"><p>Returns the computed size of this node during the measure step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 GetMeasureSize()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetSizeType_" data-uid="Flexalon.FlexalonNode.GetSizeType*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetSizeType_Flexalon_Axis_" data-uid="Flexalon.FlexalonNode.GetSizeType(Flexalon.Axis)">GetSizeType(Axis)</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned SizeType of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SizeType GetSizeType(Axis axis)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Axis.html">Axis</a></td>
+        <td><span class="parametername">axis</span></td>
+        <td><p>The axis to get the SizeType of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.SizeType.html">SizeType</a></td>
+        <td><p>The SizeType of the given axis.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetSizeType_" data-uid="Flexalon.FlexalonNode.GetSizeType*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetSizeType_System_Int32_" data-uid="Flexalon.FlexalonNode.GetSizeType(System.Int32)">GetSizeType(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the assigned SizeType of this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SizeType GetSizeType(int axis)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">axis</span></td>
+        <td><p>The axis to get the SizeType of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.SizeType.html">SizeType</a></td>
+        <td><p>The SizeType of the given axis.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetWorldBoxPosition_" data-uid="Flexalon.FlexalonNode.GetWorldBoxPosition*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetWorldBoxPosition_UnityEngine_Vector3_System_Boolean_" data-uid="Flexalon.FlexalonNode.GetWorldBoxPosition(UnityEngine.Vector3,System.Boolean)">GetWorldBoxPosition(Vector3, bool)</h4>
+  <div class="markdown level1 summary"><p>Returns the world position of the layout box. Used for gizmos.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 GetWorldBoxPosition(Vector3 scale, bool includePadding)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">scale</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">includePadding</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetWorldBoxScale_" data-uid="Flexalon.FlexalonNode.GetWorldBoxScale*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetWorldBoxScale_System_Boolean_" data-uid="Flexalon.FlexalonNode.GetWorldBoxScale(System.Boolean)">GetWorldBoxScale(bool)</h4>
+  <div class="markdown level1 summary"><p>Returns the world scale of the layout box. Used for gizmos.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 GetWorldBoxScale(bool includeLocalScale)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">includeLocalScale</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_InsertChild_" data-uid="Flexalon.FlexalonNode.InsertChild*"></a>
+  <h4 id="Flexalon_FlexalonNode_InsertChild_Flexalon_FlexalonNode_System_Int32_" data-uid="Flexalon.FlexalonNode.InsertChild(Flexalon.FlexalonNode,System.Int32)">InsertChild(FlexalonNode, int)</h4>
+  <div class="markdown level1 summary"><p>Inserts a child into this layout node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void InsertChild(FlexalonNode child, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>The child to insert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index to insert the child at.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_MarkDirty_" data-uid="Flexalon.FlexalonNode.MarkDirty*"></a>
+  <h4 id="Flexalon_FlexalonNode_MarkDirty" data-uid="Flexalon.FlexalonNode.MarkDirty">MarkDirty()</h4>
+  <div class="markdown level1 summary"><p>Marks this node and its parents as dirty, so they will be updated by the Flexalon component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void MarkDirty()</code></pre>
+  </div>
+  <a id="Flexalon_FlexalonNode_RemoveModifier_" data-uid="Flexalon.FlexalonNode.RemoveModifier*"></a>
+  <h4 id="Flexalon_FlexalonNode_RemoveModifier_Flexalon_FlexalonModifier_" data-uid="Flexalon.FlexalonNode.RemoveModifier(Flexalon.FlexalonModifier)">RemoveModifier(FlexalonModifier)</h4>
+  <div class="markdown level1 summary"><p>Removes a modifier from this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RemoveModifier(FlexalonModifier modifier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonModifier.html">FlexalonModifier</a></td>
+        <td><span class="parametername">modifier</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetAdapter_" data-uid="Flexalon.FlexalonNode.SetAdapter*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetAdapter_Flexalon_Adapter_" data-uid="Flexalon.FlexalonNode.SetAdapter(Flexalon.Adapter)">SetAdapter(Adapter)</h4>
+  <div class="markdown level1 summary"><p>Overrides the default adapter for this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetAdapter(Adapter adapter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Adapter.html">Adapter</a></td>
+        <td><span class="parametername">adapter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetConstraint_" data-uid="Flexalon.FlexalonNode.SetConstraint*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetConstraint_Flexalon_Constraint_Flexalon_FlexalonNode_" data-uid="Flexalon.FlexalonNode.SetConstraint(Flexalon.Constraint,Flexalon.FlexalonNode)">SetConstraint(Constraint, FlexalonNode)</h4>
+  <div class="markdown level1 summary"><p>Constrains this node to the given target node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetConstraint(Constraint constraint, FlexalonNode target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Constraint.html">Constraint</a></td>
+        <td><span class="parametername">constraint</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetFillSize_" data-uid="Flexalon.FlexalonNode.SetFillSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetFillSize_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonNode.SetFillSize(UnityEngine.Vector3)">SetFillSize(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Set the available fill size from the layout measure step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetFillSize(Vector3 size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">size</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetFlexalonObject_" data-uid="Flexalon.FlexalonNode.SetFlexalonObject*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetFlexalonObject_Flexalon_FlexalonObject_" data-uid="Flexalon.FlexalonNode.SetFlexalonObject(Flexalon.FlexalonObject)">SetFlexalonObject(FlexalonObject)</h4>
+  <div class="markdown level1 summary"><p>Assigns a FlexalonObject to this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetFlexalonObject(FlexalonObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonObject.html">FlexalonObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetMethod_" data-uid="Flexalon.FlexalonNode.SetMethod*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetMethod_Flexalon_Layout_" data-uid="Flexalon.FlexalonNode.SetMethod(Flexalon.Layout)">SetMethod(Layout)</h4>
+  <div class="markdown level1 summary"><p>Assigns a layout method to this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetMethod(Layout method)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.Layout.html">Layout</a></td>
+        <td><span class="parametername">method</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetPositionResult_" data-uid="Flexalon.FlexalonNode.SetPositionResult*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetPositionResult_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonNode.SetPositionResult(UnityEngine.Vector3)">SetPositionResult(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Set the position result from a layout arrange step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetPositionResult(Vector3 position)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetRotationResult_" data-uid="Flexalon.FlexalonNode.SetRotationResult*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetRotationResult_UnityEngine_Quaternion_" data-uid="Flexalon.FlexalonNode.SetRotationResult(UnityEngine.Quaternion)">SetRotationResult(Quaternion)</h4>
+  <div class="markdown level1 summary"><p>Set the rotation result from a layout arrange step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetRotationResult(Quaternion quaternion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Quaternion</span></td>
+        <td><span class="parametername">quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetTransformUpdater_" data-uid="Flexalon.FlexalonNode.SetTransformUpdater*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetTransformUpdater_Flexalon_TransformUpdater_" data-uid="Flexalon.FlexalonNode.SetTransformUpdater(Flexalon.TransformUpdater)">SetTransformUpdater(TransformUpdater)</h4>
+  <div class="markdown level1 summary"><p>Assigns a transform updater to this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetTransformUpdater(TransformUpdater updater)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.TransformUpdater.html">TransformUpdater</a></td>
+        <td><span class="parametername">updater</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+</h3>
+  <h4 id="Flexalon_FlexalonNode_ResultChanged" data-uid="Flexalon.FlexalonNode.ResultChanged">ResultChanged</h4>
+  <div class="markdown level1 summary"><p>Event invoked when layout results change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action&lt;FlexalonNode&gt; ResultChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Flexalon 3D Layouts
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    
+    
+    
+  </body>
+</html>

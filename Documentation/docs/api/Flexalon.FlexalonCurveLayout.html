@@ -1,0 +1,814 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FlexalonCurveLayout
+ | Flexalon 3D Layouts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FlexalonCurveLayout
+ | Flexalon 3D Layouts ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="tochead.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="https://www.flexalon.com/">
+                <img id="logo" class="svg" src="images/logo_32x32.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Flexalon.FlexalonCurveLayout">
+
+
+  <h1 id="Flexalon_FlexalonCurveLayout" data-uid="Flexalon.FlexalonCurveLayout" class="text-break">Class FlexalonCurveLayout
+</h1>
+  <div class="markdown level0 summary"><p>Use a curve layout to position children along a bézier curve.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
+    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
+    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
+    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
+    <div class="level5"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
+    <div class="level6"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
+    <div class="level7"><span class="xref">FlexalonCurveLayout</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Flexalon.Layout.html">Layout</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_DoOnEnable">LayoutBase.DoOnEnable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_DoOnDisable">LayoutBase.DoOnDisable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_ResetProperties">LayoutBase.ResetProperties()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent__node">FlexalonComponent._node</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Node">FlexalonComponent.Node</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_MarkDirty">FlexalonComponent.MarkDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_ForceUpdate">FlexalonComponent.ForceUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_UpdateProperties">FlexalonComponent.UpdateProperties()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_DoUpdate">FlexalonComponent.DoUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Initialize">FlexalonComponent.Initialize()</a>
+    </div>
+    <div>
+      <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent_Upgrade_System_Int32_">FlexalonComponent.Upgrade(int)</a>
+    </div>
+  </div>
+  <h5 id="Flexalon_FlexalonCurveLayout_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ExecuteAlways]
+[AddComponentMenu(&quot;Flexalon/Flexalon Curve Layout&quot;)]
+[HelpURL(&quot;https://www.flexalon.com/docs/curveLayout&quot;)]
+public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <h4 id="Flexalon_FlexalonCurveLayout_EditorHovered" data-uid="Flexalon.FlexalonCurveLayout.EditorHovered">EditorHovered</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int EditorHovered</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Flexalon_FlexalonCurveLayout_AfterEnd_" data-uid="Flexalon.FlexalonCurveLayout.AfterEnd*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_AfterEnd" data-uid="Flexalon.FlexalonCurveLayout.AfterEnd">AfterEnd</h4>
+  <div class="markdown level1 summary"><p>Offsets all objects along the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonCurveLayout.ExtendBehavior AfterEnd { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.ExtendBehavior.html">ExtendBehavior</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_BeforeStart_" data-uid="Flexalon.FlexalonCurveLayout.BeforeStart*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_BeforeStart" data-uid="Flexalon.FlexalonCurveLayout.BeforeStart">BeforeStart</h4>
+  <div class="markdown level1 summary"><p>Offsets all objects along the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonCurveLayout.ExtendBehavior BeforeStart { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.ExtendBehavior.html">ExtendBehavior</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_CurveLength_" data-uid="Flexalon.FlexalonCurveLayout.CurveLength*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_CurveLength" data-uid="Flexalon.FlexalonCurveLayout.CurveLength">CurveLength</h4>
+  <div class="markdown level1 summary"><p>The length of the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CurveLength { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_CurvePositions_" data-uid="Flexalon.FlexalonCurveLayout.CurvePositions*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_CurvePositions" data-uid="Flexalon.FlexalonCurveLayout.CurvePositions">CurvePositions</h4>
+  <div class="markdown level1 summary"><p>Points along the curve used to position objects and can be used for visualization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Vector3&gt; CurvePositions { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_LockPositions_" data-uid="Flexalon.FlexalonCurveLayout.LockPositions*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_LockPositions" data-uid="Flexalon.FlexalonCurveLayout.LockPositions">LockPositions</h4>
+  <div class="markdown level1 summary"><p>Prevents the position handles from appearing in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LockPositions { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_LockTangents_" data-uid="Flexalon.FlexalonCurveLayout.LockTangents*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_LockTangents" data-uid="Flexalon.FlexalonCurveLayout.LockTangents">LockTangents</h4>
+  <div class="markdown level1 summary"><p>Prevents the tangent handles from appearing in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LockTangents { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_Points_" data-uid="Flexalon.FlexalonCurveLayout.Points*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_Points" data-uid="Flexalon.FlexalonCurveLayout.Points">Points</h4>
+  <div class="markdown level1 summary"><p>The points that define the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;FlexalonCurveLayout.CurvePoint&gt; Points { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_Rotation_" data-uid="Flexalon.FlexalonCurveLayout.Rotation*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_Rotation" data-uid="Flexalon.FlexalonCurveLayout.Rotation">Rotation</h4>
+  <div class="markdown level1 summary"><p>Determines how children should be rotated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonCurveLayout.RotationOptions Rotation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.RotationOptions.html">RotationOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_Spacing_" data-uid="Flexalon.FlexalonCurveLayout.Spacing*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_Spacing" data-uid="Flexalon.FlexalonCurveLayout.Spacing">Spacing</h4>
+  <div class="markdown level1 summary"><p>Determines the fixed distance between children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Spacing { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_SpacingType_" data-uid="Flexalon.FlexalonCurveLayout.SpacingType*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_SpacingType" data-uid="Flexalon.FlexalonCurveLayout.SpacingType">SpacingType</h4>
+  <div class="markdown level1 summary"><p>Determines how the children will be spaced along the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexalonCurveLayout.SpacingOptions SpacingType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.SpacingOptions.html">SpacingOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_StartAt_" data-uid="Flexalon.FlexalonCurveLayout.StartAt*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_StartAt" data-uid="Flexalon.FlexalonCurveLayout.StartAt">StartAt</h4>
+  <div class="markdown level1 summary"><p>Offsets all objects along the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float StartAt { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Flexalon_FlexalonCurveLayout_AddPoint_" data-uid="Flexalon.FlexalonCurveLayout.AddPoint*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_AddPoint_Flexalon_FlexalonCurveLayout_CurvePoint_" data-uid="Flexalon.FlexalonCurveLayout.AddPoint(Flexalon.FlexalonCurveLayout.CurvePoint)">AddPoint(CurvePoint)</h4>
+  <div class="markdown level1 summary"><p>Adds a new point to the end of the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddPoint(FlexalonCurveLayout.CurvePoint point)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a></td>
+        <td><span class="parametername">point</span></td>
+        <td><p>The point to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_AddPoint_" data-uid="Flexalon.FlexalonCurveLayout.AddPoint*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_AddPoint_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.AddPoint(UnityEngine.Vector3,UnityEngine.Vector3)">AddPoint(Vector3, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Adds a new point to the end of the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddPoint(Vector3 position, Vector3 tangent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position of the point.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">tangent</span></td>
+        <td><p>The tangent of the point.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_Arrange_" data-uid="Flexalon.FlexalonCurveLayout.Arrange*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.Arrange(Flexalon.FlexalonNode,UnityEngine.Vector3)">Arrange(FlexalonNode, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Position the children of node within the available bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Arrange(FlexalonNode node, Vector3 layoutSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">layoutSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_">LayoutBase.Arrange(FlexalonNode, Vector3)</a></div>
+  <a id="Flexalon_FlexalonCurveLayout_InsertPoint_" data-uid="Flexalon.FlexalonCurveLayout.InsertPoint*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_InsertPoint_System_Int32_Flexalon_FlexalonCurveLayout_CurvePoint_" data-uid="Flexalon.FlexalonCurveLayout.InsertPoint(System.Int32,Flexalon.FlexalonCurveLayout.CurvePoint)">InsertPoint(int, CurvePoint)</h4>
+  <div class="markdown level1 summary"><p>Inserts a new point into the curve at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InsertPoint(int index, FlexalonCurveLayout.CurvePoint point)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index to insert the point at.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a></td>
+        <td><span class="parametername">point</span></td>
+        <td><p>The point to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_InsertPoint_" data-uid="Flexalon.FlexalonCurveLayout.InsertPoint*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_InsertPoint_System_Int32_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.InsertPoint(System.Int32,UnityEngine.Vector3,UnityEngine.Vector3)">InsertPoint(int, Vector3, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Inserts a new point into the curve at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InsertPoint(int index, Vector3 position, Vector3 tangent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index to insert the point at.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position of the point.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">tangent</span></td>
+        <td><p>The tangent of the point.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_Measure_" data-uid="Flexalon.FlexalonCurveLayout.Measure*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.Measure(Flexalon.FlexalonNode,UnityEngine.Vector3)">Measure(FlexalonNode, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Perform minimal work to determine what the size of node and available size for node's children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Bounds Measure(FlexalonNode node, Vector3 size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">size</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Bounds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_">LayoutBase.Measure(FlexalonNode, Vector3)</a></div>
+  <a id="Flexalon_FlexalonCurveLayout_RemovePoint_" data-uid="Flexalon.FlexalonCurveLayout.RemovePoint*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_RemovePoint_System_Int32_" data-uid="Flexalon.FlexalonCurveLayout.RemovePoint(System.Int32)">RemovePoint(int)</h4>
+  <div class="markdown level1 summary"><p>Removes the point at the index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemovePoint(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the point to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_ReplacePoint_" data-uid="Flexalon.FlexalonCurveLayout.ReplacePoint*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_ReplacePoint_System_Int32_Flexalon_FlexalonCurveLayout_CurvePoint_" data-uid="Flexalon.FlexalonCurveLayout.ReplacePoint(System.Int32,Flexalon.FlexalonCurveLayout.CurvePoint)">ReplacePoint(int, CurvePoint)</h4>
+  <div class="markdown level1 summary"><p>Replaces the point at the index with a new point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReplacePoint(int index, FlexalonCurveLayout.CurvePoint point)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the point to replace.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a></td>
+        <td><span class="parametername">point</span></td>
+        <td><p>The new point.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_ReplacePoint_" data-uid="Flexalon.FlexalonCurveLayout.ReplacePoint*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_ReplacePoint_System_Int32_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.ReplacePoint(System.Int32,UnityEngine.Vector3,UnityEngine.Vector3)">ReplacePoint(int, Vector3, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Replaces the point at the index with a new point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReplacePoint(int index, Vector3 position, Vector3 tangent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the point to replace.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position of the point.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">tangent</span></td>
+        <td><p>The tangent of the point.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonCurveLayout_SetPoints_" data-uid="Flexalon.FlexalonCurveLayout.SetPoints*"></a>
+  <h4 id="Flexalon_FlexalonCurveLayout_SetPoints_System_Collections_Generic_List_Flexalon_FlexalonCurveLayout_CurvePoint__" data-uid="Flexalon.FlexalonCurveLayout.SetPoints(System.Collections.Generic.List{Flexalon.FlexalonCurveLayout.CurvePoint})">SetPoints(List&lt;CurvePoint&gt;)</h4>
+  <div class="markdown level1 summary"><p>Replaces all points of the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPoints(List&lt;FlexalonCurveLayout.CurvePoint&gt; points)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a>&gt;</td>
+        <td><span class="parametername">points</span></td>
+        <td><p>The new points.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Flexalon.Layout.html">Layout</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Flexalon 3D Layouts
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    
+    
+    
+  </body>
+</html>

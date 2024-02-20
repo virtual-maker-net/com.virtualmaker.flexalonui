@@ -4,7 +4,7 @@ namespace Flexalon
 {
     /// <summary> To control the size of an object, add a Flexalon Object
     /// component to it and edit the width, height, or depth properties. </summary>
-    [ExecuteAlways, DisallowMultipleComponent, AddComponentMenu("Flexalon/Flexalon Object"), HelpURL("https://www.flexalon.com/docs/flexalonObject")]
+    [DisallowMultipleComponent, AddComponentMenu("Flexalon/Flexalon Object"), HelpURL("https://www.flexalon.com/docs/flexalonObject")]
     public class FlexalonObject : FlexalonComponent
     {
         /// <summary> The fixed size of the object. </summary>
@@ -797,6 +797,7 @@ namespace Flexalon
 
         protected override void Initialize()
         {
+            base.Initialize();
             if (transform is RectTransform || (transform.parent && transform.parent is RectTransform))
             {
                 _width = 100;

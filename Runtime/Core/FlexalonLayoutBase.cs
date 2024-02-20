@@ -7,26 +7,12 @@ namespace Flexalon
     /// on how to extend this class. Assigns the Layout method to FlexalonNode and keeps the
     /// node's children up to date.
     /// </summary>
-    [ExecuteAlways, DisallowMultipleComponent]
+    [DisallowMultipleComponent, RequireComponent(typeof(FlexalonObject))]
     public abstract class LayoutBase : FlexalonComponent, Layout
     {
         /// <inheritdoc />
         protected override void DoOnEnable()
         {
-            if (GetComponent<FlexalonObject>() == null)
-            {
-                var obj = Flexalon.AddComponent<FlexalonObject>(gameObject);
-
-#if UNITY_UI
-                if (GetComponent<Canvas>() == null)
-#endif
-                {
-                    obj.WidthType = SizeType.Layout;
-                    obj.HeightType = SizeType.Layout;
-                    obj.DepthType = SizeType.Layout;
-                }
-            }
-
             _node.DetachAllChildren();
             foreach (Transform child in transform)
             {
@@ -118,6 +104,36 @@ namespace Flexalon
                 }
 
                 index++;
+            }
+        }
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+
+            if (!gameObject.TryGetComponent<FlexalonObject>(out var obj))
+            {
+                obj = Flexalon.AddComponent<FlexalonObject>(gameObject);
+            }
+
+#if UNITY_UI
+            if (GetComponent<Canvas>() == null)
+#endif
+            {
+                if (obj.WidthType == SizeType.Component)
+                {
+                    obj.WidthType = SizeType.Layout;
+                }
+
+                if (obj.HeightType == SizeType.Component)
+                {
+                    obj.HeightType = SizeType.Layout;
+                }
+
+                if (obj.DepthType == SizeType.Component)
+                {
+                    obj.DepthType = SizeType.Layout;
+                }
             }
         }
 

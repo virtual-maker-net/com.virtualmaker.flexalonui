@@ -7,6 +7,7 @@ namespace Flexalon
     /// Base type for many Flexalon components. Deals with FlexalonNode lifecycle,
     /// and provides the ForceUpdate and MarkDirty methods to trigger a Flexalon update.
     /// </summary>
+    [ExecuteAlways, RequireComponent(typeof(FlexalonResult))]
     public abstract class FlexalonComponent : MonoBehaviour
     {
         protected FlexalonNode _node;

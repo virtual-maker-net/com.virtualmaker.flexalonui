@@ -7,7 +7,7 @@ namespace Flexalon
     /// Use a flexible layout to position children linearly along the x, y, or z axis.
     /// The sizes of the children are considered so that they are evenly spaced.
     /// </summary>
-    [ExecuteAlways, AddComponentMenu("Flexalon/Flexalon Flexible Layout"), HelpURL("https://www.flexalon.com/docs/flexibleLayout")]
+    [AddComponentMenu("Flexalon/Flexalon Flexible Layout"), HelpURL("https://www.flexalon.com/docs/flexibleLayout")]
     public class FlexalonFlexibleLayout : LayoutBase
     {
         /// <summary> Determines how the space between children is distributed. </summary>

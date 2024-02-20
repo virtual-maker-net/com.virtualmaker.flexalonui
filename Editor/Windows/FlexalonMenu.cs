@@ -22,7 +22,6 @@ namespace Flexalon.Editor
         private static readonly string _showOnStartKey = "FlexalonMenu_ShowOnStart";
         private static readonly string _versionKey = "FlexalonMenu_Version";
 
-        private GUIStyle _trialStyle;
         private GUIStyle _errorStyle;
         private GUIStyle _buttonStyle;
         private GUIStyle _bodyStyle;
@@ -79,16 +78,12 @@ namespace Flexalon.Editor
             _showOnStart = (ShowOnStart)EditorPrefs.GetInt(_showOnStartKey, 0);
             bool showPref = _showOnStart == ShowOnStart.Always ||
                 (_showOnStart == ShowOnStart.OnUpdate && newVersion);
-            if (!EditorApplication.isPlayingOrWillChangePlaymode && !alreadyShown && showPref)
+            if (!EditorApplication.isPlayingOrWillChangePlaymode && !alreadyShown && showPref && !Application.isBatchMode)
             {
                 StartScreen();
             }
-            else
-            {
-                FlexalonTrial.UpdateRemainingDays();
-            }
 
-            if (!FlexalonTrial.IsTrial && !EditorApplication.isPlayingOrWillChangePlaymode && FlexalonSurvey.ShouldAsk())
+            if (!EditorApplication.isPlayingOrWillChangePlaymode && FlexalonSurvey.ShouldAsk())
             {
                 FlexalonSurvey.ShowSurvey();
             }
@@ -97,7 +92,6 @@ namespace Flexalon.Editor
         [MenuItem("Tools/Flexalon/Start Screen")]
         public static void StartScreen()
         {
-            FlexalonTrial.UpdateRemainingDays();
             FlexalonMenu window = GetWindow<FlexalonMenu>(true, "Flexalon Start Screen", true);
             window.minSize = new Vector2(800, 600);
             window.maxSize = window.minSize;
@@ -134,11 +128,6 @@ namespace Flexalon.Editor
             _bodyStyle.stretchWidth = false;
             _bodyStyle.richText = true;
 
-            _trialStyle = new GUIStyle(_bodyStyle);
-            _trialStyle.fontStyle = FontStyle.Bold;
-            _trialStyle.margin.top = 10;
-            _trialStyle.normal.textColor = Color.yellow;
-
             _boldStyle = new GUIStyle(_bodyStyle);
             _boldStyle.fontStyle = FontStyle.Bold;
             _boldStyle.fontSize = 16;
@@ -146,7 +135,9 @@ namespace Flexalon.Editor
             _semiboldStyle = new GUIStyle(_bodyStyle);
             _semiboldStyle.fontStyle = FontStyle.Bold;
 
-            _errorStyle = new GUIStyle(_trialStyle);
+            _errorStyle = new GUIStyle(_bodyStyle);
+            _errorStyle.fontStyle = FontStyle.Bold;
+            _errorStyle.margin.top = 10;
             _errorStyle.normal.textColor = new Color(1, 0.2f, 0);
 
             _buttonStyle = new GUIStyle(_bodyStyle);
@@ -309,9 +300,9 @@ namespace Flexalon.Editor
                         LinkButton("Get More Layouts", _website, _moreLayoutsStyle);
                     }
 
-                    LinkButton(FlexalonTrial.IsTrial ? "Reviews" : "Write a Review", _review);
+                    LinkButton("Write a Review", _review);
 
-                    if (!FlexalonTrial.IsTrial && !FlexalonSurvey.Completed)
+                    if (!FlexalonSurvey.Completed)
                     {
                         if (Button("Feedback"))
                         {
@@ -346,28 +337,7 @@ namespace Flexalon.Editor
                     EditorGUILayout.Space();
                     GUILayout.BeginVertical(EditorStyles.helpBox);
                     {
-                        if (FlexalonTrial.IsTrial)
-                        {
-                            if (FlexalonTrial.RemainingDays > 0)
-                            {
-                                var day = FlexalonTrial.RemainingDays == 1 ? "day" : "days";
-                                GUILayout.Label("You have " + FlexalonTrial.RemainingDays + " " + day + " left on your trial.", _trialStyle);
-                            }
-                            else
-                            {
-                                GUILayout.Label("Your trial has expired. Flexalon components will no longer update.", _errorStyle);
-                            }
-
-                            GUILayout.Label("You can upgrade the trial to a full license at any time without affecting your project.", _bodyStyle);
-
-                            EditorGUILayout.Space();
-                            LinkButton("Purchase Flexalon", StoreLink);
-                        }
-                        else
-                        {
-                            GUILayout.Label("If you enjoy Flexalon, please consider writing a review. It helps a ton!", _bodyStyle);
-                        }
-
+                        GUILayout.Label("If you enjoy Flexalon, please consider writing a review. It helps a ton!", _bodyStyle);
                         EditorGUILayout.Space();
                     }
                     GUILayout.EndVertical();

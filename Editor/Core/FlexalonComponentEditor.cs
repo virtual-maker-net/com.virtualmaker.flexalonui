@@ -23,15 +23,7 @@ namespace Flexalon.Editor
 
         protected void ForceUpdateButton()
         {
-            if (FlexalonTrial.IsExpired)
-            {
-                EditorGUILayout.HelpBox("Flexalon trial has expired. Please purchase a license.", MessageType.Error);
-                if (GUILayout.Button("Visit Store"))
-                {
-                    Application.OpenURL(FlexalonMenu.StoreLink);
-                }
-            }
-            else if (GUILayout.Button("Force Update"))
+            if (GUILayout.Button("Force Update"))
             {
                 foreach (var target in targets)
                 {
@@ -42,7 +34,7 @@ namespace Flexalon.Editor
 
         protected void ApplyModifiedProperties()
         {
-            if (serializedObject.ApplyModifiedProperties() && !FlexalonTrial.IsExpired)
+            if (serializedObject.ApplyModifiedProperties())
             {
                 foreach (var target in targets)
                 {

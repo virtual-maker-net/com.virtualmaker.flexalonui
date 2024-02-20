@@ -142,16 +142,17 @@ namespace Flexalon
                 node = _instance.CreateNode();
                 node._gameObject = go;
                 node._adapter = new DefaultAdapter(go);
-                node._result = node._gameObject.GetComponent<FlexalonResult>();
-                node._hasResult = node._result != null;
-                if (!node._hasResult)
-                {
-                    node._result = AddComponent<FlexalonResult>(go);
-                    node._dirty = true;
-                }
-
+                node.RefreshResult();
                 node.SetResultToCurrentTransform();
+
+                // If inactive or disabled, FlexalonObject won't register itself, so do it here.
+                node._flexalonObject = go.GetComponent<FlexalonObject>();
+
                 _instance._gameObjects.Add(go, node);
+            }
+            else if (!node._result)
+            {
+                node.RefreshResult();
             }
 
             return node;
@@ -259,6 +260,11 @@ namespace Flexalon
 
         void LateUpdate()
         {
+            if (_instance != this)
+            {
+                return;
+            }
+
             if (Application.isPlaying && _updateInPlayMode)
             {
                 UpdateDirtyNodes();
@@ -375,27 +381,39 @@ namespace Flexalon
 
         void Awake()
         {
-            RecordFrameChanges = false;
+            if (_instance == this)
+            {
+                RecordFrameChanges = false;
+            }
         }
 
         void OnEnable()
         {
 #if UNITY_EDITOR
-            UnityEditor.Undo.undoRedoPerformed += OnUndoRedo;
+            if (_instance == this)
+            {
+                UnityEditor.Undo.undoRedoPerformed += OnUndoRedo;
+            }
 #endif
         }
 
         void OnDisable()
         {
 #if UNITY_EDITOR
-            UnityEditor.Undo.undoRedoPerformed -= OnUndoRedo;
+            if (_instance == this)
+            {
+                UnityEditor.Undo.undoRedoPerformed -= OnUndoRedo;
+            }
 #endif
         }
 
         void OnDestroy()
         {
-            FlexalonLog.Log("Flexalon Instance Destroyed");
-            _instance = null;
+            if (_instance == this)
+            {
+                FlexalonLog.Log("Flexalon Instance Destroyed");
+                _instance = null;
+            }
         }
 
         private void OnUndoRedo()
@@ -875,7 +893,9 @@ namespace Flexalon
             {
                 if (GetSizeType(axis) == SizeType.Fill)
                 {
-                    var fillSize = includesSizeOfParent ? childSize / SizeOfParent[axis] : childSize;
+                    var fillSize = includesSizeOfParent ?
+                        (SizeOfParent[axis] > 0 ? childSize / SizeOfParent[axis] : 0) :
+                        childSize;
                     SetFillSize(axis, fillSize);
                 }
                 else if (GetMinSizeType(axis) != MinMaxSizeType.None)
@@ -1370,6 +1390,17 @@ namespace Flexalon
                 FlexalonLog.Log("Measure | RotatedAndScaledBounds", this, bounds);
                 HasSizeUpdate = true;
                 UpdateDependents = true;
+            }
+
+            public void RefreshResult()
+            {
+                _result = _gameObject.GetComponent<FlexalonResult>();
+                _hasResult = _result != null;
+                if (!_hasResult)
+                {
+                    _result = AddComponent<FlexalonResult>(GameObject);
+                    _dirty = true;
+                }
             }
 
             public void SetResultToCurrentTransform()

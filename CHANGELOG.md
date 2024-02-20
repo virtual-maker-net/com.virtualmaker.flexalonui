@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 4.1.2
+
+- Ensure FlexalonObject parameters are read even if the gameObject is inactive.
+- Support additive scenes by allowing multiple Flexalon singletons to be in the scene. Only one will be used.
+- Use RequireComponent to add FlexalonObject to layouts instead of adding it in OnEnable. This fixes some issues with Undo/Redo.
+- Fix a destroyed FlexalonResult being accessed on redo.
+- Fix NaN that can happen when assigning zero fill size.
+
 ## Version 4.1.1
 
 ### Fixes

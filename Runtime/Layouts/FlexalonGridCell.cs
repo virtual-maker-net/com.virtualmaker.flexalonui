@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Flexalon
 {
     /// <summary> Specifies which cell a gameObject should occupy in a grid layout. </summary>
-    [ExecuteAlways, AddComponentMenu("Flexalon/Flexalon Grid Cell"), HelpURL("https://www.flexalon.com/docs/gridLayout")]
+    [AddComponentMenu("Flexalon/Flexalon Grid Cell"), HelpURL("https://www.flexalon.com/docs/gridLayout")]
     public class FlexalonGridCell : FlexalonComponent
     {
         [SerializeField, Min(0)]

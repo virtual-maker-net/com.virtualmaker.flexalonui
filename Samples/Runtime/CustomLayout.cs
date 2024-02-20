@@ -7,7 +7,6 @@ namespace Flexalon.Samples
     // The layout strategy is to place the children on after
     // the other diagonally ascending.
     // See also CustomLayoutEditor.
-    [ExecuteAlways]
     public class CustomLayout : LayoutBase
     {
         [SerializeField]

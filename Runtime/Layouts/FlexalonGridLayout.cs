@@ -8,7 +8,7 @@ namespace Flexalon
     /// Use a grid layout to position children at fixed intervals.
     /// Objects are placed in cells in column-row-layer order.
     /// </summary>
-    [ExecuteAlways, AddComponentMenu("Flexalon/Flexalon Grid Layout"), HelpURL("https://www.flexalon.com/docs/gridLayout")]
+    [AddComponentMenu("Flexalon/Flexalon Grid Layout"), HelpURL("https://www.flexalon.com/docs/gridLayout")]
     public class FlexalonGridLayout : LayoutBase
     {
         /// <summary> The type of cell to use on the column-row axes. </summary>

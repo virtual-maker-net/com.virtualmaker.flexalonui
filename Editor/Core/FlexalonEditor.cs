@@ -29,61 +29,38 @@ namespace Flexalon.Editor
         {
             serializedObject.Update();
 
-            if (FlexalonTrial.IsExpired)
+            if ((Application.isPlaying && !(target as Flexalon).UpdateInPlayMode) ||
+                (!Application.isPlaying && !(target as Flexalon).UpdateInEditMode))
             {
-                if (_updateInEditMode.boolValue)
+                if (GUILayout.Button("Update"))
                 {
-                    _updateInEditMode.boolValue = false;
-                }
-
-                if (_updateInPlayMode.boolValue)
-                {
-                    _updateInPlayMode.boolValue = false;
-                }
-
-                EditorGUILayout.HelpBox("Flexalon trial has expired. Please purchase a license.", MessageType.Error);
-                if (GUILayout.Button("Visit Store"))
-                {
-                    Application.OpenURL(FlexalonMenu.StoreLink);
-                }
-
-                serializedObject.ApplyModifiedProperties();
-            }
-            else
-            {
-                if ((Application.isPlaying && !(target as Flexalon).UpdateInPlayMode) ||
-                    (!Application.isPlaying && !(target as Flexalon).UpdateInEditMode))
-                {
-                    if (GUILayout.Button("Update"))
-                    {
-                        Undo.RecordObject(target, "Update");
-                        PrefabUtility.RecordPrefabInstancePropertyModifications(target);
-                        var flexalon = (target as Flexalon);
-                        Flexalon.RecordFrameChanges = true;
-                        flexalon.UpdateDirtyNodes();
-                    }
-                }
-
-                if (GUILayout.Button("Force Update"))
-                {
-                    Undo.RecordObject(target, "Force Update");
+                    Undo.RecordObject(target, "Update");
                     PrefabUtility.RecordPrefabInstancePropertyModifications(target);
                     var flexalon = (target as Flexalon);
                     Flexalon.RecordFrameChanges = true;
-                    flexalon.ForceUpdate();
+                    flexalon.UpdateDirtyNodes();
                 }
-
-                EditorGUILayout.PropertyField(_updateInEditMode);
-                EditorGUILayout.PropertyField(_updateInPlayMode);
-                EditorGUILayout.PropertyField(_inputProvider);
-
-                if (serializedObject.ApplyModifiedProperties())
-                {
-                    EditorApplication.QueuePlayerLoopUpdate();
-                }
-
-                EditorGUILayout.HelpBox("You should only have one Flexalon component in the scene. If you create a new one, disable and re-enable all flexalon components or restart Unity.", MessageType.Info);
             }
+
+            if (GUILayout.Button("Force Update"))
+            {
+                Undo.RecordObject(target, "Force Update");
+                PrefabUtility.RecordPrefabInstancePropertyModifications(target);
+                var flexalon = (target as Flexalon);
+                Flexalon.RecordFrameChanges = true;
+                flexalon.ForceUpdate();
+            }
+
+            EditorGUILayout.PropertyField(_updateInEditMode);
+            EditorGUILayout.PropertyField(_updateInPlayMode);
+            EditorGUILayout.PropertyField(_inputProvider);
+
+            if (serializedObject.ApplyModifiedProperties())
+            {
+                EditorApplication.QueuePlayerLoopUpdate();
+            }
+
+            EditorGUILayout.HelpBox("You should only have one Flexalon component in the scene. If you create a new one, disable and re-enable all flexalon components or restart Unity.", MessageType.Info);
         }
     }
 }

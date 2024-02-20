@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 namespace Flexalon.Samples
 {
     // Automatically selects the right material based on render pipeline and provides helpers for setting the color.
-    [ExecuteAlways, AddComponentMenu("Flexalon Samples/Flexalon Dynamic Material")]
+    [AddComponentMenu("Flexalon Samples/Flexalon Dynamic Material")]
     public class FlexalonDynamicMaterial : MonoBehaviour
     {
         public Material Standard;

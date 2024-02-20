@@ -1222,9 +1222,9 @@ namespace Flexalon
                     _parent = null;
                     _index = 0;
 
-                    if (GameObject)
+                    if (_instance != null && _instance._gameObjects.ContainsKey(GameObject))
                     {
-                        _instance?._roots.Add(this);
+                        _instance._roots.Add(this);
                     }
                 }
             }

@@ -103,7 +103,9 @@ and provides the ForceUpdate and MarkDirty methods to trigger a Flexalon update.
   </div>
   <h5 id="Flexalon_FlexalonComponent_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class FlexalonComponent : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">[ExecuteAlways]
+[RequireComponent(typeof(FlexalonResult))]
+public abstract class FlexalonComponent : MonoBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>

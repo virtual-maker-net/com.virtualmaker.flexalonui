@@ -7,6 +7,11 @@
 - Use RequireComponent to add FlexalonObject to layouts instead of adding it in OnEnable. This fixes some issues with Undo/Redo.
 - Fix a destroyed FlexalonResult being accessed on redo.
 - Fix NaN that can happen when assigning zero fill size.
+- Fix an exception when leaving prefab mode on some versions of Unity.
+- Fix an occasional exception on deserializing a grid layout.
+- Fix an error that occurs if a Flexalon Interactables with a UI component is instantiated without a Canvas parent.
+- Support canvases inside canvases by treating them as RectTransforms.
+- Fix Flexalon Animators on children of a layout freezing when that layout is dragged by a Flexalon Interactable.
 
 ## Version 4.1.1
 

@@ -95,6 +95,52 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class Math</code></pre>
   </div>
+  <h3 id="fields">Fields
+</h3>
+  <h4 id="Flexalon_Math_MaxValue" data-uid="Flexalon.Math.MaxValue">MaxValue</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly float MaxValue</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Flexalon_Math_MaxVector" data-uid="Flexalon.Math.MaxVector">MaxVector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Vector3 MaxVector</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
   <a id="Flexalon_Math_Abs_" data-uid="Flexalon.Math.Abs*"></a>
@@ -825,6 +871,61 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><p>The aligned position of the child.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_Math_Clamp_" data-uid="Flexalon.Math.Clamp*"></a>
+  <h4 id="Flexalon_Math_Clamp_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.Math.Clamp(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">Clamp(Vector3, Vector3, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Clamps value of to each vector component between min and max.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Clamp(Vector3 v, Vector3 min, Vector3 max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">v</span></td>
+        <td><p>The vector to clamp.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><p>The clamped vector.</p>
 </td>
       </tr>
     </tbody>
@@ -1717,14 +1818,14 @@
     </tbody>
   </table>
   <a id="Flexalon_Math_MeasureComponentBounds_" data-uid="Flexalon.Math.MeasureComponentBounds*"></a>
-  <h4 id="Flexalon_Math_MeasureComponentBounds_UnityEngine_Bounds_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.Math.MeasureComponentBounds(UnityEngine.Bounds,Flexalon.FlexalonNode,UnityEngine.Vector3)">MeasureComponentBounds(Bounds, FlexalonNode, Vector3)</h4>
+  <h4 id="Flexalon_Math_MeasureComponentBounds_UnityEngine_Bounds_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.Math.MeasureComponentBounds(UnityEngine.Bounds,Flexalon.FlexalonNode,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">MeasureComponentBounds(Bounds, FlexalonNode, Vector3, Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Given the bounds of a component, creates a bounds for the node respecting the
 size types. Aspect ratio is preserved when possible.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Bounds MeasureComponentBounds(Bounds componentBounds, FlexalonNode node, Vector3 size)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Bounds MeasureComponentBounds(Bounds componentBounds, FlexalonNode node, Vector3 size, Vector3 min, Vector3 max)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1752,6 +1853,18 @@ size types. Aspect ratio is preserved when possible.</p>
         <td><span class="xref">UnityEngine.Vector3</span></td>
         <td><span class="parametername">size</span></td>
         <td><p>The size of the node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum size of the node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum size of the node.</p>
 </td>
       </tr>
     </tbody>
@@ -1773,14 +1886,14 @@ size types. Aspect ratio is preserved when possible.</p>
     </tbody>
   </table>
   <a id="Flexalon_Math_MeasureComponentBounds2D_" data-uid="Flexalon.Math.MeasureComponentBounds2D*"></a>
-  <h4 id="Flexalon_Math_MeasureComponentBounds2D_UnityEngine_Bounds_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.Math.MeasureComponentBounds2D(UnityEngine.Bounds,Flexalon.FlexalonNode,UnityEngine.Vector3)">MeasureComponentBounds2D(Bounds, FlexalonNode, Vector3)</h4>
+  <h4 id="Flexalon_Math_MeasureComponentBounds2D_UnityEngine_Bounds_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.Math.MeasureComponentBounds2D(UnityEngine.Bounds,Flexalon.FlexalonNode,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">MeasureComponentBounds2D(Bounds, FlexalonNode, Vector3, Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Given the bounds of a component, creates a bounds for the node respecting the
 size types. Aspect ratio is preserved for X and Y when possible.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Bounds MeasureComponentBounds2D(Bounds componentBounds, FlexalonNode node, Vector3 size)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Bounds MeasureComponentBounds2D(Bounds componentBounds, FlexalonNode node, Vector3 size, Vector3 min, Vector3 max)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1808,6 +1921,18 @@ size types. Aspect ratio is preserved for X and Y when possible.</p>
         <td><span class="xref">UnityEngine.Vector3</span></td>
         <td><span class="parametername">size</span></td>
         <td><p>The size of the node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum size of the node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum size of the node.</p>
 </td>
       </tr>
     </tbody>

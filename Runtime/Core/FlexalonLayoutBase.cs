@@ -116,9 +116,7 @@ namespace Flexalon
                 obj = Flexalon.AddComponent<FlexalonObject>(gameObject);
             }
 
-#if UNITY_UI
-            if (GetComponent<Canvas>() == null)
-#endif
+            if (!Flexalon.IsRootCanvas(gameObject))
             {
                 if (obj.WidthType == SizeType.Component)
                 {

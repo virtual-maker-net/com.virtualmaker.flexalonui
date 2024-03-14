@@ -572,6 +572,30 @@
       </tr>
     </tbody>
   </table>
+  <a id="Flexalon_FlexalonNode_SkipLayout_" data-uid="Flexalon.FlexalonNode.SkipLayout*"></a>
+  <h4 id="Flexalon_FlexalonNode_SkipLayout" data-uid="Flexalon.FlexalonNode.SkipLayout">SkipLayout</h4>
+  <div class="markdown level1 summary"><p>True when this node should not skipped when performing layout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SkipLayout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
   <a id="Flexalon_FlexalonNode_AddChild_" data-uid="Flexalon.FlexalonNode.AddChild*"></a>
@@ -636,6 +660,47 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void ApplyScaleAndRotation()</code></pre>
   </div>
+  <a id="Flexalon_FlexalonNode_CanShrink_" data-uid="Flexalon.FlexalonNode.CanShrink*"></a>
+  <h4 id="Flexalon_FlexalonNode_CanShrink_System_Int32_" data-uid="Flexalon.FlexalonNode.CanShrink(System.Int32)">CanShrink(int)</h4>
+  <div class="markdown level1 summary"><p>Returns true if this node is not filling this axis and has a min size set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool CanShrink(int axis)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">axis</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Flexalon_FlexalonNode_Detach_" data-uid="Flexalon.FlexalonNode.Detach*"></a>
   <h4 id="Flexalon_FlexalonNode_Detach" data-uid="Flexalon.FlexalonNode.Detach">Detach()</h4>
   <div class="markdown level1 summary"><p>Removes this node from its parent layout node.</p>
@@ -730,15 +795,211 @@
       </tr>
     </tbody>
   </table>
+  <a id="Flexalon_FlexalonNode_GetMaxSize_" data-uid="Flexalon.FlexalonNode.GetMaxSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetMaxSize_System_Int32_System_Single_" data-uid="Flexalon.FlexalonNode.GetMaxSize(System.Int32,System.Single)">GetMaxSize(int, float)</h4>
+  <div class="markdown level1 summary"><p>Returns the max size of this node, including margin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float GetMaxSize(int axis, float parentSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">axis</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">parentSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Flexalon_FlexalonNode_GetMeasureSize_" data-uid="Flexalon.FlexalonNode.GetMeasureSize*"></a>
-  <h4 id="Flexalon_FlexalonNode_GetMeasureSize" data-uid="Flexalon.FlexalonNode.GetMeasureSize">GetMeasureSize()</h4>
+  <h4 id="Flexalon_FlexalonNode_GetMeasureSize_System_Int32_System_Single_" data-uid="Flexalon.FlexalonNode.GetMeasureSize(System.Int32,System.Single)">GetMeasureSize(int, float)</h4>
   <div class="markdown level1 summary"><p>Returns the computed size of this node during the measure step.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Vector3 GetMeasureSize()</code></pre>
+    <pre><code class="lang-csharp hljs">float GetMeasureSize(int axis, float layoutSize)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">axis</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">layoutSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetMeasureSize_" data-uid="Flexalon.FlexalonNode.GetMeasureSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetMeasureSize_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonNode.GetMeasureSize(UnityEngine.Vector3)">GetMeasureSize(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Returns the computed size of this node during the measure step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 GetMeasureSize(Vector3 layoutSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">layoutSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetMinSize_" data-uid="Flexalon.FlexalonNode.GetMinSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetMinSize_System_Int32_System_Single_" data-uid="Flexalon.FlexalonNode.GetMinSize(System.Int32,System.Single)">GetMinSize(int, float)</h4>
+  <div class="markdown level1 summary"><p>Returns the min size of this node, including margin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float GetMinSize(int axis, float parentSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">axis</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">parentSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_GetMinSize_" data-uid="Flexalon.FlexalonNode.GetMinSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_GetMinSize_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonNode.GetMinSize(UnityEngine.Vector3)">GetMinSize(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Returns the min size of this node, including margin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector3 GetMinSize(Vector3 parentSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">parentSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -1052,32 +1313,6 @@
       </tr>
     </tbody>
   </table>
-  <a id="Flexalon_FlexalonNode_SetFillSize_" data-uid="Flexalon.FlexalonNode.SetFillSize*"></a>
-  <h4 id="Flexalon_FlexalonNode_SetFillSize_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonNode.SetFillSize(UnityEngine.Vector3)">SetFillSize(Vector3)</h4>
-  <div class="markdown level1 summary"><p>Set the available fill size from the layout measure step.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void SetFillSize(Vector3 size)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
-        <td><span class="parametername">size</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Flexalon_FlexalonNode_SetFlexalonObject_" data-uid="Flexalon.FlexalonNode.SetFlexalonObject*"></a>
   <h4 id="Flexalon_FlexalonNode_SetFlexalonObject_Flexalon_FlexalonObject_" data-uid="Flexalon.FlexalonNode.SetFlexalonObject(Flexalon.FlexalonObject)">SetFlexalonObject(FlexalonObject)</h4>
   <div class="markdown level1 summary"><p>Assigns a FlexalonObject to this node.</p>
@@ -1178,6 +1413,83 @@
       <tr>
         <td><span class="xref">UnityEngine.Quaternion</span></td>
         <td><span class="parametername">quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetShrinkFillSize_" data-uid="Flexalon.FlexalonNode.SetShrinkFillSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetShrinkFillSize_System_Int32_System_Single_System_Single_System_Boolean_" data-uid="Flexalon.FlexalonNode.SetShrinkFillSize(System.Int32,System.Single,System.Single,System.Boolean)">SetShrinkFillSize(int, float, float, bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the space a child should shrink or fill.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetShrinkFillSize(int axis, float childSize, float layoutSize, bool includesSizeOfParent = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">axis</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">childSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">layoutSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">includesSizeOfParent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonNode_SetShrinkFillSize_" data-uid="Flexalon.FlexalonNode.SetShrinkFillSize*"></a>
+  <h4 id="Flexalon_FlexalonNode_SetShrinkFillSize_UnityEngine_Vector3_UnityEngine_Vector3_System_Boolean_" data-uid="Flexalon.FlexalonNode.SetShrinkFillSize(UnityEngine.Vector3,UnityEngine.Vector3,System.Boolean)">SetShrinkFillSize(Vector3, Vector3, bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the space a child should shrink or fill.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetShrinkFillSize(Vector3 childSize, Vector3 layoutSize, bool includesSizeOfParent = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">childSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="parametername">layoutSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">includesSizeOfParent</span></td>
         <td></td>
       </tr>
     </tbody>

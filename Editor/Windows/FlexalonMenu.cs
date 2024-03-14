@@ -220,7 +220,7 @@ namespace Flexalon.Editor
             }
             GUILayout.Label("•", _bodyStyle);
 
-            GUILayout.Label(text.Substring(ws + 1), _bodyStyle);
+            GUILayout.Label(text.Substring(ws + 1), _bodyStyle, GUILayout.ExpandWidth(true));
 
             EditorGUILayout.EndHorizontal();
         }

@@ -229,11 +229,7 @@ namespace Flexalon
         [SerializeField, HideInInspector]
         private CellDict _cellToChildren;
 
-        [Serializable]
-        private class ChildDict : FlexalonDict<Transform, Vector3Int> {}
-
-        [SerializeField, HideInInspector]
-        private ChildDict _childToCell;
+        private Dictionary<Transform, Vector3Int> _childToCell;
 
         /// <summary> Returns the first child in the cell. </summary>
         /// <param name="column"> The column of the cell. </param>
@@ -292,7 +288,7 @@ namespace Flexalon
 
             if (_childToCell == null)
             {
-                _childToCell = new ChildDict();
+                _childToCell = new Dictionary<Transform, Vector3Int>();
             }
 
             _cellToChildren.Clear();

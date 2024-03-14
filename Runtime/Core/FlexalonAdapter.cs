@@ -436,7 +436,7 @@ namespace Flexalon
 
         public Bounds Measure(FlexalonNode node, Vector3 size, Vector3 min, Vector3 max)
         {
-            if (_canvas.renderMode == RenderMode.WorldSpace)
+            if (!_canvas.isRootCanvas || _canvas.renderMode == RenderMode.WorldSpace)
             {
                 return _rectTransformAdapter.Measure(node, size, min, max);
             }

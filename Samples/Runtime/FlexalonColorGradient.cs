@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Flexalon.Samples
 {
     // Changes the material or text color of each child to create a gradient.
-    [AddComponentMenu("Flexalon Samples/Flexalon Color Gradient")]
+    [ExecuteAlways, AddComponentMenu("Flexalon Samples/Flexalon Color Gradient")]
     public class FlexalonColorGradient : MonoBehaviour
     {
         // First color of the gradient.

@@ -356,18 +356,7 @@ namespace Flexalon
             _node = Flexalon.GetOrCreateNode(gameObject);
             _inputProvider = GetInputProvider();
 
-#if UNITY_UI
-            _canvas = GetComponentInParent<Canvas>();
-
-            if (_canvas)
-            {
-                if (_restriction == RestrictionType.None)
-                {
-                    _restriction = RestrictionType.Plane;
-                    _planeNormal = Vector3.forward;
-                }
-            }
-#endif
+            UpdateCanvas();
 
             if (!_handle)
             {
@@ -446,6 +435,28 @@ namespace Flexalon
             }
 
             _lastTarget = _target;
+        }
+
+        internal void UpdateCanvas()
+        {
+#if UNITY_UI
+            if (_canvas)
+            {
+                return;
+            }
+
+            _canvas = GetComponentInParent<Canvas>();
+
+            if (_canvas)
+            {
+                if (_restriction == RestrictionType.None)
+                {
+                    _restriction = RestrictionType.Plane;
+                    _planeNormal = Vector3.forward;
+                }
+            }
+#endif
+
         }
 
         private InputProvider GetInputProvider()

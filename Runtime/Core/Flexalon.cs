@@ -423,12 +423,7 @@ namespace Flexalon
 
         private void Compute(Node node)
         {
-            if (node.IsDragging)
-            {
-                return;
-            }
-
-            if (node.Dirty)
+            if (node.Dirty && !node.IsDragging)
             {
                 FlexalonLog.Log("LAYOUT COMPUTE", node);
                 Measure(node);
@@ -804,6 +799,17 @@ namespace Flexalon
             return child.GetSizeType(axis) == SizeType.Fill ||
                 child.GetMaxSizeType(axis) == MinMaxSizeType.Fill ||
                 child.GetMinSizeType(axis) == MinMaxSizeType.Fill;
+        }
+
+        internal static bool IsRootCanvas(GameObject go)
+        {
+#if UNITY_UI
+            if (go.TryGetComponent<Canvas>(out var canvas))
+            {
+                return canvas.isRootCanvas;
+            }
+#endif
+            return false;
         }
 
         private class Node : FlexalonNode

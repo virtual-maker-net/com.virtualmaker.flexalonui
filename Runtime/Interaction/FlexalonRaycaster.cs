@@ -65,7 +65,9 @@ namespace Flexalon
                                 _hitInteractable = hitInteractable;
                                 minDistance = hit.distance;
 
-                                if (hitInteractable.Canvas.renderMode == UnityEngine.RenderMode.ScreenSpaceOverlay)
+                                hitInteractable.UpdateCanvas();
+
+                                if (hitInteractable.Canvas?.renderMode == UnityEngine.RenderMode.ScreenSpaceOverlay)
                                 {
                                     hitPosition = hit.screenPosition;
                                 }

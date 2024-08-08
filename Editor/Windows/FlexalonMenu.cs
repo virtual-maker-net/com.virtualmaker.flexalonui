@@ -17,7 +17,8 @@ namespace Flexalon.Editor
         private static readonly string _templates = "https://www.flexalon.com/templates?utm_source=fxmenu";
         private static readonly string _examples = "https://github.com/afarchy/flexalon-examples";
         // private static readonly string _proxima = "https://www.unityproxima.com?utm_source=pxmenu";
-        private static readonly string _copilot = "https://www.flexalon.com/ai?utm_source=pxmenu";
+        // private static readonly string _copilot = "https://www.flexalon.com/ai?utm_source=pxmenu";
+        private static readonly string _buildalon = "https://www.buildalon.com?utm_source=fxmenu";
 
         private static readonly string _showOnStartKey = "FlexalonMenu_ShowOnStart";
         private static readonly string _versionKey = "FlexalonMenu_Version";
@@ -28,8 +29,9 @@ namespace Flexalon.Editor
         private GUIStyle _versionStyle;
         private GUIStyle _boldStyle;
         private GUIStyle _semiboldStyle;
-        private GUIStyle _proximaButtonStyle;
+        private GUIStyle _moreToolsButtonStyle;
         private GUIStyle _moreLayoutsStyle;
+        private GUIStyle _buildalonStyle;
 
         private static ShowOnStart _showOnStart;
         private static readonly string[] _showOnStartOptions = {
@@ -89,6 +91,12 @@ namespace Flexalon.Editor
             }
         }
 
+        private void OnDisable()
+        {
+            _bodyStyle = null;
+            FlexalonGUI.CleanupBackgroundTextures(StyleTag);
+        }
+
         [MenuItem("Tools/Flexalon/Start Screen")]
         public static void StartScreen()
         {
@@ -116,9 +124,14 @@ namespace Flexalon.Editor
             Application.OpenURL(_discord);
         }
 
+        private const string StyleTag = "FlexalonStartScreenStyles";
+
         private void InitStyles()
         {
             if (_bodyStyle != null) return;
+
+            FlexalonGUI.StyleTag = StyleTag;
+            FlexalonGUI.StyleFontSize = 14;
 
             _bodyStyle = new GUIStyle(EditorStyles.label);
             _bodyStyle.wordWrap = true;
@@ -127,6 +140,11 @@ namespace Flexalon.Editor
             _bodyStyle.margin.top = 10;
             _bodyStyle.stretchWidth = false;
             _bodyStyle.richText = true;
+
+            _buildalonStyle = FlexalonGUI.CreateStyle(FlexalonGUI.HexColor("#FF1E6F"));
+            _buildalonStyle.fontStyle = FontStyle.Bold;
+            _buildalonStyle.margin.left = 10;
+            _buildalonStyle.margin.top = 10;
 
             _boldStyle = new GUIStyle(_bodyStyle);
             _boldStyle.fontStyle = FontStyle.Bold;
@@ -161,16 +179,16 @@ namespace Flexalon.Editor
             _versionStyle = new GUIStyle(EditorStyles.label);
             _versionStyle.padding.right = 10;
 
-            _proximaButtonStyle = new GUIStyle(_buttonStyle);
-            _proximaButtonStyle.normal.background = Texture2D.blackTexture;
-            _proximaButtonStyle.hover.background = Texture2D.blackTexture;
-            _proximaButtonStyle.focused.background = Texture2D.blackTexture;
-            _proximaButtonStyle.active.background = Texture2D.blackTexture;
-            _proximaButtonStyle.padding.left = 0;
-            _proximaButtonStyle.padding.right = 0;
-            _proximaButtonStyle.padding.bottom = 0;
-            _proximaButtonStyle.padding.top = 0;
-            _proximaButtonStyle.margin.bottom = 10;
+            _moreToolsButtonStyle = new GUIStyle(_buttonStyle);
+            _moreToolsButtonStyle.normal.background = Texture2D.blackTexture;
+            _moreToolsButtonStyle.hover.background = Texture2D.blackTexture;
+            _moreToolsButtonStyle.focused.background = Texture2D.blackTexture;
+            _moreToolsButtonStyle.active.background = Texture2D.blackTexture;
+            _moreToolsButtonStyle.padding.left = 0;
+            _moreToolsButtonStyle.padding.right = 0;
+            _moreToolsButtonStyle.padding.bottom = 0;
+            _moreToolsButtonStyle.padding.top = 0;
+            _moreToolsButtonStyle.margin.bottom = 20;
 
             _moreLayoutsStyle = new GUIStyle(_buttonStyle);
             _moreLayoutsStyle.normal.background = new Texture2D(1, 1);
@@ -231,6 +249,7 @@ namespace Flexalon.Editor
             var changelogPath = AssetDatabase.GUIDToAssetPath("b711ce346029a6f43969ef8de5691942");
             var changelogAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(changelogPath);
             _changelog = changelogAsset.text.Split('\n')
+                .Select(x => Regex.Replace(x.TrimEnd(), @"`(.*?)`", "<b>$1</b>"))
                 .Select(x => Regex.Replace(x.TrimEnd(), @"\*\*(.*?)\*\*", "<b>$1</b>"))
                 .Where(x => !string.IsNullOrEmpty(x))
                 .ToList();
@@ -275,9 +294,9 @@ namespace Flexalon.Editor
         {
             InitStyles();
 
-            GUILayout.BeginHorizontal("In BigTitle", GUILayout.ExpandWidth(true));
+            GUILayout.BeginHorizontal("In BigTitle", GUILayout.ExpandWidth(true))   ;
             {
-                WindowUtil.DrawFlexalonIcon(128);
+                FlexalonGUI.Image("d0d1cda04ee3f144abf998efbfdfb8dc", 128, (int)(128 * 0.361f));
                 GUILayout.FlexibleSpace();
                 GUILayout.Label("Version: " + WindowUtil.GetVersion(), _versionStyle, GUILayout.ExpandHeight(true));
             }
@@ -312,9 +331,9 @@ namespace Flexalon.Editor
 
                     GUILayout.FlexibleSpace();
                     GUILayout.Label("More Tools", _boldStyle);
-                    if (WindowUtil.DrawCopilotButton(165, _proximaButtonStyle))
+                    if (FlexalonGUI.ImageButton("2d4f1ef6bb116dd439a01757e51b59de", 165, (int)(165 * 0.525f)))
                     {
-                        Application.OpenURL(_copilot);
+                        Application.OpenURL(_buildalon);
                     }
 
                     EditorGUIUtility.AddCursorRect(GUILayoutUtility.GetLastRect(), MouseCursor.Link);
@@ -335,12 +354,28 @@ namespace Flexalon.Editor
 
                     EditorGUILayout.Space();
                     EditorGUILayout.Space();
-                    GUILayout.BeginVertical(EditorStyles.helpBox);
+
+                    FlexalonGUI.Vertical(EditorStyles.helpBox, () =>
                     {
-                        GUILayout.Label("If you enjoy Flexalon, please consider writing a review. It helps a ton!", _bodyStyle);
+                        GUILayout.Label("Unveiling our new tool for Unity developers:", _bodyStyle);
                         EditorGUILayout.Space();
-                    }
-                    GUILayout.EndVertical();
+                        if (FlexalonGUI.Link("Buildalon: Automate Unity!", _buildalonStyle))
+                        {
+                            Application.OpenURL(_buildalon);
+                        }
+                        EditorGUILayout.Space();
+                        GUILayout.Label("Buildalon is a comprehensive suite of build, test, and deploy automation solutions for Unity developers.", _bodyStyle);
+                        EditorGUILayout.Space();
+                    });
+
+                    EditorGUILayout.Space();
+                    EditorGUILayout.Space();
+
+                    FlexalonGUI.Vertical(EditorStyles.helpBox, () =>
+                    {
+                        GUILayout.Label("If you're enjoying Flexalon, please consider writing a review. It helps a ton!", _bodyStyle);
+                        EditorGUILayout.Space();
+                    });
 
                     WhatsNew();
 

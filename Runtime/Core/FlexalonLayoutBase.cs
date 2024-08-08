@@ -14,9 +14,9 @@ namespace Flexalon
         protected override void DoOnEnable()
         {
             _node.DetachAllChildren();
-            foreach (Transform child in transform)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                _node.AddChild(Flexalon.GetOrCreateNode(child.gameObject));
+                _node.AddChild(Flexalon.GetOrCreateNode(transform.GetChild(i).gameObject));
             }
 
             Flexalon.GetOrCreate().PreUpdate += DetectChanges;
@@ -80,8 +80,9 @@ namespace Flexalon
 
             // Check if we have any new or out of order children.
             int index = 0;
-            foreach (Transform child in transform)
+            for (int i = 0; i < transform.childCount; i++)
             {
+                var child = transform.GetChild(i);
                 var childNode = Flexalon.GetOrCreateNode(child.gameObject);
                 if (childNode.IsDragging || childNode.SkipLayout || childNode.Constraint != null)
                 {

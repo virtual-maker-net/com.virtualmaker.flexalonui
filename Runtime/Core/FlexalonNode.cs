@@ -59,6 +59,9 @@ namespace Flexalon
         /// <summary> Returns the FlexalonObject of this node. </summary>
         FlexalonObject FlexalonObject { get; }
 
+        /// <summary> Returns true if FlexalonObject is set. </summary>
+        bool HasFlexalonObject { get; }
+
         /// <summary> Assigns a FlexalonObject to this node. </summary>
         void SetFlexalonObject(FlexalonObject obj);
 

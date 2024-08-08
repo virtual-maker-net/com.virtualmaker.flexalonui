@@ -72,7 +72,7 @@ namespace Flexalon
             var max = center + extents;
 
             // Transform the sphere center into the OBB's local coordinate system
-            Vector3 localSphereCenter = transform.InverseTransformPoint(position) - center;
+            Vector3 localSphereCenter = transform.InverseTransformPoint(position);
 
             // Calculate the closest point on the OBB to the sphere center
             Vector3 closestPointOnOBB = Vector3.Min(Vector3.Max(localSphereCenter, min), max);
@@ -82,7 +82,6 @@ namespace Flexalon
 
             // Check if the distance is less than or equal to the sphere's radius squared
             return distanceSquared <= radius * radius;
-
         }
     }
 }

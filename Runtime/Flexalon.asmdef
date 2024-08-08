@@ -30,6 +30,11 @@
             "define": "UNITY_TMPRO"
         },
         {
+            "name": "com.unity.ugui",
+            "expression": "2.0.0",
+            "define": "UNITY_TMPRO"
+        },
+        {
             "name": "com.unity.xr.interaction.toolkit",
             "expression": "",
             "define": "UNITY_XRI"

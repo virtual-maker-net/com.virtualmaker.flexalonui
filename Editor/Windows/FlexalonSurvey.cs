@@ -217,7 +217,7 @@ namespace Flexalon.Editor
                 GUILayout.FlexibleSpace();
 
                 BeginCenter();
-                WindowUtil.DrawFlexalonIcon(128);
+                FlexalonGUI.Image("d0d1cda04ee3f144abf998efbfdfb8dc", 128, (int)(128 * 0.361f));
                 EndCenter();
 
                 GUILayout.FlexibleSpace();

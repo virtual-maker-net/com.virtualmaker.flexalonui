@@ -20,11 +20,16 @@ namespace Flexalon.Samples
                     return;
                 }
 
-                if (GraphicsSettings.renderPipelineAsset?.GetType().Name.Contains("HDRenderPipelineAsset") ?? false)
+#if UNITY_6000_0_OR_NEWER
+                var renderPipeline = GraphicsSettings.defaultRenderPipeline;
+#else
+                var renderPipeline = GraphicsSettings.renderPipelineAsset;
+#endif
+                if (renderPipeline?.GetType().Name.Contains("HDRenderPipelineAsset") ?? false)
                 {
                     renderer.sharedMaterial = HDRP;
                 }
-                else if (GraphicsSettings.renderPipelineAsset?.GetType().Name.Contains("UniversalRenderPipelineAsset") ?? false)
+                else if (renderPipeline?.GetType().Name.Contains("UniversalRenderPipelineAsset") ?? false)
                 {
                     renderer.sharedMaterial = URP;
                 }

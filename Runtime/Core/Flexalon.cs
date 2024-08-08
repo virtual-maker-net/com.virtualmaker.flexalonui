@@ -29,6 +29,15 @@ namespace Flexalon
         }
 
         [SerializeField]
+        private bool _skipInactiveObjects = true;
+        /// <summary> Determines if Flexalon should automatically skip inactive gameObjects in a layout. </summary>
+        public bool SkipInactiveObjects
+        {
+            get { return _skipInactiveObjects; }
+            set { _skipInactiveObjects = value; }
+        }
+
+        [SerializeField]
         private GameObject _inputProvider = null;
         private InputProvider _input;
         /// <summary>
@@ -141,12 +150,11 @@ namespace Flexalon
             {
                 node = _instance.CreateNode();
                 node._gameObject = go;
-                node._adapter = new DefaultAdapter(go);
                 node.RefreshResult();
                 node.SetResultToCurrentTransform();
 
                 // If inactive or disabled, FlexalonObject won't register itself, so do it here.
-                node._flexalonObject = go.GetComponent<FlexalonObject>();
+                node.SetFlexalonObject(go.GetComponent<FlexalonObject>());
 
                 _instance._gameObjects.Add(go, node);
             }
@@ -295,7 +303,8 @@ namespace Flexalon
                 }
                 else
                 {
-                    if (!Application.isPlaying && (node._parent != null || node._dependency != null || node.FlexalonObject || node.Method != null))
+                    if (!Application.isPlaying &&
+                        (node._parent != null || node._dependency != null || node.HasFlexalonObject || node.Method != null))
                     {
                         node.CheckDefaultAdapter();
                     }
@@ -333,7 +342,7 @@ namespace Flexalon
             if (!node.ReachedTargetPosition)
             {
                 node.ReachedTargetPosition = node._transformUpdater.UpdatePosition(node, node._result.TargetPosition);
-                foreach (Node child in node.Children)
+                foreach (Node child in node._children)
                 {
                     child.ReachedTargetPosition = false;
                 }
@@ -342,7 +351,7 @@ namespace Flexalon
             if (!node.ReachedTargetRotation)
             {
                 node.ReachedTargetRotation = node._transformUpdater.UpdateRotation(node, node._result.TargetRotation);
-                foreach (Node child in node.Children)
+                foreach (Node child in node._children)
                 {
                     child.ReachedTargetRotation = false;
                 }
@@ -351,7 +360,7 @@ namespace Flexalon
             if (!node.ReachedTargetScale)
             {
                 node.ReachedTargetScale = node._transformUpdater.UpdateScale(node, node._result.TargetScale);
-                foreach (Node child in node.Children)
+                foreach (Node child in node._children)
                 {
                     child.ReachedTargetScale = false;
                 }
@@ -426,7 +435,7 @@ namespace Flexalon
             if (node.Dirty && !node.IsDragging)
             {
                 FlexalonLog.Log("LAYOUT COMPUTE", node);
-                Measure(node);
+                MeasureRoot(node);
                 Arrange(node);
                 Constrain(node);
             }
@@ -449,7 +458,14 @@ namespace Flexalon
                     if (dep.GameObject)
                     {
                         dep._dirty = dep._dirty || node.UpdateDependents;
-                        dep.SetFillSize(fillSize);
+
+                        var fillSizeForDep = fillSize;
+                        if (dep.GameObject.transform.parent)
+                        {
+                            fillSizeForDep = Math.Div(fillSize, dep.GameObject.transform.parent.lossyScale);
+                        }
+
+                        dep.SetFillSize(fillSizeForDep);
                         Compute(dep);
                     }
                 }
@@ -481,14 +497,32 @@ namespace Flexalon
             FlexalonLog.Log("LayoutBounds", node, node._result.LayoutBounds);
         }
 
-        private void Measure(Node node, bool includeChildren = true)
+        private void MeasureRoot(Node node)
+        {
+            Vector3 min, max;
+
+            if (node.GameObject.transform.parent && node.GameObject.transform.parent is RectTransform parentRect)
+            {
+                min = node.GetMinSize(parentRect.rect.size, false);
+                max = node.GetMaxSize(parentRect.rect.size, false);
+            }
+            else
+            {
+                min = node.GetMinSize(Vector3.zero, false);
+                max = node.GetMaxSize(Math.MaxVector, false);
+            }
+
+            Measure(node, min, max, true);
+        }
+
+        private void MeasureChild(Node node, bool includeChildren = true)
         {
             var min = node.GetMinSize(Vector3.zero, false);
             var max = node.GetMaxSize(Math.MaxVector, false);
             Measure(node, min, max, includeChildren);
         }
 
-        private void Measure(Node node, Vector3 parentLayoutSize, bool includeChildren)
+        private void MeasureChild(Node node, Vector3 parentLayoutSize, bool includeChildren)
         {
             var min = node.GetMinSize(parentLayoutSize, false);
             var max = Vector3.Min(node._result.ShrinkSize, node.GetMaxSize(parentLayoutSize, false));
@@ -522,14 +556,15 @@ namespace Flexalon
             {
                 bool isShrunk = child.IsShrunk();
                 child.ResetShrinkFillSize();
+                child.ResetFillShrinkChanged();
 
-                if (AnyChildAxisDependsOnParent(child))
+                if (AnyAxisIsFill(child))
                 {
-                    Measure(child, false);
+                    MeasureChild(child, false);
                 }
                 else if (child.Dirty || !child.HasResult || isShrunk)
                 {
-                    Measure(child);
+                    MeasureChild(child);
                 }
             }
 
@@ -547,26 +582,28 @@ namespace Flexalon
             MeasureAdapterSize(node, layoutBounds.center, layoutBounds.size + node.Padding.Size, min, max);
 
             // Measure any children that depend on our size
-            bool childSizeChanged = false;
+            bool anyChildSizeChanged = false;
             foreach (var child in node._children)
             {
-                if (AnyChildAxisDependsOnParent(child) || child.IsShrunk())
+                if (AnyFillSizeChanged(child) || AnyShrinkSizeChanged(child))
                 {
                     var previousSize = child.GetArrangeSize();
 
-                    Measure(child, layoutBounds.size, true);
+                    MeasureChild(child, layoutBounds.size, true);
 
                     if (previousSize != child.GetArrangeSize())
                     {
-                        childSizeChanged = true;
+                        anyChildSizeChanged = true;
                         child._dirty = true;
                     }
+
+                    child.ResetFillShrinkChanged();
                 }
             }
 
-            if (childSizeChanged)
+            if (anyChildSizeChanged)
             {
-                // Re-measure given final child sizes.
+                // Re-measure given new child sizes.
                 layoutBounds = node.Method.Measure(node, childAvailableSize, minChildAvailableSize, maxChildAvailableSize);
                 FlexalonLog.Log("Measure | LayoutBounds 2", node, layoutBounds);
                 MeasureAdapterSize(node, layoutBounds.center, layoutBounds.size + node.Padding.Size, min, max);
@@ -575,9 +612,9 @@ namespace Flexalon
                 // This cycle can continue forever, but this is the last time we'll do it.
                 foreach (var child in node._children)
                 {
-                    if (AnyChildAxisDependsOnParent(child) || child.IsShrunk())
+                    if (AnyFillSizeChanged(child) || AnyShrinkSizeChanged(child))
                     {
-                        Measure(child, layoutBounds.size, true);
+                        MeasureChild(child, layoutBounds.size, true);
                         child._dirty = true;
                     }
                 }
@@ -628,13 +665,10 @@ namespace Flexalon
         private void ComputeScale(Node node)
         {
             bool canScale = true;
-            if (node._adapter != null)
-            {
-                canScale = node._adapter.TryGetScale(node, out var componentScale);
-                node.SetComponentScale(componentScale);
-            }
+            canScale = node.Adapter.TryGetScale(node, out var componentScale);
+            node.SetComponentScale(componentScale);
 
-            bool shouldScale = canScale && (node.Parent != null || node.FlexalonObject);
+            bool shouldScale = canScale && (node.Parent != null || node.HasFlexalonObject);
             if (!shouldScale)
             {
                 node.ReachedTargetScale = true;
@@ -646,10 +680,6 @@ namespace Flexalon
             {
                 scale = Math.Div(scale, node.Parent.Result.ComponentScale);
             }
-            else if (node.Constraint != null && node.GameObject.transform.parent)
-            {
-                scale = Math.Div(scale, node.GameObject.transform.parent.lossyScale);
-            }
 
             FlexalonLog.Log("ComputeTransform:Scale", node, scale);
             scale.Scale(node.Scale);
@@ -660,7 +690,7 @@ namespace Flexalon
 
         private void ComputeRectSize(Node node)
         {
-            if (node.GameObject.transform is RectTransform && node._adapter != null && node._adapter.TryGetRectSize(node, out var rectSize))
+            if (node.GameObject.transform is RectTransform && node.Adapter.TryGetRectSize(node, out var rectSize))
             {
                 node.RecordResultUndo();
                 node.Result.TargetRectSize = rectSize;
@@ -679,7 +709,7 @@ namespace Flexalon
                 node.HasSizeUpdate = false;
                 ComputeScale(node);
                 ComputeRectSize(node);
-                if (node.Parent != null || node.FlexalonObject)
+                if (node.Parent != null || node.HasFlexalonObject)
                 {
                     foreach (var child in node._children)
                     {
@@ -767,7 +797,7 @@ namespace Flexalon
                 var unit = node.GetSizeType(axis);
                 if (unit == SizeType.Layout)
                 {
-                    result[axis] = 0;
+                    result[axis] = node._method != null ? node.Padding.Size[axis] : 0;
                 }
                 else if (unit == SizeType.Component)
                 {
@@ -789,16 +819,40 @@ namespace Flexalon
             return result;
         }
 
-        private static bool AnyChildAxisDependsOnParent(Node child)
+        private static bool AnyAxisIsFill(Node child)
         {
-            return ChildAxisDependsOnParent(child, 0) || ChildAxisDependsOnParent(child, 1) || ChildAxisDependsOnParent(child, 2);
+            return AxisIsFill(child, 0) || AxisIsFill(child, 1) || AxisIsFill(child, 2);
         }
 
-        private static bool ChildAxisDependsOnParent(Node child, int axis)
+        private static bool AxisIsFill(Node child, int axis)
         {
             return child.GetSizeType(axis) == SizeType.Fill ||
                 child.GetMaxSizeType(axis) == MinMaxSizeType.Fill ||
                 child.GetMinSizeType(axis) == MinMaxSizeType.Fill;
+        }
+
+        private static bool FillSizeChanged(Node child, int axis)
+        {
+            return AxisIsFill(child, axis) && child._fillSizeChanged[axis];
+        }
+
+        private static bool AnyFillSizeChanged(Node child)
+        {
+            return FillSizeChanged(child, 0) ||
+                FillSizeChanged(child, 1) ||
+                FillSizeChanged(child, 2);
+        }
+
+        private static bool ShrinkSizeChanged(Node child, int axis)
+        {
+            return child.CanShrink(axis) && child._shrinkSizeChanged[axis];
+        }
+
+        private static bool AnyShrinkSizeChanged(Node child)
+        {
+            return ShrinkSizeChanged(child, 0) ||
+                ShrinkSizeChanged(child, 1) ||
+                ShrinkSizeChanged(child, 2);
         }
 
         internal static bool IsRootCanvas(GameObject go)
@@ -836,23 +890,23 @@ namespace Flexalon
             public GameObject _gameObject;
             public GameObject GameObject => _gameObject;
             public Layout _method;
-            public Layout Method { get { return _method; } set { _method = value; } }
+            public Layout Method { get => _method; set => _method = value; }
             public Constraint _constraint;
             public Constraint Constraint => _constraint;
-            public Adapter _adapter = null;
-            public Adapter Adapter => _adapter;
+            private Adapter _adapter = null;
+            public Adapter Adapter => (_adapter == null) ? _adapter = new DefaultAdapter(GameObject) : _adapter;
             public bool _customAdapter = false;
             public FlexalonResult _result;
             public FlexalonResult Result => _result;
             public FlexalonObject _flexalonObject;
             public FlexalonObject FlexalonObject => _flexalonObject;
-            public Vector3 Size => _flexalonObject ? _flexalonObject.Size : Vector3.one;
-            public Vector3 SizeOfParent => _flexalonObject ? _flexalonObject.SizeOfParent : Vector3.one;
-            public Vector3 Offset => _flexalonObject ? _flexalonObject.Offset : Vector3.zero;
-            public Vector3 Scale => _flexalonObject ? _flexalonObject.Scale : Vector3.one;
-            public Quaternion Rotation => _flexalonObject ? _flexalonObject.Rotation : Quaternion.identity;
-            public Directions Margin => _flexalonObject ? _flexalonObject.Margin : Directions.zero;
-            public Directions Padding => _flexalonObject ? _flexalonObject.Padding : Directions.zero;
+            public Vector3 Size => HasFlexalonObject ? _flexalonObject.Size : Vector3.one;
+            public Vector3 SizeOfParent => HasFlexalonObject ? _flexalonObject.SizeOfParent : Vector3.one;
+            public Vector3 Offset => HasFlexalonObject ? _flexalonObject.Offset : Vector3.zero;
+            public Vector3 Scale => HasFlexalonObject ? _flexalonObject.Scale : Vector3.one;
+            public Quaternion Rotation => HasFlexalonObject ? _flexalonObject.Rotation : Quaternion.identity;
+            public Directions Margin => HasFlexalonObject ? _flexalonObject.Margin : Directions.zero;
+            public Directions Padding => HasFlexalonObject ? _flexalonObject.Padding : Directions.zero;
             public Node _dependency;
             public FlexalonNode Dependency => _dependency;
             public bool HasDependents => _dependents != null && _dependents.Count > 0;
@@ -862,17 +916,31 @@ namespace Flexalon
             public IReadOnlyList<FlexalonModifier> Modifiers => _modifiers;
             public event System.Action<FlexalonNode> ResultChanged;
             public bool IsDragging { get; set; }
-            public bool SkipLayout => _flexalonObject ? _flexalonObject.SkipLayout : false;
+            private bool SkipInactive => _instance._skipInactiveObjects && !_gameObject.activeInHierarchy;
+            public bool SkipLayout => SkipInactive || (HasFlexalonObject ? _flexalonObject.SkipLayout : false);
+            private bool _hasFlexalonObject;
+            public bool HasFlexalonObject => _hasFlexalonObject;
+            public bool[] _fillSizeChanged = new bool[3];
+            public bool[] _shrinkSizeChanged = new bool[3];
 
             public void SetFillSize(Vector3 fillSize)
             {
-                _result.FillSize = fillSize;
+                SetFillSize(0, fillSize.x);
+                SetFillSize(1, fillSize.y);
+                SetFillSize(2, fillSize.z);
             }
 
             public void SetFillSize(int axis, float size)
             {
                 FlexalonLog.Log("SetFillSize", this, axis, size);
+                _fillSizeChanged[axis] = _fillSizeChanged[axis] || (_result.FillSize[axis] != size);
                 _result.FillSize[axis] = size;
+            }
+
+            public void ResetFillShrinkChanged()
+            {
+                _fillSizeChanged[0] = _fillSizeChanged[1] = _fillSizeChanged[2] = false;
+                _shrinkSizeChanged[0] = _shrinkSizeChanged[1] = _shrinkSizeChanged[2] = false;
             }
 
             public void ResetShrinkFillSize()
@@ -884,6 +952,7 @@ namespace Flexalon
             public void SetShrinkSize(int axis, float size)
             {
                 FlexalonLog.Log("SetShrinkSize", this, axis, size);
+                _shrinkSizeChanged[axis] = _shrinkSizeChanged[axis] || (_result.ShrinkSize[axis] != size);
                 _result.ShrinkSize[axis] = size;
             }
 
@@ -897,14 +966,15 @@ namespace Flexalon
 
             public void SetShrinkFillSize(int axis, float childSize, float layoutSize, bool includesSizeOfParent)
             {
-                if (GetSizeType(axis) == SizeType.Fill)
+                if (AxisIsFill(this, axis))
                 {
                     var fillSize = includesSizeOfParent ?
                         (SizeOfParent[axis] > 0 ? childSize / SizeOfParent[axis] : 0) :
                         childSize;
                     SetFillSize(axis, fillSize);
                 }
-                else if (GetMinSizeType(axis) != MinMaxSizeType.None)
+
+                if (GetMinSizeType(axis) != MinMaxSizeType.None)
                 {
                     var measureSize = GetMeasureSize(axis, layoutSize);
                     if (measureSize > childSize)
@@ -930,7 +1000,7 @@ namespace Flexalon
                 if (newSize != _result.FillSize)
                 {
                     FlexalonLog.Log("UpdateRootFillSize", this, newSize);
-                    _result.FillSize = newSize;
+                    SetFillSize(newSize);
                     MarkDirty();
                 }
             }
@@ -948,7 +1018,7 @@ namespace Flexalon
 
             public SizeType GetSizeType(Axis axis)
             {
-                if (_flexalonObject)
+                if (HasFlexalonObject)
                 {
                     switch (axis)
                     {
@@ -973,7 +1043,7 @@ namespace Flexalon
 
             public MinMaxSizeType GetMinSizeType(Axis axis)
             {
-                if (_flexalonObject)
+                if (HasFlexalonObject)
                 {
                     switch (axis)
                     {
@@ -1000,7 +1070,7 @@ namespace Flexalon
             {
                 var margin = withMargin ? Margin.Size[(int)axis] : 0;
 
-                if (_flexalonObject)
+                if (HasFlexalonObject)
                 {
                     switch (GetMinSizeType(axis))
                     {
@@ -1035,7 +1105,7 @@ namespace Flexalon
 
             public MinMaxSizeType GetMaxSizeType(Axis axis)
             {
-                if (_flexalonObject)
+                if (HasFlexalonObject)
                 {
                     switch (axis)
                     {
@@ -1067,7 +1137,7 @@ namespace Flexalon
             {
                 var margin = withMargin ? Margin.Size[(int)axis] : 0;
 
-                if (_flexalonObject)
+                if (HasFlexalonObject)
                 {
                     switch (GetMaxSizeType(axis))
                     {
@@ -1134,6 +1204,7 @@ namespace Flexalon
 
             public void SetFlexalonObject(FlexalonObject obj)
             {
+                _hasFlexalonObject = obj != null;
                 _flexalonObject = obj;
             }
 
@@ -1263,12 +1334,12 @@ namespace Flexalon
 
             public Vector3 GetBoxScale()
             {
-                bool shouldScale = _adapter.TryGetScale(this, out var _);
+                bool shouldScale = Adapter.TryGetScale(this, out var _);
                 if (!shouldScale)
                 {
                     return GameObject.transform.localScale;
                 }
-                else if (_flexalonObject)
+                else if (HasFlexalonObject)
                 {
                     // FlexalonObject size/scale always applies, even without a layout.
                     return _flexalonObject.Scale;
@@ -1288,7 +1359,7 @@ namespace Flexalon
                 // FlexalonObject rotation only takes effect if there's a layout.
                 if (_parent != null || _dependency != null)
                 {
-                    return _flexalonObject?.Rotation ?? Quaternion.identity;
+                    return HasFlexalonObject ? _flexalonObject.Rotation : Quaternion.identity;
                 }
                 else
                 {
@@ -1306,7 +1377,7 @@ namespace Flexalon
                     node = node._parent;
                 }
 
-                if (node.Constraint == null && node.GameObject.transform.parent != null)
+                if (node.GameObject.transform.parent != null)
                 {
                     scale.Scale(node.GameObject.transform.parent.lossyScale);
                 }
@@ -1360,27 +1431,15 @@ namespace Flexalon
 
             public void SetAdapter(Adapter adapter)
             {
-                if (_adapter != adapter)
-                {
-                    _adapter = adapter;
-
-                    if (_adapter == null)
-                    {
-                        _adapter = new DefaultAdapter(GameObject);
-                        _customAdapter = false;
-                    }
-                    else
-                    {
-                        _customAdapter = true;
-                    }
-                }
+                _adapter = adapter;
+                _customAdapter = (_adapter != null);
             }
 
             public void CheckDefaultAdapter()
             {
                 if (!_customAdapter)
                 {
-                    if ((_adapter as DefaultAdapter).CheckComponent(GameObject))
+                    if ((Adapter as DefaultAdapter).CheckComponent(GameObject))
                     {
                         MarkDirty();
                     }

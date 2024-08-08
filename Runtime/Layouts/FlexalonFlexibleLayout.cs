@@ -168,7 +168,7 @@ namespace Flexalon
         private List<Line> _lines = new List<Line>();
         private List<FlexItem> _flexItems = new List<FlexItem>();
 
-        private void CreateLines(FlexalonNode node, int flexAxis, int wrapAxis, int thirdAxis, bool wrap, Vector3 size, bool measure)
+        private void CreateLines(FlexalonNode node, int flexAxis, int wrapAxis, int thirdAxis, bool wrap, Vector3 size, float maxLineSize, bool measure)
         {
             _lines.Clear();
             if (node.Children.Count == 0)
@@ -186,7 +186,7 @@ namespace Flexalon
                 var gap = (addGap && _gapType == GapOptions.Fixed ? _gap : 0);
                 var childSize = measure ? child.GetMeasureSize(size) : child.GetArrangeSize();
                 if (line.ChildSizes.Count > 0 && wrap &&
-                    line.Size[flexAxis] + childSize[flexAxis] + gap > size[flexAxis])
+                    line.Size[flexAxis] + childSize[flexAxis] + gap > maxLineSize)
                 {
                     line = new Line();
                     _lines.Add(line);
@@ -388,14 +388,15 @@ namespace Flexalon
             }
 
             var thirdAxis = (wrapAxis == otherAxes.Item1 ? otherAxes.Item2 : otherAxes.Item1);
-            bool wrap = !childrenSizeFlexAxis && (flexAxis != wrapAxis) && _wrap;
+            bool wrap = (flexAxis != wrapAxis) && _wrap;
+            var maxLineSize = childrenSizeFlexAxis ? max[flexAxis] : size[flexAxis];
 
             FlexalonLog.Log("FlexMeasure | Flex Axis", node,  flexAxis);
             FlexalonLog.Log("FlexMeasure | Wrap Axis", node,  wrapAxis);
             FlexalonLog.Log("FlexMeasure | Third Axis", node,  thirdAxis);
             FlexalonLog.Log("FlexMeasure | Wrap", node, wrap);
 
-            CreateLines(node, flexAxis, wrapAxis, thirdAxis, wrap, size, true);
+            CreateLines(node, flexAxis, wrapAxis, thirdAxis, wrap, size, maxLineSize, true);
             for (int i = 0; i < _lines.Count; i++)
             {
                 FlexalonLog.Log("FlexMeasure | Line size " + i + " " + _lines[i].Size);
@@ -425,7 +426,7 @@ namespace Flexalon
             }
 
             var thirdAxis = (wrapAxis == otherAxes.Item1 ? otherAxes.Item2 : otherAxes.Item1);
-            bool wrap = !childrenSizeFlexAxis && (flexAxis != wrapAxis) && _wrap;
+            bool wrap = (flexAxis != wrapAxis) && _wrap;
             var flexDirection = Math.GetPositiveFromDirection(_direction);
             var wrapDirection = Math.GetPositiveFromDirection(_wrapDirection);
             var align = new Align[] { _horizontalAlign, _verticalAlign, _depthAlign };
@@ -436,7 +437,7 @@ namespace Flexalon
             FlexalonLog.Log("FlexArrange | Third Axis", node, thirdAxis);
             FlexalonLog.Log("FlexArrange | Wrap", node, wrap);
 
-            CreateLines(node, flexAxis, wrapAxis, thirdAxis, wrap, layoutSize, false);
+            CreateLines(node, flexAxis, wrapAxis, thirdAxis, wrap, layoutSize, layoutSize[flexAxis], false);
 
             // Position children within _lines. Consider: line size, child size, flexInnerAlign
             {

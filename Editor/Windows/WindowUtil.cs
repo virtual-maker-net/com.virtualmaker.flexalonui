@@ -43,17 +43,6 @@ namespace Flexalon.Editor
             return _version;
         }
 
-        public static void DrawFlexalonIcon(float width)
-        {
-            if (!_flexalonIcon)
-            {
-                var flexalonIconPath = AssetDatabase.GUIDToAssetPath("d0d1cda04ee3f144abf998efbfdfb8dc");
-                _flexalonIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(flexalonIconPath);
-            }
-
-            GUILayout.Label(_flexalonIcon, GUILayout.Width(width), GUILayout.Height(width * 0.361f));
-        }
-
         public static bool DrawProximaButton(float width, GUIStyle style)
         {
             if (!_proximaIcon)

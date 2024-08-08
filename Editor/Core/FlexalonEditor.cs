@@ -8,6 +8,7 @@ namespace Flexalon.Editor
     {
         private SerializedProperty _updateInEditMode;
         private SerializedProperty _updateInPlayMode;
+        private SerializedProperty _skipInactiveObjects;
         private SerializedProperty _inputProvider;
 
         public static void Create()
@@ -22,6 +23,7 @@ namespace Flexalon.Editor
         {
             _updateInEditMode = serializedObject.FindProperty("_updateInEditMode");
             _updateInPlayMode = serializedObject.FindProperty("_updateInPlayMode");
+            _skipInactiveObjects = serializedObject.FindProperty("_skipInactiveObjects");
             _inputProvider = serializedObject.FindProperty("_inputProvider");
         }
 
@@ -53,6 +55,7 @@ namespace Flexalon.Editor
 
             EditorGUILayout.PropertyField(_updateInEditMode);
             EditorGUILayout.PropertyField(_updateInPlayMode);
+            EditorGUILayout.PropertyField(_skipInactiveObjects);
             EditorGUILayout.PropertyField(_inputProvider);
 
             if (serializedObject.ApplyModifiedProperties())

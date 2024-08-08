@@ -1,5 +1,26 @@
 # Changelog
 
+## Version 4.2.0
+
+### Features
+
+- New option `Flexalon.SkipInactiveObjects` will cause all inactive gameObjects in the scene to be skipped in layouts. This is the same as enabling FlexalonObject.SkipLayout on individual objects. This option is enabled by default.
+- Adding max size to a FlexalonFlexibleLayout can now cause it to wrap.
+
+### Fixes
+
+- Performance: Avoid third layout pass when possible when using Fill size type on children.
+- Performance: Make Directions struct immutable.
+- Performance: Improve how Flexalon checks for the existance of FlexalonObject.
+- Performance: Reduce garbage collection allocations by replacing foreach loops with for loops.
+- Interactable: Fix how overlaps are calculated for drag targets with a non-center RectTransform pivot.
+- Fix SkipLayout not working correctly for children in a FlexalonGridLayout.
+- Fix TextMeshPro adapters not loading in Unity 2022.3 and Unity 6.
+- Fix Flexalon adapters not working when a new gameObject is added to a layout in a script before another component is added like a mesh, image, or text.
+- Fix how FlexalonConstraint computes fill sizes when the target is scaled.
+- Fix max fill size not working on root layouts with RectTransform parents.
+- Fix Unity 6 deprecation warnings.
+
 ## Version 4.1.2
 
 - Ensure FlexalonObject parameters are read even if the gameObject is inactive.

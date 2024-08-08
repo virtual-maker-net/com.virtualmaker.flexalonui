@@ -295,15 +295,16 @@ namespace Flexalon
             _childToCell.Clear();
 
             Vector3Int nextCell = Vector3Int.zero;
-            for (int i = 0; i < transform.childCount; i++)
+            foreach (var child in Node.Children)
             {
-                if (transform.GetChild(i).TryGetComponent<FlexalonGridCell>(out var cellComponent))
+                var childTransform = child.GameObject.transform;
+                if (child.GameObject.TryGetComponent<FlexalonGridCell>(out var cellComponent))
                 {
-                    SetCell(cellComponent.Cell, transform.GetChild(i));
+                    SetCell(cellComponent.Cell, childTransform);
                 }
                 else
                 {
-                    SetCell(nextCell, transform.GetChild(i));
+                    SetCell(nextCell, childTransform);
                     nextCell[0]++;
                     if (nextCell[0] >= _columns)
                     {

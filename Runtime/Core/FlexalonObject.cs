@@ -511,12 +511,12 @@ namespace Flexalon
                 _marginRight, _marginLeft, _marginTop, _marginBottom, _marginBack, _marginFront});
             set
             {
-                _marginRight = value.Values[0];
-                _marginLeft = value.Values[1];
-                _marginTop = value.Values[2];
-                _marginBottom = value.Values[3];
-                _marginBack = value.Values[4];
-                _marginFront = value.Values[5];
+                _marginRight = value[0];
+                _marginLeft = value[1];
+                _marginTop = value[2];
+                _marginBottom = value[3];
+                _marginBack = value[4];
+                _marginFront = value[5];
                 MarkDirty();
             }
         }
@@ -582,12 +582,12 @@ namespace Flexalon
                 _paddingRight, _paddingLeft, _paddingTop, _paddingBottom, _paddingBack, _paddingFront});
             set
             {
-                _paddingRight = value.Values[0];
-                _paddingLeft = value.Values[1];
-                _paddingTop = value.Values[2];
-                _paddingBottom = value.Values[3];
-                _paddingBack = value.Values[4];
-                _paddingFront = value.Values[5];
+                _paddingRight = value[0];
+                _paddingLeft = value[1];
+                _paddingTop = value[2];
+                _paddingBottom = value[3];
+                _paddingBack = value[4];
+                _paddingFront = value[5];
                 MarkDirty();
             }
         }

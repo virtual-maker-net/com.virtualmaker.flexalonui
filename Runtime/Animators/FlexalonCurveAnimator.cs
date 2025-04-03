@@ -13,6 +13,7 @@ namespace Flexalon
         private FlexalonNode _node;
         private RectTransform _rectTransform;
 
+        [SerializeField]
         private bool _animateInWorldSpace = true;
         /// <summary> Determines if the animation should be performed in world space. </summary>
         public bool AnimateInWorldSpace

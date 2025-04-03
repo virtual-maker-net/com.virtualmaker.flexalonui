@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Flexalon
@@ -9,6 +8,9 @@ namespace Flexalon
     /// </summary>
     [ExecuteAlways, DisallowMultipleComponent]
     public class FlexalonResult : MonoBehaviour
+#if UNITY_UI
+        , UnityEngine.UI.ILayoutSelfController
+#endif
     {
         /// <summary> Parent layout </summary>
         public Transform Parent;
@@ -68,5 +70,34 @@ namespace Flexalon
         {
             hideFlags = HideFlags.HideInInspector;
         }
-    };
+
+#if UNITY_UI
+        private FlexalonNode _node;
+
+        // This gets called when a UGUI component like TextMeshPro changes.
+        // This allows us to detect the changes and mark the layout as dirty.
+        // This gets called during Canvas.willUpdateCanvases, which is after LateUpdate,
+        // so we also register Flexalon for rebuild so that it can process the update without
+        // waiting for the next frame.
+        public void SetLayoutHorizontal()
+        {
+            var flexalon = Flexalon.Get();
+            if (flexalon != null)
+            {
+                if (_node == null)
+                {
+                    _node = Flexalon.GetNode(gameObject);
+                }
+
+                if (_node != null)
+                {
+                    _node.MarkDirty();
+                    UnityEngine.UI.CanvasUpdateRegistry.RegisterCanvasElementForLayoutRebuild(flexalon);
+                }
+            }
+        }
+
+        public void SetLayoutVertical() {}
+#endif
+    }
 }

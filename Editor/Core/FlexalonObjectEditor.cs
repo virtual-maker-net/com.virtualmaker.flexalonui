@@ -49,6 +49,7 @@ namespace Flexalon.Editor
         private SerializedProperty _paddingFront;
         private SerializedProperty _paddingBack;
         private SerializedProperty _skipLayout;
+        private SerializedProperty _useDefaultAdapter;
 
         private static readonly int ValueWidth = 50;
 
@@ -103,6 +104,7 @@ namespace Flexalon.Editor
             _paddingFront = serializedObject.FindProperty("_paddingFront");
             _paddingBack = serializedObject.FindProperty("_paddingBack");
             _skipLayout = serializedObject.FindProperty("_skipLayout");
+            _useDefaultAdapter = serializedObject.FindProperty("_useDefaultAdapter");
 
             _sizeFoldout = EditorPrefs.GetBool("FlexalonSizeFoldout", true);
             _minMaxFoldout = EditorPrefs.GetBool("FlexalonMinMaxFoldout", false);
@@ -183,6 +185,7 @@ namespace Flexalon.Editor
             EditorGUILayout.EndFoldoutHeaderGroup();
 
             EditorGUILayout.PropertyField(_skipLayout);
+            EditorGUILayout.PropertyField(_useDefaultAdapter);
 
             ApplyModifiedProperties();
         }

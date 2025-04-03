@@ -249,6 +249,30 @@ namespace Flexalon
             return a;
         }
 
+        /// <summary> Divides each component of two vectors. If b is zero, returns 1. </summary>
+        /// <param name="a"> The divided vector. </param>
+        /// <param name="b"> The divisor vector. </param>
+        /// <returns> The divided vector. </returns>
+        public static Vector3 SafeDivOne(Vector3 a, Vector3 b)
+        {
+            a.x = b.x == 0 ? 1 : a.x / b.x;
+            a.y = b.y == 0 ? 1 : a.y / b.y;
+            a.z = b.z == 0 ? 1 : a.z / b.z;
+            return a;
+        }
+
+        /// <summary> Divides each component of two vectors. If b is zero, returns 1. </summary>
+        /// <param name="a"> The divided vector. </param>
+        /// <param name="b"> The divisor vector. </param>
+        /// <returns> The divided vector. </returns>
+        public static Vector3 SafeDivZero(Vector3 a, Vector3 b)
+        {
+            a.x = b.x == 0 ? 0 : a.x / b.x;
+            a.y = b.y == 0 ? 0 : a.y / b.y;
+            a.z = b.z == 0 ? 0 : a.z / b.z;
+            return a;
+        }
+
         /// <summary> Rotates a bounds around the origin and returns a new bounds
         /// that encapsulates all of the rotated corners. </summary>
         /// <param name="bounds"> The bounds to rotate. </param>

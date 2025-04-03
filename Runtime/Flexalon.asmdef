@@ -40,6 +40,11 @@
             "define": "UNITY_XRI"
         },
         {
+            "name": "com.unity.xr.interaction.toolkit",
+            "expression": "3.0.0",
+            "define": "UNITY_XRI_3"
+        },
+        {
             "name": "com.unity.modules.ui",
             "expression": "",
             "define": "UNITY_UI"

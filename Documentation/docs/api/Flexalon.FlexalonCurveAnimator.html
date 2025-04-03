@@ -91,11 +91,7 @@ This is ideal for scenarios in which the layout position does not change often.<
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">object</span></div>
-    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
-    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
-    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
-    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
-    <div class="level5"><span class="xref">FlexalonCurveAnimator</span></div>
+    <div class="level1"><span class="xref">FlexalonCurveAnimator</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -103,9 +99,7 @@ This is ideal for scenarios in which the layout position does not change often.<
   </div>
   <h5 id="Flexalon_FlexalonCurveAnimator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;Flexalon/Flexalon Curve Animator&quot;)]
-[HelpURL(&quot;https://www.flexalon.com/docs/animators&quot;)]
-public class FlexalonCurveAnimator : MonoBehaviour, TransformUpdater</code></pre>
+    <pre><code class="lang-csharp hljs">public class FlexalonCurveAnimator : MonoBehaviour, TransformUpdater</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
@@ -224,7 +218,7 @@ public class FlexalonCurveAnimator : MonoBehaviour, TransformUpdater</code></pre
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.AnimationCurve</span></td>
+        <td><span class="xref">AnimationCurve</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -260,7 +254,7 @@ Use this to capture the transform position.</p>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveAnimator_UpdatePosition_" data-uid="Flexalon.FlexalonCurveAnimator.UpdatePosition*"></a>
-  <h4 id="Flexalon_FlexalonCurveAnimator_UpdatePosition_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveAnimator.UpdatePosition(Flexalon.FlexalonNode,UnityEngine.Vector3)">UpdatePosition(FlexalonNode, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCurveAnimator_UpdatePosition_Flexalon_FlexalonNode_Vector3_" data-uid="Flexalon.FlexalonCurveAnimator.UpdatePosition(Flexalon.FlexalonNode,Vector3)">UpdatePosition(FlexalonNode, Vector3)</h4>
   <div class="markdown level1 summary"><p>Called to update the position of the object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -285,7 +279,7 @@ Use this to capture the transform position.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">position</span></td>
         <td><p>The computed local position of the object.</p>
 </td>
@@ -308,7 +302,7 @@ Use this to capture the transform position.</p>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveAnimator_UpdateRectSize_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateRectSize*"></a>
-  <h4 id="Flexalon_FlexalonCurveAnimator_UpdateRectSize_Flexalon_FlexalonNode_UnityEngine_Vector2_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateRectSize(Flexalon.FlexalonNode,UnityEngine.Vector2)">UpdateRectSize(FlexalonNode, Vector2)</h4>
+  <h4 id="Flexalon_FlexalonCurveAnimator_UpdateRectSize_Flexalon_FlexalonNode_Vector2_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateRectSize(Flexalon.FlexalonNode,Vector2)">UpdateRectSize(FlexalonNode, Vector2)</h4>
   <div class="markdown level1 summary"><p>Called to update the rect of the object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -333,7 +327,7 @@ Use this to capture the transform position.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector2</span></td>
+        <td><span class="xref">Vector2</span></td>
         <td><span class="parametername">size</span></td>
         <td></td>
       </tr>
@@ -355,7 +349,7 @@ Use this to capture the transform position.</p>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveAnimator_UpdateRotation_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateRotation*"></a>
-  <h4 id="Flexalon_FlexalonCurveAnimator_UpdateRotation_Flexalon_FlexalonNode_UnityEngine_Quaternion_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateRotation(Flexalon.FlexalonNode,UnityEngine.Quaternion)">UpdateRotation(FlexalonNode, Quaternion)</h4>
+  <h4 id="Flexalon_FlexalonCurveAnimator_UpdateRotation_Flexalon_FlexalonNode_Quaternion_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateRotation(Flexalon.FlexalonNode,Quaternion)">UpdateRotation(FlexalonNode, Quaternion)</h4>
   <div class="markdown level1 summary"><p>Called to update the rotation of the object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -380,7 +374,7 @@ Use this to capture the transform position.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Quaternion</span></td>
+        <td><span class="xref">Quaternion</span></td>
         <td><span class="parametername">rotation</span></td>
         <td><p>The computed local rotation of the object.</p>
 </td>
@@ -403,7 +397,7 @@ Use this to capture the transform position.</p>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveAnimator_UpdateScale_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateScale*"></a>
-  <h4 id="Flexalon_FlexalonCurveAnimator_UpdateScale_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateScale(Flexalon.FlexalonNode,UnityEngine.Vector3)">UpdateScale(FlexalonNode, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCurveAnimator_UpdateScale_Flexalon_FlexalonNode_Vector3_" data-uid="Flexalon.FlexalonCurveAnimator.UpdateScale(Flexalon.FlexalonNode,Vector3)">UpdateScale(FlexalonNode, Vector3)</h4>
   <div class="markdown level1 summary"><p>Called to update the scale of the object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -428,7 +422,7 @@ Use this to capture the transform position.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">scale</span></td>
         <td><p>The computed local scale of the object.</p>
 </td>

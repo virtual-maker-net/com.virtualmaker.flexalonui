@@ -92,13 +92,9 @@ editing the Offset, Rotation, Size, and Scale properties on that child's Flexalo
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">object</span></div>
-    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
-    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
-    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
-    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
-    <div class="level5"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
-    <div class="level6"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
-    <div class="level7"><span class="xref">FlexalonAlignLayout</span></div>
+    <div class="level1"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
+    <div class="level2"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
+    <div class="level3"><span class="xref">FlexalonAlignLayout</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -119,7 +115,7 @@ editing the Offset, Rotation, Size, and Scale properties on that child's Flexalo
       <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Initialize">LayoutBase.Initialize()</a>
     </div>
     <div>
-      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_SetChildrenFillShrinkSize_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_">LayoutBase.SetChildrenFillShrinkSize(FlexalonNode, Vector3, Vector3)</a>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_SetChildrenFillShrinkSize_Flexalon_FlexalonNode_Vector3_Vector3_">LayoutBase.SetChildrenFillShrinkSize(FlexalonNode, Vector3, Vector3)</a>
     </div>
     <div>
       <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent__node">FlexalonComponent._node</a>
@@ -145,9 +141,7 @@ editing the Offset, Rotation, Size, and Scale properties on that child's Flexalo
   </div>
   <h5 id="Flexalon_FlexalonAlignLayout_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;Flexalon/Flexalon Align Layout&quot;)]
-[HelpURL(&quot;https://www.flexalon.com/docs/alignLayout&quot;)]
-public class FlexalonAlignLayout : LayoutBase, Layout</code></pre>
+    <pre><code class="lang-csharp hljs">public class FlexalonAlignLayout : LayoutBase, Layout</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
@@ -298,7 +292,7 @@ public class FlexalonAlignLayout : LayoutBase, Layout</code></pre>
   <h3 id="methods">Methods
 </h3>
   <a id="Flexalon_FlexalonAlignLayout_Arrange_" data-uid="Flexalon.FlexalonAlignLayout.Arrange*"></a>
-  <h4 id="Flexalon_FlexalonAlignLayout_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonAlignLayout.Arrange(Flexalon.FlexalonNode,UnityEngine.Vector3)">Arrange(FlexalonNode, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonAlignLayout_Arrange_Flexalon_FlexalonNode_Vector3_" data-uid="Flexalon.FlexalonAlignLayout.Arrange(Flexalon.FlexalonNode,Vector3)">Arrange(FlexalonNode, Vector3)</h4>
   <div class="markdown level1 summary"><p>Position the children of node within the available bounds.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -322,16 +316,16 @@ public class FlexalonAlignLayout : LayoutBase, Layout</code></pre>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">size</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_">LayoutBase.Arrange(FlexalonNode, Vector3)</a></div>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Arrange_Flexalon_FlexalonNode_Vector3_">LayoutBase.Arrange(FlexalonNode, Vector3)</a></div>
   <a id="Flexalon_FlexalonAlignLayout_Measure_" data-uid="Flexalon.FlexalonAlignLayout.Measure*"></a>
-  <h4 id="Flexalon_FlexalonAlignLayout_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonAlignLayout.Measure(Flexalon.FlexalonNode,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">Measure(FlexalonNode, Vector3, Vector3, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonAlignLayout_Measure_Flexalon_FlexalonNode_Vector3_Vector3_Vector3_" data-uid="Flexalon.FlexalonAlignLayout.Measure(Flexalon.FlexalonNode,Vector3,Vector3,Vector3)">Measure(FlexalonNode, Vector3, Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Perform minimal work to determine what the size of node and available size for node's children.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -355,17 +349,17 @@ public class FlexalonAlignLayout : LayoutBase, Layout</code></pre>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">size</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">min</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">max</span></td>
         <td></td>
       </tr>
@@ -381,13 +375,13 @@ public class FlexalonAlignLayout : LayoutBase, Layout</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Bounds</span></td>
+        <td><span class="xref">Bounds</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_">LayoutBase.Measure(FlexalonNode, Vector3, Vector3, Vector3)</a></div>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Measure_Flexalon_FlexalonNode_Vector3_Vector3_Vector3_">LayoutBase.Measure(FlexalonNode, Vector3, Vector3, Vector3)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Flexalon.Layout.html">Layout</a>

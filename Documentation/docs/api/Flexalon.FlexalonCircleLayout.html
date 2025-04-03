@@ -89,13 +89,9 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">object</span></div>
-    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
-    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
-    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
-    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
-    <div class="level5"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
-    <div class="level6"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
-    <div class="level7"><span class="xref">FlexalonCircleLayout</span></div>
+    <div class="level1"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
+    <div class="level2"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
+    <div class="level3"><span class="xref">FlexalonCircleLayout</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -113,7 +109,7 @@
       <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_ResetProperties">LayoutBase.ResetProperties()</a>
     </div>
     <div>
-      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_SetChildrenFillShrinkSize_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_">LayoutBase.SetChildrenFillShrinkSize(FlexalonNode, Vector3, Vector3)</a>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_SetChildrenFillShrinkSize_Flexalon_FlexalonNode_Vector3_Vector3_">LayoutBase.SetChildrenFillShrinkSize(FlexalonNode, Vector3, Vector3)</a>
     </div>
     <div>
       <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent__node">FlexalonComponent._node</a>
@@ -136,9 +132,7 @@
   </div>
   <h5 id="Flexalon_FlexalonCircleLayout_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;Flexalon/Flexalon Circle Layout&quot;)]
-[HelpURL(&quot;https://www.flexalon.com/docs/circleLayout&quot;)]
-public class FlexalonCircleLayout : LayoutBase, Layout</code></pre>
+    <pre><code class="lang-csharp hljs">public class FlexalonCircleLayout : LayoutBase, Layout</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
@@ -435,7 +429,7 @@ Start At Degrees value will add an offset all children around the circle.</p>
   <h3 id="methods">Methods
 </h3>
   <a id="Flexalon_FlexalonCircleLayout_Arrange_" data-uid="Flexalon.FlexalonCircleLayout.Arrange*"></a>
-  <h4 id="Flexalon_FlexalonCircleLayout_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCircleLayout.Arrange(Flexalon.FlexalonNode,UnityEngine.Vector3)">Arrange(FlexalonNode, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCircleLayout_Arrange_Flexalon_FlexalonNode_Vector3_" data-uid="Flexalon.FlexalonCircleLayout.Arrange(Flexalon.FlexalonNode,Vector3)">Arrange(FlexalonNode, Vector3)</h4>
   <div class="markdown level1 summary"><p>Position the children of node within the available bounds.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -459,14 +453,14 @@ Start At Degrees value will add an offset all children around the circle.</p>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">layoutSize</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_">LayoutBase.Arrange(FlexalonNode, Vector3)</a></div>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Arrange_Flexalon_FlexalonNode_Vector3_">LayoutBase.Arrange(FlexalonNode, Vector3)</a></div>
   <a id="Flexalon_FlexalonCircleLayout_Initialize_" data-uid="Flexalon.FlexalonCircleLayout.Initialize*"></a>
   <h4 id="Flexalon_FlexalonCircleLayout_Initialize" data-uid="Flexalon.FlexalonCircleLayout.Initialize">Initialize()</h4>
   <div class="markdown level1 summary"></div>
@@ -478,7 +472,7 @@ Start At Degrees value will add an offset all children around the circle.</p>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Initialize">LayoutBase.Initialize()</a></div>
   <a id="Flexalon_FlexalonCircleLayout_Measure_" data-uid="Flexalon.FlexalonCircleLayout.Measure*"></a>
-  <h4 id="Flexalon_FlexalonCircleLayout_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCircleLayout.Measure(Flexalon.FlexalonNode,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">Measure(FlexalonNode, Vector3, Vector3, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCircleLayout_Measure_Flexalon_FlexalonNode_Vector3_Vector3_Vector3_" data-uid="Flexalon.FlexalonCircleLayout.Measure(Flexalon.FlexalonNode,Vector3,Vector3,Vector3)">Measure(FlexalonNode, Vector3, Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Perform minimal work to determine what the size of node and available size for node's children.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -502,17 +496,17 @@ Start At Degrees value will add an offset all children around the circle.</p>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">size</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">min</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">max</span></td>
         <td></td>
       </tr>
@@ -528,13 +522,13 @@ Start At Degrees value will add an offset all children around the circle.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Bounds</span></td>
+        <td><span class="xref">Bounds</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_">LayoutBase.Measure(FlexalonNode, Vector3, Vector3, Vector3)</a></div>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Measure_Flexalon_FlexalonNode_Vector3_Vector3_Vector3_">LayoutBase.Measure(FlexalonNode, Vector3, Vector3, Vector3)</a></div>
   <a id="Flexalon_FlexalonCircleLayout_ShrinkFillChildrenToCircleHeight_" data-uid="Flexalon.FlexalonCircleLayout.ShrinkFillChildrenToCircleHeight*"></a>
   <h4 id="Flexalon_FlexalonCircleLayout_ShrinkFillChildrenToCircleHeight_Flexalon_FlexalonNode_System_Single_System_Int32_" data-uid="Flexalon.FlexalonCircleLayout.ShrinkFillChildrenToCircleHeight(Flexalon.FlexalonNode,System.Single,System.Int32)">ShrinkFillChildrenToCircleHeight(FlexalonNode, float, int)</h4>
   <div class="markdown level1 summary"></div>
@@ -571,7 +565,7 @@ Start At Degrees value will add an offset all children around the circle.</p>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCircleLayout_ShrinkFillChildrenToDiameter_" data-uid="Flexalon.FlexalonCircleLayout.ShrinkFillChildrenToDiameter*"></a>
-  <h4 id="Flexalon_FlexalonCircleLayout_ShrinkFillChildrenToDiameter_Flexalon_FlexalonNode_System_Single_System_Int32_System_Int32_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCircleLayout.ShrinkFillChildrenToDiameter(Flexalon.FlexalonNode,System.Single,System.Int32,System.Int32,UnityEngine.Vector3)">ShrinkFillChildrenToDiameter(FlexalonNode, float, int, int, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCircleLayout_ShrinkFillChildrenToDiameter_Flexalon_FlexalonNode_System_Single_System_Int32_System_Int32_Vector3_" data-uid="Flexalon.FlexalonCircleLayout.ShrinkFillChildrenToDiameter(Flexalon.FlexalonNode,System.Single,System.Int32,System.Int32,Vector3)">ShrinkFillChildrenToDiameter(FlexalonNode, float, int, int, Vector3)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -609,7 +603,7 @@ Start At Degrees value will add an offset all children around the circle.</p>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">size</span></td>
         <td></td>
       </tr>

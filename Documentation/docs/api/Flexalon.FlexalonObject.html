@@ -90,12 +90,8 @@ component to it and edit the width, height, or depth properties.</p>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">object</span></div>
-    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
-    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
-    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
-    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
-    <div class="level5"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
-    <div class="level6"><span class="xref">FlexalonObject</span></div>
+    <div class="level1"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
+    <div class="level2"><span class="xref">FlexalonObject</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -123,10 +119,7 @@ component to it and edit the width, height, or depth properties.</p>
   </div>
   <h5 id="Flexalon_FlexalonObject_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[DisallowMultipleComponent]
-[AddComponentMenu(&quot;Flexalon/Flexalon Object&quot;)]
-[HelpURL(&quot;https://www.flexalon.com/docs/flexalonObject&quot;)]
-public class FlexalonObject : FlexalonComponent</code></pre>
+    <pre><code class="lang-csharp hljs">public class FlexalonObject : FlexalonComponent</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
@@ -605,7 +598,7 @@ public class FlexalonObject : FlexalonComponent</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -629,7 +622,7 @@ public class FlexalonObject : FlexalonComponent</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -869,7 +862,7 @@ public class FlexalonObject : FlexalonComponent</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -893,7 +886,7 @@ public class FlexalonObject : FlexalonComponent</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -989,7 +982,7 @@ public class FlexalonObject : FlexalonComponent</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1182,7 +1175,7 @@ This will generate a new size to encapsulate the rotated object.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Quaternion</span></td>
+        <td><span class="xref">Quaternion</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1207,7 +1200,7 @@ This will generate a new size to encapsulate the scaled object.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1231,7 +1224,7 @@ This will generate a new size to encapsulate the scaled object.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1255,7 +1248,7 @@ This will generate a new size to encapsulate the scaled object.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1268,6 +1261,33 @@ This will generate a new size to encapsulate the scaled object.</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool SkipLayout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">bool</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Flexalon_FlexalonObject_UseDefaultAdapter_" data-uid="Flexalon.FlexalonObject.UseDefaultAdapter*"></a>
+  <h4 id="Flexalon_FlexalonObject_UseDefaultAdapter" data-uid="Flexalon.FlexalonObject.UseDefaultAdapter">UseDefaultAdapter</h4>
+  <div class="markdown level1 summary"><p>The 'adapter' on a Flexalon Object is used to control how the object is measured and scaled.
+If you don't supply a custom adapter, then Flexalon will use a default adapter for common
+Unity components like MeshRenderer, TextMeshPro, etc. Use this property to disable that adapter
+and treat this Flexalon Object as an empty gameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseDefaultAdapter { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">

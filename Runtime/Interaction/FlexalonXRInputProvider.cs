@@ -1,7 +1,12 @@
 #if UNITY_XRI
 
 using UnityEngine;
+
+#if UNITY_XRI_3
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+#else
 using UnityEngine.XR.Interaction.Toolkit;
+#endif
 
 namespace Flexalon
 {

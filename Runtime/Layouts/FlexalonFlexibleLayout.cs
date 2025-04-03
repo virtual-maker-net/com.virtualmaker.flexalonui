@@ -195,8 +195,8 @@ namespace Flexalon
                     i++;
                 }
 
-                FlexalonLog.Log("FlexMeasure | Add child to line", child, i);
-                FlexalonLog.Log("FlexMeasure | Child Size", child, childSize);
+                FlexalonLog.Log("Flex | Add child to line", child, i);
+                FlexalonLog.Log("Flex | Child Size", child, childSize);
                 line.ChildSizes.Add(childSize);
                 line.Size[flexAxis] += childSize[flexAxis] + gap;
                 line.Size[wrapAxis] = Mathf.Max(line.Size[wrapAxis], childSize[wrapAxis]);
@@ -267,12 +267,6 @@ namespace Flexalon
 
             foreach (var line in _lines)
             {
-                var remainingSpace = size - line.Size[flexAxis];
-                if (Mathf.Abs(remainingSpace) <= 1e-6f)
-                {
-                    continue;
-                }
-
                 _flexItems.Clear();
                 for (int i = 0; i < line.Children.Count; i++)
                 {
@@ -375,7 +369,7 @@ namespace Flexalon
         /// <inheritdoc />
         public override Bounds Measure(FlexalonNode node, Vector3 size, Vector3 min, Vector3 max)
         {
-            FlexalonLog.Log("FlexMeasure | Size", node, size);
+            FlexalonLog.Log("FlexMeasure", node, size, min, max);
 
             // Gather useful data
             var flexAxis = (int) Math.GetAxisFromDirection(_direction);
@@ -437,7 +431,7 @@ namespace Flexalon
             FlexalonLog.Log("FlexArrange | Third Axis", node, thirdAxis);
             FlexalonLog.Log("FlexArrange | Wrap", node, wrap);
 
-            CreateLines(node, flexAxis, wrapAxis, thirdAxis, wrap, layoutSize, layoutSize[flexAxis], false);
+            CreateLines(node, flexAxis, wrapAxis, thirdAxis, wrap, layoutSize, layoutSize[flexAxis] + 1e-4f, false);
 
             // Position children within _lines. Consider: line size, child size, flexInnerAlign
             {

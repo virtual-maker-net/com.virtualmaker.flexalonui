@@ -605,6 +605,24 @@ namespace Flexalon
             }
         }
 
+        [SerializeField]
+        private bool _useDefaultAdapter = true;
+        /// <summary>
+        /// The 'adapter' on a Flexalon Object is used to control how the object is measured and scaled.
+        /// If you don't supply a custom adapter, then Flexalon will use a default adapter for common
+        /// Unity components like MeshRenderer, TextMeshPro, etc. Use this property to disable that adapter
+        /// and treat this Flexalon Object as an empty gameObject.
+        /// </summary>
+        public bool UseDefaultAdapter
+        {
+            get => _useDefaultAdapter;
+            set
+            {
+                _useDefaultAdapter = value;
+                MarkDirty();
+            }
+        }
+
         /// <inheritdoc />
         protected override void ResetProperties()
         {

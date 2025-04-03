@@ -9,6 +9,9 @@ namespace Flexalon
     /// </summary>
     [ExecuteAlways, HelpURL("https://www.flexalon.com/docs/coreConcepts")]
     public class Flexalon : MonoBehaviour
+#if UNITY_UI
+    , UnityEngine.UI.ICanvasElement
+#endif
     {
         [SerializeField]
         private bool _updateInEditMode = true;
@@ -396,26 +399,26 @@ namespace Flexalon
             }
         }
 
+#if UNITY_EDITOR
         void OnEnable()
         {
-#if UNITY_EDITOR
             if (_instance == this)
             {
                 UnityEditor.Undo.undoRedoPerformed += OnUndoRedo;
             }
-#endif
         }
+#endif
 
+#if UNITY_EDITOR
         void OnDisable()
         {
-#if UNITY_EDITOR
             if (_instance == this)
             {
                 UnityEditor.Undo.undoRedoPerformed -= OnUndoRedo;
             }
-#endif
         }
 
+#endif
         void OnDestroy()
         {
             if (_instance == this)
@@ -554,7 +557,7 @@ namespace Flexalon
             // Assume empty fill size for now just to gather fixed and component values.
             foreach (var child in node._children)
             {
-                bool isShrunk = child.IsShrunk();
+                bool wasShrunk = child.IsShrunk();
                 child.ResetShrinkFillSize();
                 child.ResetFillShrinkChanged();
 
@@ -562,7 +565,7 @@ namespace Flexalon
                 {
                     MeasureChild(child, false);
                 }
-                else if (child.Dirty || !child.HasResult || isShrunk)
+                else if (child.Dirty || !child.HasResult || wasShrunk)
                 {
                     MeasureChild(child);
                 }
@@ -585,7 +588,7 @@ namespace Flexalon
             bool anyChildSizeChanged = false;
             foreach (var child in node._children)
             {
-                if (AnyFillSizeChanged(child) || AnyShrinkSizeChanged(child))
+                if (AnyAxisIsFill(child) || child.IsShrunk())
                 {
                     var previousSize = child.GetArrangeSize();
 
@@ -612,7 +615,7 @@ namespace Flexalon
                 // This cycle can continue forever, but this is the last time we'll do it.
                 foreach (var child in node._children)
                 {
-                    if (AnyFillSizeChanged(child) || AnyShrinkSizeChanged(child))
+                    if (AnyFillOrShrinkSizeChanged(child))
                     {
                         MeasureChild(child, layoutBounds.size, true);
                         child._dirty = true;
@@ -678,7 +681,7 @@ namespace Flexalon
             var scale = node.Result.ComponentScale;
             if (node.Parent != null)
             {
-                scale = Math.Div(scale, node.Parent.Result.ComponentScale);
+                scale = Math.SafeDivOne(scale, node.Parent.Result.ComponentScale);
             }
 
             FlexalonLog.Log("ComputeTransform:Scale", node, scale);
@@ -756,7 +759,7 @@ namespace Flexalon
                         - node._result.TargetRotation * node._result.RotatedAndScaledBounds.center
                         + node.Offset;
 
-                    position = Math.Div(position, node.Parent.Result.ComponentScale);
+                    position = Math.SafeDivZero(position, node.Parent.Result.ComponentScale);
                     FlexalonLog.Log("ComputeTransform:Layout:Position", node, position);
                     node.RecordResultUndo();
                     node._result.TargetPosition = position;
@@ -833,7 +836,7 @@ namespace Flexalon
 
         private static bool FillSizeChanged(Node child, int axis)
         {
-            return AxisIsFill(child, axis) && child._fillSizeChanged[axis];
+            return AxisIsFill(child, axis) && child.FillSizeChanged[axis];
         }
 
         private static bool AnyFillSizeChanged(Node child)
@@ -845,7 +848,7 @@ namespace Flexalon
 
         private static bool ShrinkSizeChanged(Node child, int axis)
         {
-            return child.CanShrink(axis) && child._shrinkSizeChanged[axis];
+            return child.CanShrink(axis) && child.ShrinkSizeChanged[axis];
         }
 
         private static bool AnyShrinkSizeChanged(Node child)
@@ -853,6 +856,11 @@ namespace Flexalon
             return ShrinkSizeChanged(child, 0) ||
                 ShrinkSizeChanged(child, 1) ||
                 ShrinkSizeChanged(child, 2);
+        }
+
+        private static bool AnyFillOrShrinkSizeChanged(Node child)
+        {
+            return AnyFillSizeChanged(child) || AnyShrinkSizeChanged(child);
         }
 
         internal static bool IsRootCanvas(GameObject go)
@@ -865,6 +873,16 @@ namespace Flexalon
 #endif
             return false;
         }
+
+#if UNITY_UI
+        public void Rebuild(UnityEngine.UI.CanvasUpdate executing) {}
+
+        public void LayoutComplete() => UpdateDirtyNodes();
+
+        public void GraphicUpdateComplete() {}
+
+        public bool IsDestroyed() => this == null;
+#endif
 
         private class Node : FlexalonNode
         {
@@ -894,7 +912,7 @@ namespace Flexalon
             public Constraint _constraint;
             public Constraint Constraint => _constraint;
             private Adapter _adapter = null;
-            public Adapter Adapter => (_adapter == null) ? _adapter = new DefaultAdapter(GameObject) : _adapter;
+            public Adapter Adapter => (_adapter == null) ? _adapter = new DefaultAdapter(GameObject, this) : _adapter;
             public bool _customAdapter = false;
             public FlexalonResult _result;
             public FlexalonResult Result => _result;
@@ -920,8 +938,8 @@ namespace Flexalon
             public bool SkipLayout => SkipInactive || (HasFlexalonObject ? _flexalonObject.SkipLayout : false);
             private bool _hasFlexalonObject;
             public bool HasFlexalonObject => _hasFlexalonObject;
-            public bool[] _fillSizeChanged = new bool[3];
-            public bool[] _shrinkSizeChanged = new bool[3];
+            public bool[] FillSizeChanged = new bool[3];
+            public bool[] ShrinkSizeChanged = new bool[3];
 
             public void SetFillSize(Vector3 fillSize)
             {
@@ -933,14 +951,14 @@ namespace Flexalon
             public void SetFillSize(int axis, float size)
             {
                 FlexalonLog.Log("SetFillSize", this, axis, size);
-                _fillSizeChanged[axis] = _fillSizeChanged[axis] || (_result.FillSize[axis] != size);
+                FillSizeChanged[axis] = FillSizeChanged[axis] || (_result.FillSize[axis] != size);
                 _result.FillSize[axis] = size;
             }
 
             public void ResetFillShrinkChanged()
             {
-                _fillSizeChanged[0] = _fillSizeChanged[1] = _fillSizeChanged[2] = false;
-                _shrinkSizeChanged[0] = _shrinkSizeChanged[1] = _shrinkSizeChanged[2] = false;
+                FillSizeChanged[0] = FillSizeChanged[1] = FillSizeChanged[2] = false;
+                ShrinkSizeChanged[0] = ShrinkSizeChanged[1] = ShrinkSizeChanged[2] = false;
             }
 
             public void ResetShrinkFillSize()
@@ -952,7 +970,7 @@ namespace Flexalon
             public void SetShrinkSize(int axis, float size)
             {
                 FlexalonLog.Log("SetShrinkSize", this, axis, size);
-                _shrinkSizeChanged[axis] = _shrinkSizeChanged[axis] || (_result.ShrinkSize[axis] != size);
+                ShrinkSizeChanged[axis] = ShrinkSizeChanged[axis] || (_result.ShrinkSize[axis] != size);
                 _result.ShrinkSize[axis] = size;
             }
 
@@ -1337,12 +1355,12 @@ namespace Flexalon
                 bool shouldScale = Adapter.TryGetScale(this, out var _);
                 if (!shouldScale)
                 {
-                    return GameObject.transform.localScale;
+                    return Math.Abs(GameObject.transform.localScale);
                 }
                 else if (HasFlexalonObject)
                 {
                     // FlexalonObject size/scale always applies, even without a layout.
-                    return _flexalonObject.Scale;
+                    return Math.Abs(_flexalonObject.Scale);
                 }
                 else if (_parent != null)
                 {
@@ -1350,7 +1368,7 @@ namespace Flexalon
                 }
                 else
                 {
-                    return GameObject.transform.localScale;
+                    return Math.Abs(GameObject.transform.localScale);
                 }
             }
 
@@ -1439,7 +1457,7 @@ namespace Flexalon
             {
                 if (!_customAdapter)
                 {
-                    if ((Adapter as DefaultAdapter).CheckComponent(GameObject))
+                    if ((Adapter as DefaultAdapter).CheckComponent(GameObject, this))
                     {
                         MarkDirty();
                     }

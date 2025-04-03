@@ -90,17 +90,11 @@ See <a href="..\../docs/coreConcepts.html">core concepts</a> for more informatio
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">object</span></div>
-    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
-    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
-    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
-    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
-    <div class="level5"><span class="xref">Flexalon</span></div>
+    <div class="level1"><span class="xref">Flexalon</span></div>
   </div>
   <h5 id="Flexalon_Flexalon_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ExecuteAlways]
-[HelpURL(&quot;https://www.flexalon.com/docs/coreConcepts&quot;)]
-public class Flexalon : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class Flexalon : MonoBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -110,7 +104,7 @@ public class Flexalon : MonoBehaviour</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action PreUpdate</code></pre>
+    <pre><code class="lang-csharp hljs">public System.Action PreUpdate</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,7 +166,7 @@ public class Flexalon : MonoBehaviour</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</span>&lt;<a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a>&gt;</td>
+        <td><span class="xref">IReadOnlyCollection&lt;&gt;</span>&lt;<a class="xref" href="Flexalon.FlexalonNode.html">FlexalonNode</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -275,13 +269,13 @@ public class Flexalon : MonoBehaviour</code></pre>
   <h3 id="methods">Methods
 </h3>
   <a id="Flexalon_Flexalon_AddComponent_" data-uid="Flexalon.Flexalon.AddComponent*"></a>
-  <h4 id="Flexalon_Flexalon_AddComponent_UnityEngine_GameObject_System_Type_" data-uid="Flexalon.Flexalon.AddComponent(UnityEngine.GameObject,System.Type)">AddComponent(GameObject, Type)</h4>
+  <h4 id="Flexalon_Flexalon_AddComponent_GameObject_System_Type_" data-uid="Flexalon.Flexalon.AddComponent(GameObject,System.Type)">AddComponent(GameObject, Type)</h4>
   <div class="markdown level1 summary"><p>Helper to ensure undo operation on AddComponent is handled correctly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Component AddComponent(GameObject go, Type type)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Component AddComponent(GameObject go, System.Type type)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -294,7 +288,7 @@ public class Flexalon : MonoBehaviour</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="xref">GameObject</span></td>
         <td><span class="parametername">go</span></td>
         <td></td>
       </tr>
@@ -315,13 +309,13 @@ public class Flexalon : MonoBehaviour</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Component</span></td>
+        <td><span class="xref">Component</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Flexalon_Flexalon_AddComponent_" data-uid="Flexalon.Flexalon.AddComponent*"></a>
-  <h4 id="Flexalon_Flexalon_AddComponent__1_UnityEngine_GameObject_" data-uid="Flexalon.Flexalon.AddComponent``1(UnityEngine.GameObject)">AddComponent&lt;T&gt;(GameObject)</h4>
+  <h4 id="Flexalon_Flexalon_AddComponent__1_GameObject_" data-uid="Flexalon.Flexalon.AddComponent``1(GameObject)">AddComponent&lt;T&gt;(GameObject)</h4>
   <div class="markdown level1 summary"><p>Helper to ensure undo operation on AddComponent is handled correctly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -340,7 +334,7 @@ public class Flexalon : MonoBehaviour</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="xref">GameObject</span></td>
         <td><span class="parametername">go</span></td>
         <td></td>
       </tr>
@@ -435,7 +429,7 @@ public class Flexalon : MonoBehaviour</code></pre>
     </tbody>
   </table>
   <a id="Flexalon_Flexalon_GetNode_" data-uid="Flexalon.Flexalon.GetNode*"></a>
-  <h4 id="Flexalon_Flexalon_GetNode_UnityEngine_GameObject_" data-uid="Flexalon.Flexalon.GetNode(UnityEngine.GameObject)">GetNode(GameObject)</h4>
+  <h4 id="Flexalon_Flexalon_GetNode_GameObject_" data-uid="Flexalon.Flexalon.GetNode(GameObject)">GetNode(GameObject)</h4>
   <div class="markdown level1 summary"><p>Returns the FlexalonNode associated with the gameObject.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -454,7 +448,7 @@ public class Flexalon : MonoBehaviour</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="xref">GameObject</span></td>
         <td><span class="parametername">go</span></td>
         <td><p>The gameObject to get the FlexalonNode for.</p>
 </td>
@@ -501,7 +495,7 @@ public class Flexalon : MonoBehaviour</code></pre>
     </tbody>
   </table>
   <a id="Flexalon_Flexalon_GetOrCreateNode_" data-uid="Flexalon.Flexalon.GetOrCreateNode*"></a>
-  <h4 id="Flexalon_Flexalon_GetOrCreateNode_UnityEngine_GameObject_" data-uid="Flexalon.Flexalon.GetOrCreateNode(UnityEngine.GameObject)">GetOrCreateNode(GameObject)</h4>
+  <h4 id="Flexalon_Flexalon_GetOrCreateNode_GameObject_" data-uid="Flexalon.Flexalon.GetOrCreateNode(GameObject)">GetOrCreateNode(GameObject)</h4>
   <div class="markdown level1 summary"><p>Returns the FlexalonNode associated with the gameObject,
 or creates it if it doesn't exist.</p>
 </div>
@@ -521,7 +515,7 @@ or creates it if it doesn't exist.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="xref">GameObject</span></td>
         <td><span class="parametername">go</span></td>
         <td><p>The gameObject to get the FlexalonNode for.</p>
 </td>

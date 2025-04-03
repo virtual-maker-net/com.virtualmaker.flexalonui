@@ -1,6 +1,26 @@
 # Changelog
 
-## Version 4.2.0
+## Version 4.3
+
+### Features
+
+- **Improved UGUI Integration**: UGUI components like TextMeshPro and Image will automatically be recomputed when properties change in play mode.
+- **FlexalonAspectRatioAdapter**: Set a specific aspect ratio for an object.
+- **FlexalonColliderAdapter**: Resizes an attached collider to match the object's layout size.
+- **FlexalonObject.UseDefaultAdapter**: new property that can be disabled to make Flexalon treat the object as an empty gameObject and not consider components like MeshRenderer, TextMeshPro, etc.
+- **FlexalonInteractable.MaxClickDistance**: Immediately converts a click to a drag if the mouse moves more than the specified distance.
+
+### Fixes
+
+- Support negative Scale values in Flexalon Object.
+- Fix floating point error in Flexible Layout preventing wrapping.
+- Workaround for a TextMeshPro bug causing hanges in the template scene.
+- Display and serialize the "AnimateInWorldSpace" property in Curve Animator.
+- Disable the Flexalon Interactable placeholder when dragged off of a drag target.
+- Fix Flexible Layout fill not working correctly if there is no remaining space.
+- Fix some divide by zero errors.
+
+## Version 4.2
 
 ### Features
 
@@ -10,6 +30,7 @@
 ### Fixes
 
 - Performance: Avoid third layout pass when possible when using Fill size type on children.
+- Hotfix 4.2.1: Fix a regression where sometimes child sizes don't update from this performance fix.
 - Performance: Make Directions struct immutable.
 - Performance: Improve how Flexalon checks for the existance of FlexalonObject.
 - Performance: Reduce garbage collection allocations by replacing foreach loops with for loops.

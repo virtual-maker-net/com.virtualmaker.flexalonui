@@ -10,6 +10,7 @@ namespace Flexalon.Editor
     {
         private SerializedProperty _clickable;
         private SerializedProperty _maxClickTime;
+        private SerializedProperty _maxClickDistance;
         private SerializedProperty _draggable;
         private SerializedProperty _interpolationSpeed;
         private SerializedProperty _insertRadius;
@@ -41,6 +42,7 @@ namespace Flexalon.Editor
         {
             _clickable = serializedObject.FindProperty("_clickable");
             _maxClickTime = serializedObject.FindProperty("_maxClickTime");
+            _maxClickDistance = serializedObject.FindProperty("_maxClickDistance");
             _draggable = serializedObject.FindProperty("_draggable");
             _interpolationSpeed = serializedObject.FindProperty("_interpolationSpeed");
             _insertRadius = serializedObject.FindProperty("_insertRadius");
@@ -74,7 +76,8 @@ namespace Flexalon.Editor
             if (_clickable.boolValue)
             {
                 EditorGUI.indentLevel++;
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("_maxClickTime"), new GUIContent("Max Click Time"));
+                EditorGUILayout.PropertyField(_maxClickTime);
+                EditorGUILayout.PropertyField(_maxClickDistance);
                 EditorGUI.indentLevel--;
                 EditorGUILayout.Space();
             }

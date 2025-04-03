@@ -89,13 +89,9 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">object</span></div>
-    <div class="level1"><span class="xref">UnityEngine.Object</span></div>
-    <div class="level2"><span class="xref">UnityEngine.Component</span></div>
-    <div class="level3"><span class="xref">UnityEngine.Behaviour</span></div>
-    <div class="level4"><span class="xref">UnityEngine.MonoBehaviour</span></div>
-    <div class="level5"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
-    <div class="level6"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
-    <div class="level7"><span class="xref">FlexalonCurveLayout</span></div>
+    <div class="level1"><a class="xref" href="Flexalon.FlexalonComponent.html">FlexalonComponent</a></div>
+    <div class="level2"><a class="xref" href="Flexalon.LayoutBase.html">LayoutBase</a></div>
+    <div class="level3"><span class="xref">FlexalonCurveLayout</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -113,7 +109,7 @@
       <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_ResetProperties">LayoutBase.ResetProperties()</a>
     </div>
     <div>
-      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_SetChildrenFillShrinkSize_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_">LayoutBase.SetChildrenFillShrinkSize(FlexalonNode, Vector3, Vector3)</a>
+      <a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_SetChildrenFillShrinkSize_Flexalon_FlexalonNode_Vector3_Vector3_">LayoutBase.SetChildrenFillShrinkSize(FlexalonNode, Vector3, Vector3)</a>
     </div>
     <div>
       <a class="xref" href="Flexalon.FlexalonComponent.html#Flexalon_FlexalonComponent__node">FlexalonComponent._node</a>
@@ -139,9 +135,7 @@
   </div>
   <h5 id="Flexalon_FlexalonCurveLayout_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;Flexalon/Flexalon Curve Layout&quot;)]
-[HelpURL(&quot;https://www.flexalon.com/docs/curveLayout&quot;)]
-public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
+    <pre><code class="lang-csharp hljs">public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -260,7 +254,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList&lt;T&gt;</span>&lt;<span class="xref">UnityEngine.Vector3</span>&gt;</td>
+        <td><span class="xref">IReadOnlyList&lt;&gt;</span>&lt;<span class="xref">Vector3</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -332,7 +326,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList&lt;T&gt;</span>&lt;<a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a>&gt;</td>
+        <td><span class="xref">IReadOnlyList&lt;&gt;</span>&lt;<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -463,7 +457,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveLayout_AddPoint_" data-uid="Flexalon.FlexalonCurveLayout.AddPoint*"></a>
-  <h4 id="Flexalon_FlexalonCurveLayout_AddPoint_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.AddPoint(UnityEngine.Vector3,UnityEngine.Vector3)">AddPoint(Vector3, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCurveLayout_AddPoint_Vector3_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.AddPoint(Vector3,Vector3)">AddPoint(Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Adds a new point to the end of the curve.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -482,13 +476,13 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">position</span></td>
         <td><p>The position of the point.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">tangent</span></td>
         <td><p>The tangent of the point.</p>
 </td>
@@ -496,7 +490,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveLayout_Arrange_" data-uid="Flexalon.FlexalonCurveLayout.Arrange*"></a>
-  <h4 id="Flexalon_FlexalonCurveLayout_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.Arrange(Flexalon.FlexalonNode,UnityEngine.Vector3)">Arrange(FlexalonNode, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCurveLayout_Arrange_Flexalon_FlexalonNode_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.Arrange(Flexalon.FlexalonNode,Vector3)">Arrange(FlexalonNode, Vector3)</h4>
   <div class="markdown level1 summary"><p>Position the children of node within the available bounds.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -520,14 +514,14 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">layoutSize</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Arrange_Flexalon_FlexalonNode_UnityEngine_Vector3_">LayoutBase.Arrange(FlexalonNode, Vector3)</a></div>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Arrange_Flexalon_FlexalonNode_Vector3_">LayoutBase.Arrange(FlexalonNode, Vector3)</a></div>
   <a id="Flexalon_FlexalonCurveLayout_Initialize_" data-uid="Flexalon.FlexalonCurveLayout.Initialize*"></a>
   <h4 id="Flexalon_FlexalonCurveLayout_Initialize" data-uid="Flexalon.FlexalonCurveLayout.Initialize">Initialize()</h4>
   <div class="markdown level1 summary"></div>
@@ -572,7 +566,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveLayout_InsertPoint_" data-uid="Flexalon.FlexalonCurveLayout.InsertPoint*"></a>
-  <h4 id="Flexalon_FlexalonCurveLayout_InsertPoint_System_Int32_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.InsertPoint(System.Int32,UnityEngine.Vector3,UnityEngine.Vector3)">InsertPoint(int, Vector3, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCurveLayout_InsertPoint_System_Int32_Vector3_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.InsertPoint(System.Int32,Vector3,Vector3)">InsertPoint(int, Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Inserts a new point into the curve at the specified index.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -597,13 +591,13 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">position</span></td>
         <td><p>The position of the point.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">tangent</span></td>
         <td><p>The tangent of the point.</p>
 </td>
@@ -611,7 +605,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveLayout_Measure_" data-uid="Flexalon.FlexalonCurveLayout.Measure*"></a>
-  <h4 id="Flexalon_FlexalonCurveLayout_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.Measure(Flexalon.FlexalonNode,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">Measure(FlexalonNode, Vector3, Vector3, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCurveLayout_Measure_Flexalon_FlexalonNode_Vector3_Vector3_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.Measure(Flexalon.FlexalonNode,Vector3,Vector3,Vector3)">Measure(FlexalonNode, Vector3, Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Perform minimal work to determine what the size of node and available size for node's children.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -635,17 +629,17 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">size</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">min</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">max</span></td>
         <td></td>
       </tr>
@@ -661,13 +655,13 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UnityEngine.Bounds</span></td>
+        <td><span class="xref">Bounds</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Measure_Flexalon_FlexalonNode_UnityEngine_Vector3_UnityEngine_Vector3_UnityEngine_Vector3_">LayoutBase.Measure(FlexalonNode, Vector3, Vector3, Vector3)</a></div>
+  <div><a class="xref" href="Flexalon.LayoutBase.html#Flexalon_LayoutBase_Measure_Flexalon_FlexalonNode_Vector3_Vector3_Vector3_">LayoutBase.Measure(FlexalonNode, Vector3, Vector3, Vector3)</a></div>
   <a id="Flexalon_FlexalonCurveLayout_RemovePoint_" data-uid="Flexalon.FlexalonCurveLayout.RemovePoint*"></a>
   <h4 id="Flexalon_FlexalonCurveLayout_RemovePoint_System_Int32_" data-uid="Flexalon.FlexalonCurveLayout.RemovePoint(System.Int32)">RemovePoint(int)</h4>
   <div class="markdown level1 summary"><p>Removes the point at the index.</p>
@@ -729,7 +723,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveLayout_ReplacePoint_" data-uid="Flexalon.FlexalonCurveLayout.ReplacePoint*"></a>
-  <h4 id="Flexalon_FlexalonCurveLayout_ReplacePoint_System_Int32_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.ReplacePoint(System.Int32,UnityEngine.Vector3,UnityEngine.Vector3)">ReplacePoint(int, Vector3, Vector3)</h4>
+  <h4 id="Flexalon_FlexalonCurveLayout_ReplacePoint_System_Int32_Vector3_Vector3_" data-uid="Flexalon.FlexalonCurveLayout.ReplacePoint(System.Int32,Vector3,Vector3)">ReplacePoint(int, Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Replaces the point at the index with a new point.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -754,13 +748,13 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">position</span></td>
         <td><p>The position of the point.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityEngine.Vector3</span></td>
+        <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">tangent</span></td>
         <td><p>The tangent of the point.</p>
 </td>
@@ -768,7 +762,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </tbody>
   </table>
   <a id="Flexalon_FlexalonCurveLayout_SetPoints_" data-uid="Flexalon.FlexalonCurveLayout.SetPoints*"></a>
-  <h4 id="Flexalon_FlexalonCurveLayout_SetPoints_System_Collections_Generic_List_Flexalon_FlexalonCurveLayout_CurvePoint__" data-uid="Flexalon.FlexalonCurveLayout.SetPoints(System.Collections.Generic.List{Flexalon.FlexalonCurveLayout.CurvePoint})">SetPoints(List&lt;CurvePoint&gt;)</h4>
+  <h4 id="Flexalon_FlexalonCurveLayout_SetPoints_List_Flexalon_FlexalonCurveLayout_CurvePoint__" data-uid="Flexalon.FlexalonCurveLayout.SetPoints(List{Flexalon.FlexalonCurveLayout.CurvePoint})">SetPoints(List&lt;CurvePoint&gt;)</h4>
   <div class="markdown level1 summary"><p>Replaces all points of the curve.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -787,7 +781,7 @@ public class FlexalonCurveLayout : LayoutBase, Layout</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List&lt;T&gt;</span>&lt;<a class="xref" href="Flexalon.FlexalonCurveLayout.html">FlexalonCurveLayout</a>.<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a>&gt;</td>
+        <td><span class="xref">List&lt;&gt;</span>&lt;<a class="xref" href="Flexalon.FlexalonCurveLayout.CurvePoint.html">CurvePoint</a>&gt;</td>
         <td><span class="parametername">points</span></td>
         <td><p>The new points.</p>
 </td>

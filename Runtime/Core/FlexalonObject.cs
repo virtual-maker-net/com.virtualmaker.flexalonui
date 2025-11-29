@@ -626,13 +626,13 @@ namespace Flexalon
         /// <inheritdoc />
         protected override void ResetProperties()
         {
-            _node.SetFlexalonObject(null);
+            Node.SetFlexalonObject(null);
         }
 
         /// <inheritdoc />
         protected override void UpdateProperties()
         {
-            _node.SetFlexalonObject(this);
+            Node.SetFlexalonObject(this);
         }
 
 #if false
@@ -652,7 +652,7 @@ namespace Flexalon
                 return;
             }
 
-            var result = _node.Result;
+            var result = Node.Result;
 
             // Don't do any of this if the parent changed.
             if (_lastParent != transform.parent)
@@ -695,7 +695,7 @@ namespace Flexalon
                 isRectTransform = true;
             }
 
-            bool shouldScale = _node.Adapter.TryGetScale(_node, out var s);
+            bool shouldScale = Node.Adapter.TryGetScale(Node, out var s);
             if (shouldScale && result.TransformScale != transform.localScale)
             {
                 UnityEditor.Undo.RecordObject(this, "Scale change");
@@ -712,15 +712,15 @@ namespace Flexalon
                 if (Mathf.Abs(1f - _scale.z) < 1e-5f) _scale.z = 1;
                 result.TargetScale = transform.localScale;
                 result.TransformScale = transform.localScale;
-                _node.Parent?.MarkDirty();
+                Node.Parent?.MarkDirty();
 
-                if (_node.Constraint != null)
+                if (Node.Constraint != null)
                 {
-                    _node.MarkDirty();
+                    Node.MarkDirty();
                 }
                 else
                 {
-                    _node.ApplyScaleAndRotation();
+                    Node.ApplyScaleAndRotation();
                 }
 
                 // The scale and rect transform controls affect both position and scale,
@@ -729,8 +729,8 @@ namespace Flexalon
             }
 
             bool inLayoutOrConstraint =
-                (_node.Parent != null && !_node.Parent.Dirty && transform.parent == _node.Parent.GameObject.transform) ||
-                (_node.Constraint != null && _node.Constraint.Target != null);
+                (Node.Parent != null && !Node.Parent.Dirty && transform.parent == Node.Parent.GameObject.transform) ||
+                (Node.Constraint != null && Node.Constraint.Target != null);
 
             if (inLayoutOrConstraint)
             {
@@ -787,15 +787,15 @@ namespace Flexalon
                     _rotation.Normalize();
                     result.TargetRotation = transform.localRotation;
                     result.TransformRotation = transform.localRotation;
-                    _node.Parent?.MarkDirty();
+                    Node.Parent?.MarkDirty();
 
-                    if (_node.Constraint != null)
+                    if (Node.Constraint != null)
                     {
-                        _node.MarkDirty();
+                        Node.MarkDirty();
                     }
                     else
                     {
-                        _node.ApplyScaleAndRotation();
+                        Node.ApplyScaleAndRotation();
                     }
                 }
             }
@@ -807,7 +807,7 @@ namespace Flexalon
                     UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(result);
                     result.TargetRotation = transform.localRotation;
                     result.TransformRotation = transform.localRotation;
-                    _node.ApplyScaleAndRotation();
+                    Node.ApplyScaleAndRotation();
                 }
             }
         }
@@ -838,7 +838,7 @@ namespace Flexalon
                 if (canvas.renderMode == RenderMode.WorldSpace)
                 {
                     _scale = canvas.transform.localScale;
-                    _node.Result.AdapterBounds = new Bounds(Vector3.zero, (transform as RectTransform).rect.size);
+                    Node.Result.AdapterBounds = new Bounds(Vector3.zero, (transform as RectTransform).rect.size);
                 }
             }
 #endif

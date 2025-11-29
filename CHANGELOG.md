@@ -1,5 +1,24 @@
 # Changelog
 
+IMPORTANT: Unity 2019 and 2021 are no longer tested. As always, please back up your project before updating.
+
+## Version 4.4
+
+### Features
+
+- Added built-in support for the new Input System. It should work out of the box with mouse input. For more advanced usage, see FlexalonInputSystemProvider. All samples have also been updated to work in both new and legacy input systems.
+- Breaking Change: Disabled components (MeshRenderer, Image, etc.) are no longer used to determine the size of objects. You can override this behavior with a custom Adapter (see docs).
+- Added some helpful methods to FlexalonGridLayout: GetCellPositionWorldSpace and GetCellPositionLocalSpace.
+- New FlexalonInteractable property: Set Parent While Dragging. Normally, the interactable is unparented while being dragged. Setting this will set the parent to the currently hovered drag target.
+- Support raycasting with Canvas render mode Screen Space Camera.
+- Added FlexalonDpiScaler, which scales a Canvas pixel size to match the operating system screen settings.
+- Added spacing options to Flexible Layout: Space Evently and Space Around.
+
+### Fixes
+- Flexalon no longer preserves aspect ratio for ILayoutElement components. This was never intended.
+- Fixed Flexalon Constrant scaling the child of a Canvas.
+- Fixed collider adapter not scaling correctly.
+
 ## Version 4.3
 
 ### Features

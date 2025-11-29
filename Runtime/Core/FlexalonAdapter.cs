@@ -94,7 +94,7 @@ namespace Flexalon
             }
             else if (gameObject.TryGetComponent<UnityEngine.UI.ILayoutElement>(out var layoutElement))
             {
-                _adapter = new LayoutElementAdapter(layoutElement as Component);
+                _adapter = new LayoutElementAdapter(layoutElement as MonoBehaviour);
             } else
 #endif
             if (gameObject.TryGetComponent<RectTransform>(out var rectTransform))
@@ -174,7 +174,7 @@ namespace Flexalon
 
         public bool IsValid()
         {
-            return _renderer;
+            return _renderer && _renderer.enabled;
         }
 
         public bool SizeChanged()
@@ -237,7 +237,7 @@ namespace Flexalon
 
         public bool IsValid()
         {
-            return _renderer && _meshFilter && _meshFilter.sharedMesh;
+            return _renderer && _meshFilter && _meshFilter.sharedMesh && _renderer.enabled;
         }
 
         public bool SizeChanged()
@@ -341,7 +341,7 @@ namespace Flexalon
 
         public bool IsValid()
         {
-            return _text;
+            return _text && _text.enabled;
         }
 
         public bool SizeChanged()
@@ -405,7 +405,7 @@ namespace Flexalon
 
         public bool IsValid()
         {
-            return _canvas;
+            return _canvas && _canvas.enabled;
         }
 
         public bool SizeChanged()
@@ -460,10 +460,10 @@ namespace Flexalon
 
     internal class LayoutElementAdapter : InternalAdapter
     {
-        private Component _layoutElement;
+        private MonoBehaviour _layoutElement;
         private RectTransformAdapter _rectTransformAdapter;
 
-        public LayoutElementAdapter(Component layoutElement)
+        public LayoutElementAdapter(MonoBehaviour layoutElement)
         {
             _rectTransformAdapter = new RectTransformAdapter(layoutElement.transform as RectTransform);
             _layoutElement = layoutElement;
@@ -471,7 +471,7 @@ namespace Flexalon
 
         public bool IsValid()
         {
-            return _layoutElement;
+            return _layoutElement && _layoutElement.enabled;
         }
 
         public bool SizeChanged()
@@ -481,18 +481,46 @@ namespace Flexalon
 
         public Bounds Measure(FlexalonNode node, Vector3 size, Vector3 min, Vector3 max)
         {
-            bool componentX = node.GetSizeType(Axis.X) == SizeType.Component;
-            bool componentY = node.GetSizeType(Axis.Y) == SizeType.Component;
-
-            // Preserve back-compatibility behavior of Image component.
-            if (_layoutElement is UnityEngine.UI.Image image && !image.preserveAspect || (componentX && componentY))
-            {
-                return _rectTransformAdapter.Measure(node, size, min, max);
-            }
-
             var le = _layoutElement as UnityEngine.UI.ILayoutElement;
             var preferredSize = new Vector2(le.preferredWidth, le.preferredHeight);
-            return Math.MeasureComponentBounds2D(new Bounds(Vector3.zero, preferredSize), node, size, min, max);
+            var rectTransform = _layoutElement.transform as RectTransform;
+            bool componentX = node.GetSizeType(Axis.X) == SizeType.Component;
+            bool componentY = node.GetSizeType(Axis.Y) == SizeType.Component;
+            bool componentZ = node.GetSizeType(Axis.Z) == SizeType.Component;
+
+            if (preferredSize.x < 0)
+            {
+                preferredSize.x = rectTransform.rect.size.x;
+            }
+
+            if (preferredSize.y < 0)
+            {
+                preferredSize.y = rectTransform.rect.size.y;
+            }
+
+            // Implement preserveAspect for the image component
+            if (_layoutElement is UnityEngine.UI.Image image)
+            {
+                if (image.preserveAspect && (componentX ^ componentY))
+                {
+                    return Math.MeasureComponentBounds2D(new Bounds(Vector3.zero, preferredSize), node, size, min, max);
+                }
+                else
+                {
+                    preferredSize.x = rectTransform.rect.size.x;
+                    preferredSize.y = rectTransform.rect.size.y;
+                }
+            }
+
+            var measureSize = new Vector3(
+                componentX ? preferredSize.x : size.x,
+                componentY ? preferredSize.y : size.y,
+                componentZ ? 0 : size.z);
+
+            measureSize = Math.Clamp(measureSize, min, max);
+
+            var center = new Vector3((0.5f - rectTransform.pivot.x) * measureSize.x, (0.5f - rectTransform.pivot.y) * measureSize.y, 0);
+            return new Bounds(center, measureSize);
         }
 
         public bool TryGetScale(FlexalonNode node, out Vector3 scale)
@@ -520,7 +548,7 @@ namespace Flexalon
 
         public bool IsValid()
         {
-            return _collider;
+            return _collider && _collider.enabled;
         }
 
         public Bounds GetBounds()
@@ -595,7 +623,7 @@ namespace Flexalon
 
         public bool IsValid()
         {
-            return _collider;
+            return _collider && _collider.enabled;
         }
 
         public Bounds GetBounds()

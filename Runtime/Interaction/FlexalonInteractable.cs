@@ -183,6 +183,14 @@ namespace Flexalon
         }
 
         [SerializeField]
+        private bool _setParentWhileDragging = false;
+        /// <summary> Normally, the interactable is unparented while being dragged. Setting this will set the parent to the currently hovered drag target. </summary>
+        public bool SetParentWhileDragging {
+            get => _setParentWhileDragging;
+            set => _setParentWhileDragging = value;
+        }
+
+        [SerializeField]
         private GameObject _handle = null;
         /// <summary> GameObject to use to select and drag this object. If not set, uses self. </summary>
         public GameObject Handle {
@@ -309,7 +317,7 @@ namespace Flexalon
 #endif
 
         // For Editor
-        internal bool _showAllDragProperties => GetInputProvider().InputMode == InputMode.Raycast;
+        internal bool ShowAllDragProperties => GetInputProvider().InputMode == InputMode.Raycast;
 
         /// <summary> The current state of the interactable. </summary>
         public enum InteractableState
@@ -425,9 +433,19 @@ namespace Flexalon
             }
 
 #if UNITY_UI
-            if (_canvas && _canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+            if (_canvas)
             {
-                ray = new Ray(uiPointer, Vector3.forward);
+                if (_canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+                {
+                    ray = new Ray(uiPointer, Vector3.forward);
+                }
+                else if (_canvas.renderMode == RenderMode.ScreenSpaceCamera)
+                {
+                    if (_canvas.worldCamera)
+                    {
+                        ray = _canvas.worldCamera.ScreenPointToRay(uiPointer);
+                    }
+                }
             }
 #endif
 
@@ -447,7 +465,7 @@ namespace Flexalon
             }
 
             var currentDragTarget = _placeholder.transform.parent ? _placeholder.transform.parent.GetComponent<FlexalonDragTarget>() : null;
-            bool dragTargetChanged = false;
+            bool dragTargetChanged;
 
             // Find a drag target to insert into.
             if (TryFindNearestDragTarget(currentDragTarget, out var newDragTarget, out var nearestChild))
@@ -486,13 +504,11 @@ namespace Flexalon
                 }
             }
 #endif
-
         }
 
         private InputProvider GetInputProvider()
         {
-            var inputProvider = GetComponent<InputProvider>();
-            if (inputProvider == null)
+            if (!TryGetComponent<InputProvider>(out var inputProvider))
             {
                 inputProvider = Flexalon.GetInputProvider();
             }
@@ -650,7 +666,7 @@ namespace Flexalon
                 MovePlaceholder(_localSpace, _startSiblingIndex);
 
                 // Input provider may be changing the parent before we get here.
-                if (transform.parent == _localSpace)
+                if (!_setParentWhileDragging && transform.parent == _localSpace)
                 {
 #if UNITY_UI
                     transform.SetParent(_canvas?.transform, true);
@@ -819,6 +835,8 @@ namespace Flexalon
             distanceSquared = float.MaxValue;
             foreach (Transform child in dragTarget.transform)
             {
+                if (child == transform) { continue; }
+
                 var childPos = dragTarget.transform.localToWorldMatrix.MultiplyPoint(child.GetComponent<FlexalonResult>().TargetPosition);
                 var toChild = (childPos - _lastTarget).normalized;
                 if (child == _placeholder.transform || Vector3.Dot(toChild, moveDirection) > 0)
@@ -878,6 +896,13 @@ namespace Flexalon
         // Moves the placeholder into the drag target at a particular index.
         private bool MovePlaceholder(Transform newParent, int siblingIndex = 0)
         {
+#if UNITY_UI
+            if (newParent == null)
+            {
+                newParent = _canvas?.transform;
+            }
+#endif
+
             if (newParent != _placeholder.transform.parent ||
                 (newParent != null && siblingIndex != _placeholder.transform.GetSiblingIndex()))
             {
@@ -890,6 +915,23 @@ namespace Flexalon
                 }
 
                 _localSpace = newParent;
+
+                if (_setParentWhileDragging)
+                {
+                    if (newParent != transform.parent)
+                    {
+                        transform.SetParent(newParent, true);
+                    }
+
+                    if (newParent)
+                    {
+                        if (transform.GetSiblingIndex() != siblingIndex + 1)
+                        {
+                            transform.SetSiblingIndex(siblingIndex + 1);
+                        }
+                    }
+                }
+
                 return true;
             }
 
@@ -926,7 +968,7 @@ namespace Flexalon
 
             return dragTarget != null &&
                 dragTarget.gameObject != gameObject &&
-                dragTarget.CanAddObjects  &&
+                dragTarget.CanAddObjects &&
                 (dragTarget.MaxObjects == 0 || dragTarget.transform.childCount < dragTarget.MaxObjects) &&
                 (_layerMask.value & (1 << dragTarget.gameObject.layer)) != 0;
         }

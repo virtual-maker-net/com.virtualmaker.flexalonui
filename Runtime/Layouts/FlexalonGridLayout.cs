@@ -27,7 +27,7 @@ namespace Flexalon
         public CellTypes CellType
         {
             get { return _cellType; }
-            set { _cellType = value; _node.MarkDirty(); }
+            set { _cellType = value; Node.MarkDirty(); }
         }
 
         [SerializeField, Min(1)]
@@ -36,7 +36,7 @@ namespace Flexalon
         public uint Columns
         {
             get { return _columns; }
-            set { _columns = System.Math.Max(value, 1); _node.MarkDirty(); }
+            set { _columns = System.Math.Max(value, 1); Node.MarkDirty(); }
         }
 
         [SerializeField, Min(1)]
@@ -45,7 +45,7 @@ namespace Flexalon
         public uint Rows
         {
             get { return _rows; }
-            set { _rows = System.Math.Max(value, 1); _node.MarkDirty(); }
+            set { _rows = System.Math.Max(value, 1); Node.MarkDirty(); }
         }
 
         [SerializeField, Min(1)]
@@ -54,7 +54,7 @@ namespace Flexalon
         public uint Layers
         {
             get { return _layers; }
-            set { _layers = System.Math.Max(value, 1); _node.MarkDirty(); }
+            set { _layers = System.Math.Max(value, 1); Node.MarkDirty(); }
         }
 
         [SerializeField]
@@ -63,7 +63,7 @@ namespace Flexalon
         public Direction ColumnDirection
         {
             get { return _columnDirection; }
-            set { _columnDirection = value; _node.MarkDirty(); }
+            set { _columnDirection = value; Node.MarkDirty(); }
         }
 
         [SerializeField]
@@ -72,7 +72,7 @@ namespace Flexalon
         public Direction RowDirection
         {
             get { return _rowDirection; }
-            set { _rowDirection = value; _node.MarkDirty(); }
+            set { _rowDirection = value; Node.MarkDirty(); }
         }
 
         [SerializeField]
@@ -81,7 +81,7 @@ namespace Flexalon
         public Direction LayerDirection
         {
             get { return _layerDirection; }
-            set { _layerDirection = value; _node.MarkDirty(); }
+            set { _layerDirection = value; Node.MarkDirty(); }
         }
 
         /// <summary> How to determine the size of the cell. </summary>
@@ -100,7 +100,7 @@ namespace Flexalon
         public CellSizeTypes ColumnSizeType
         {
             get { return _columnSizeType; }
-            set { _columnSizeType = value; _node.MarkDirty(); }
+            set { _columnSizeType = value; Node.MarkDirty(); }
         }
 
         [SerializeField, Min(0)]
@@ -113,7 +113,7 @@ namespace Flexalon
             {
                 _columnSize = Mathf.Max(0, value);
                 _columnSizeType = CellSizeTypes.Fixed;
-                _node.MarkDirty();
+                Node.MarkDirty();
             }
         }
 
@@ -123,7 +123,7 @@ namespace Flexalon
         public CellSizeTypes RowSizeType
         {
             get { return _rowSizeType; }
-            set { _rowSizeType = value; _node.MarkDirty(); }
+            set { _rowSizeType = value; Node.MarkDirty(); }
         }
 
         [SerializeField, Min(0)]
@@ -136,7 +136,7 @@ namespace Flexalon
             {
                 _rowSize = Mathf.Max(0, value);
                 _rowSizeType = CellSizeTypes.Fixed;
-                _node.MarkDirty();
+                Node.MarkDirty();
             }
         }
 
@@ -146,7 +146,7 @@ namespace Flexalon
         public CellSizeTypes LayerSizeType
         {
             get { return _layerSizeType; }
-            set { _layerSizeType = value; _node.MarkDirty(); }
+            set { _layerSizeType = value; Node.MarkDirty(); }
         }
 
         [SerializeField, Min(0)]
@@ -159,7 +159,7 @@ namespace Flexalon
             {
                 _layerSize = Mathf.Max(0, value);
                 _layerSizeType = CellSizeTypes.Fixed;
-                _node.MarkDirty();
+                Node.MarkDirty();
             }
         }
 
@@ -169,7 +169,7 @@ namespace Flexalon
         public float ColumnSpacing
         {
             get { return _columnSpacing; }
-            set { _columnSpacing = value; _node.MarkDirty(); }
+            set { _columnSpacing = value; Node.MarkDirty(); }
         }
 
         [SerializeField]
@@ -178,7 +178,7 @@ namespace Flexalon
         public float RowSpacing
         {
             get { return _rowSpacing; }
-            set { _rowSpacing = value; _node.MarkDirty(); }
+            set { _rowSpacing = value; Node.MarkDirty(); }
         }
 
         [SerializeField]
@@ -187,7 +187,7 @@ namespace Flexalon
         public float LayerSpacing
         {
             get { return _layerSpacing; }
-            set { _layerSpacing = value; _node.MarkDirty(); }
+            set { _layerSpacing = value; Node.MarkDirty(); }
         }
 
         [SerializeField]
@@ -196,7 +196,7 @@ namespace Flexalon
         public Align HorizontalAlign
         {
             get { return _horizontalAlign; }
-            set { _horizontalAlign = value; _node.MarkDirty(); }
+            set { _horizontalAlign = value; Node.MarkDirty(); }
         }
 
         [SerializeField]
@@ -205,7 +205,7 @@ namespace Flexalon
         public Align VerticalAlign
         {
             get { return _verticalAlign; }
-            set { _verticalAlign = value; _node.MarkDirty(); }
+            set { _verticalAlign = value; Node.MarkDirty(); }
         }
 
         [SerializeField]
@@ -214,7 +214,7 @@ namespace Flexalon
         public Align DepthAlign
         {
             get { return _depthAlign; }
-            set { _depthAlign = value; _node.MarkDirty(); }
+            set { _depthAlign = value; Node.MarkDirty(); }
         }
 
         [Serializable]
@@ -537,18 +537,18 @@ namespace Flexalon
             }
         }
 
-        void OnDrawGizmosSelected()
+        private void OnDrawGizmosSelected()
         {
-            if (_node != null)
+            if (Node != null)
             {
                 var axes = GetAxes();
-                var sz = _node.Result.AdapterBounds.size - _node.Padding.Size;
+                var sz = Node.Result.AdapterBounds.size - Node.Padding.Size;
                 var cellSize = GetCellSize(axes, sz);
                 var gridSize = GetGridSize(axes, cellSize);
 
                 Gizmos.color = new Color(1, 1, 0, 0.5f);
-                var scale = _node.GetWorldBoxScale(true);
-                Gizmos.matrix = Matrix4x4.TRS(_node.GetWorldBoxPosition(scale, true), transform.rotation, scale);
+                var scale = Node.GetWorldBoxScale(true);
+                Gizmos.matrix = Matrix4x4.TRS(Node.GetWorldBoxPosition(scale, true), transform.rotation, scale);
 
                 for (int r = 0; r < _rows; r++)
                 {

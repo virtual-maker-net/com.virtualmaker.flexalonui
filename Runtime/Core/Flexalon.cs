@@ -681,6 +681,7 @@ namespace Flexalon
             var scale = node.Result.ComponentScale;
             if (node.Parent != null)
             {
+                var s = scale;
                 scale = Math.SafeDivOne(scale, node.Parent.Result.ComponentScale);
             }
 

@@ -49,12 +49,12 @@ namespace Flexalon
 
         protected override void UpdateProperties()
         {
-            _node.SetAdapter(this);
+            Node.SetAdapter(this);
         }
 
         protected override void ResetProperties()
         {
-            _node.SetAdapter(null);
+            Node.SetAdapter(null);
         }
     }
 }

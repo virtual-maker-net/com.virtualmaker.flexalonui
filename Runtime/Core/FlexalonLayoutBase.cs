@@ -13,20 +13,20 @@ namespace Flexalon
         /// <inheritdoc />
         protected override void DoOnEnable()
         {
-            _node.DetachAllChildren();
+            Node.DetachAllChildren();
             for (int i = 0; i < transform.childCount; i++)
             {
-                _node.AddChild(Flexalon.GetOrCreateNode(transform.GetChild(i).gameObject));
+                Node.AddChild(Flexalon.GetOrCreateNode(transform.GetChild(i).gameObject));
             }
 
             Flexalon.GetOrCreate().PreUpdate += DetectChanges;
-            _node.SetMethod(this);
+            Node.SetMethod(this);
         }
 
         /// <inheritdoc />
         protected override void DoOnDisable()
         {
-            _node.SetMethod(null);
+            Node.SetMethod(null);
             var flexalon = Flexalon.Get();
             if (flexalon)
             {
@@ -37,7 +37,7 @@ namespace Flexalon
         /// <inheritdoc />
         protected override void ResetProperties()
         {
-            _node.DetachAllChildren();
+            Node.DetachAllChildren();
         }
 
         // This function is complicated because it's working around two issues.
@@ -50,9 +50,9 @@ namespace Flexalon
         {
             // Check if any old children changed parents. They need to be marked dirty
             // since their size may change after leaving the layout.
-            for (int i = 0; i < _node.Children.Count; i++)
+            for (int i = 0; i < Node.Children.Count; i++)
             {
-                var childNode = _node.Children[i];
+                var childNode = Node.Children[i];
                 if (!childNode.GameObject)
                 {
                     Flexalon.RecordFrameChanges = true;
@@ -89,7 +89,7 @@ namespace Flexalon
                     continue;
                 }
 
-                _node.InsertChild(childNode, index);
+                Node.InsertChild(childNode, index);
                 if (childNode.Result.Parent != transform || childNode.Result.SiblingIndex != index)
                 {
 #if UNITY_EDITOR

@@ -24,6 +24,7 @@ namespace Flexalon.Editor
         private SerializedProperty _holdRotation;
         private SerializedProperty _localSpaceRotation;
         private SerializedProperty _hideCursor;
+        private SerializedProperty _setParentWhileDragging;
         private SerializedProperty _handle;
         private SerializedProperty _bounds;
         private SerializedProperty _layerMask;
@@ -56,6 +57,7 @@ namespace Flexalon.Editor
             _holdRotation = serializedObject.FindProperty("_holdRotation");
             _localSpaceRotation = serializedObject.FindProperty("_localSpaceRotation");
             _hideCursor = serializedObject.FindProperty("_hideCursor");
+            _setParentWhileDragging = serializedObject.FindProperty("_setParentWhileDragging");
             _handle = serializedObject.FindProperty("_handle");
             _bounds = serializedObject.FindProperty("_bounds");
             _layerMask = serializedObject.FindProperty("_layerMask");
@@ -96,7 +98,7 @@ namespace Flexalon.Editor
                     foreach (var target in targets)
                     {
                         var interactable = target as FlexalonInteractable;
-                        showAllOptions = showAllOptions && interactable._showAllDragProperties;
+                        showAllOptions = showAllOptions && interactable.ShowAllDragProperties;
                     }
 
                     if (showAllOptions)
@@ -149,6 +151,7 @@ namespace Flexalon.Editor
                     }
 
                     EditorGUILayout.PropertyField(_hideCursor);
+                    EditorGUILayout.PropertyField(_setParentWhileDragging);
                     EditorGUILayout.PropertyField(_layerMask);
                     EditorGUI.indentLevel--;
                 }

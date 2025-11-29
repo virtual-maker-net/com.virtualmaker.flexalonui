@@ -47,38 +47,38 @@ namespace Flexalon
         private void RaycastUI(Vector3 uiPointer, ref float minDistance)
         {
 #if UNITY_UI
-                var eventSystem = UnityEngine.EventSystems.EventSystem.current;
-                if (eventSystem)
+            var eventSystem = UnityEngine.EventSystems.EventSystem.current;
+            if (eventSystem)
+            {
+                eventSystem.RaycastAll(new UnityEngine.EventSystems.PointerEventData(eventSystem)
                 {
-                    eventSystem.RaycastAll(new UnityEngine.EventSystems.PointerEventData(eventSystem)
-                    {
-                        position = uiPointer
-                    }, _graphicRaycastResult);
+                    position = uiPointer
+                }, _graphicRaycastResult);
 
-                    for (int i = 0; i < _graphicRaycastResult.Count; i++)
+                for (int i = 0; i < _graphicRaycastResult.Count; i++)
+                {
+                    var hit = _graphicRaycastResult[i];
+                    if (hit.distance < minDistance)
                     {
-                        var hit = _graphicRaycastResult[i];
-                        if (hit.distance < minDistance)
+                        if (_handles.TryGetValue(hit.gameObject, out var hitInteractable))
                         {
-                            if (_handles.TryGetValue(hit.gameObject, out var hitInteractable))
+                            _hitInteractable = hitInteractable;
+                            minDistance = hit.distance;
+
+                            hitInteractable.UpdateCanvas();
+
+                            if (hitInteractable.Canvas && hitInteractable.Canvas.renderMode == RenderMode.ScreenSpaceOverlay)
                             {
-                                _hitInteractable = hitInteractable;
-                                minDistance = hit.distance;
-
-                                hitInteractable.UpdateCanvas();
-
-                                if (hitInteractable.Canvas?.renderMode == UnityEngine.RenderMode.ScreenSpaceOverlay)
-                                {
-                                    hitPosition = hit.screenPosition;
-                                }
-                                else
-                                {
-                                    hitPosition = hit.worldPosition;
-                                }
+                                hitPosition = hit.screenPosition;
+                            }
+                            else
+                            {
+                                hitPosition = hit.worldPosition;
                             }
                         }
                     }
                 }
+            }
 #endif
         }
 

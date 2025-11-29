@@ -10,10 +10,10 @@ namespace Flexalon
     [ExecuteAlways, RequireComponent(typeof(FlexalonResult))]
     public abstract class FlexalonComponent : MonoBehaviour
     {
-        protected FlexalonNode _node;
+        private FlexalonNode _node;
 
         /// <summary> The FlexalonNode associated with this gameObject. </summary>
-        public FlexalonNode Node => _node;
+        public FlexalonNode Node => _node ??= Flexalon.GetOrCreateNode(gameObject);
 
         [SerializeField, HideInInspector, FormerlySerializedAs("_initialized")]
         private int _version;

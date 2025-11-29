@@ -17,8 +17,8 @@ namespace Flexalon.Editor
         private static readonly string _templates = "https://www.flexalon.com/templates?utm_source=fxmenu";
         private static readonly string _examples = "https://github.com/afarchy/flexalon-examples";
         // private static readonly string _proxima = "https://www.unityproxima.com?utm_source=pxmenu";
-        // private static readonly string _copilot = "https://www.flexalon.com/ai?utm_source=pxmenu";
-        private static readonly string _buildalon = "https://www.buildalon.com?utm_source=fxmenu";
+        // private static readonly string _buildalon = "https://www.buildalon.com?utm_source=fxmenu";
+        private static readonly string _bindables = "https://www.bindables.dev?utm_source=fxmenu";
 
         private static readonly string _showOnStartKey = "FlexalonMenu_ShowOnStart";
         private static readonly string _versionKey = "FlexalonMenu_Version";
@@ -31,7 +31,7 @@ namespace Flexalon.Editor
         private GUIStyle _semiboldStyle;
         private GUIStyle _moreToolsButtonStyle;
         private GUIStyle _moreLayoutsStyle;
-        private GUIStyle _buildalonStyle;
+        private GUIStyle _bindablesStyle;
 
         private static ShowOnStart _showOnStart;
         private static readonly string[] _showOnStartOptions = {
@@ -141,10 +141,11 @@ namespace Flexalon.Editor
             _bodyStyle.stretchWidth = false;
             _bodyStyle.richText = true;
 
-            _buildalonStyle = FlexalonGUI.CreateStyle(FlexalonGUI.HexColor("#FF1E6F"));
-            _buildalonStyle.fontStyle = FontStyle.Bold;
-            _buildalonStyle.margin.left = 10;
-            _buildalonStyle.margin.top = 10;
+            _bindablesStyle = FlexalonGUI.CreateStyle(FlexalonGUI.HexColor("#03FF74"));
+            _bindablesStyle.fontStyle = FontStyle.Bold;
+            _bindablesStyle.margin.left = 10;
+            _bindablesStyle.margin.top = 10;
+            _bindablesStyle.stretchWidth = true;
 
             _boldStyle = new GUIStyle(_bodyStyle);
             _boldStyle.fontStyle = FontStyle.Bold;
@@ -331,9 +332,9 @@ namespace Flexalon.Editor
 
                     GUILayout.FlexibleSpace();
                     GUILayout.Label("More Tools", _boldStyle);
-                    if (FlexalonGUI.ImageButton("2d4f1ef6bb116dd439a01757e51b59de", 165, (int)(165 * 0.525f)))
+                    if (FlexalonGUI.ImageButton("c046a6da3c79639458bc9e72f5adc2ee", 165, (int)(165 * 0.667f)))
                     {
-                        Application.OpenURL(_buildalon);
+                        Application.OpenURL(_bindables);
                     }
 
                     EditorGUIUtility.AddCursorRect(GUILayoutUtility.GetLastRect(), MouseCursor.Link);
@@ -359,12 +360,12 @@ namespace Flexalon.Editor
                     {
                         GUILayout.Label("Unveiling our new tool for Unity developers:", _bodyStyle);
                         EditorGUILayout.Space();
-                        if (FlexalonGUI.Link("Buildalon: Automate Unity!", _buildalonStyle))
+                        if (FlexalonGUI.Link("Bindables: Reactive Unity Programming!", _bindablesStyle))
                         {
-                            Application.OpenURL(_buildalon);
+                            Application.OpenURL(_bindables);
                         }
                         EditorGUILayout.Space();
-                        GUILayout.Label("Buildalon is a comprehensive suite of build, test, and deploy automation solutions for Unity developers.", _bodyStyle);
+                        GUILayout.Label("Bindables is a reactive framework for managing your game state and syncing it to UI and gameplay. Easily bind to lists, dictionaries, derived state, animations, intervals, events, and even URIs.", _bodyStyle);
                         EditorGUILayout.Space();
                     });
 

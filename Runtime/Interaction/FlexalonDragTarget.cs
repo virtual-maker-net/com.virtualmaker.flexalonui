@@ -52,6 +52,12 @@ namespace Flexalon
         private static HashSet<FlexalonDragTarget> _dragTargets = new HashSet<FlexalonDragTarget>();
         public static IReadOnlyCollection<FlexalonDragTarget> DragTargets => _dragTargets;
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStatics()
+        {
+            _dragTargets.Clear();
+        }
+
         void OnEnable()
         {
             _node = Flexalon.GetOrCreateNode(gameObject);

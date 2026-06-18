@@ -1,8 +1,17 @@
 # Changelog
 
-IMPORTANT: Unity 2019 and 2021 are no longer tested. As always, please back up your project before updating.
+## Version 4.4.2
+
+- Unity 6.5 compatibility fixes for Flexalon and Flexalon Templates.
+
+## Version 4.4.1
+
+- Unity 6 Compile Fix to Flexalon Random Modifier
+- Fix Templates to support new Input System.
 
 ## Version 4.4
+
+IMPORTANT: Unity 2019 and 2021 are no longer tested. As always, please back up your project before updating.
 
 ### Features
 

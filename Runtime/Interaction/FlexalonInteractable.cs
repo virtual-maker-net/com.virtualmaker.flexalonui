@@ -294,6 +294,14 @@ namespace Flexalon
         /// <summary> The first selected / dragged object. </summary>
         public static FlexalonInteractable SelectedObject => _selectedObjects.Count > 0 ? _selectedObjects[0] : null;
 
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStatics()
+        {
+            _hoveredObjects.Clear();
+            _selectedObjects.Clear();
+        }
+
         private Vector3 _target;
         private Vector3 _lastTarget;
         private float _distance;

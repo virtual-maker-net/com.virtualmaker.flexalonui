@@ -58,6 +58,12 @@ namespace Flexalon
 
         private static Flexalon _instance;
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStatics()
+        {
+            _instance = null;
+        }
+
         private HashSet<Node> _nodes = new HashSet<Node>();
         private Dictionary<GameObject, Node> _gameObjects = new Dictionary<GameObject, Node>();
         private DefaultTransformUpdater _defaultTransformUpdater = new DefaultTransformUpdater();
@@ -97,7 +103,7 @@ namespace Flexalon
             if (!_instance)
             {
                 #if UNITY_2023_1_OR_NEWER
-                    _instance = FindFirstObjectByType<Flexalon>();
+                    _instance = FindAnyObjectByType<Flexalon>();
                 #else
                     _instance = FindObjectOfType<Flexalon>();
                 #endif
